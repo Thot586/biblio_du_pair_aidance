@@ -5,6 +5,7 @@ import { createMemoryRouter, RouterProvider } from 'react-router';
 import { routes } from '@/app/router';
 import { course } from '@/content/course';
 import { TOOLS } from '@/features/tools/catalog';
+import { frenchSpacing } from '@/shared/lib/text';
 
 function renderAt(path: string) {
   const router = createMemoryRouter(routes, { initialEntries: [path] });
@@ -25,7 +26,9 @@ describe('l’accueil', () => {
       'Recherche documentaire et IA, pas à pas',
     );
     for (const section of course) {
-      expect(screen.getByRole('link', { name: new RegExp(section.question) })).toBeInTheDocument();
+      expect(
+        screen.getByRole('link', { name: new RegExp(frenchSpacing(section.question)) }),
+      ).toBeInTheDocument();
     }
   });
 
@@ -47,7 +50,9 @@ describe('l’accueil', () => {
 describe('une section', () => {
   it('liste ses leçons et son quiz', () => {
     renderAt('/question');
-    expect(screen.getByRole('link', { name: 'Comment préciser mon sujet ?' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: frenchSpacing('Comment préciser mon sujet ?') }),
+    ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /quiz/ })).toBeInTheDocument();
   });
 });
@@ -80,7 +85,9 @@ describe('un quiz', () => {
     renderAt('/question/quiz');
 
     expect(screen.getByRole('button', { name: 'Vérifier ma réponse' })).toBeDisabled();
-    await user.click(screen.getByRole('radio', { name: 'Les pair-aidants sont-ils utiles ?' }));
+    await user.click(
+      screen.getByRole('radio', { name: frenchSpacing('Les pair-aidants sont-ils utiles ?') }),
+    );
     await user.click(screen.getByRole('button', { name: 'Vérifier ma réponse' }));
 
     expect(screen.getByText(/Celle-ci est trop large/)).toBeInTheDocument();

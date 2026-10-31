@@ -3,7 +3,7 @@ import { findSection } from '@/content/course';
 import { lessonKey } from '@/content/types';
 import { isLessonRead, useProgress } from '@/features/progress/progressStore';
 import { usePageTitle } from '@/shared/lib/usePageTitle';
-import { pluralize } from '@/shared/lib/text';
+import { frenchSpacing, pluralize } from '@/shared/lib/text';
 import { InlineText } from '@/shared/ui/InlineText';
 import { NotFoundPage } from './NotFoundPage';
 import styles from './SectionPage.module.css';
@@ -20,7 +20,7 @@ export function SectionPage() {
 
   return (
     <article className={styles.section}>
-      <h1>{section.question}</h1>
+      <h1>{frenchSpacing(section.question)}</h1>
       <p className={styles.promise}>
         <InlineText text={section.promise} />
       </p>
@@ -30,7 +30,7 @@ export function SectionPage() {
           return (
             <li key={lesson.slug} className={styles.lesson}>
               <Link to={`/${section.slug}/${lesson.slug}`} className={styles.lessonLink}>
-                {lesson.question}
+                {frenchSpacing(lesson.question)}
               </Link>
               <span className={styles.meta}>
                 {pluralize(lesson.minutes, 'minute')}

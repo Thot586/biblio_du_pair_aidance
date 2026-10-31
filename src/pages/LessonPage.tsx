@@ -4,7 +4,7 @@ import { lessonKey, type Lesson, type Section } from '@/content/types';
 import { BlockList } from '@/features/content-blocks/BlockList';
 import { isLessonRead, setLessonRead, useProgress } from '@/features/progress/progressStore';
 import { usePageTitle } from '@/shared/lib/usePageTitle';
-import { pluralize } from '@/shared/lib/text';
+import { frenchSpacing, pluralize } from '@/shared/lib/text';
 import { InlineText } from '@/shared/ui/InlineText';
 import { NotFoundPage } from './NotFoundPage';
 import styles from './LessonPage.module.css';
@@ -14,7 +14,7 @@ function SectionRail({ section, current }: { section: Section; current: Lesson }
   return (
     <nav aria-label="Dans cette section" className={styles.rail}>
       <Link to={`/${section.slug}`} className={styles.railTitle}>
-        {section.question}
+        {frenchSpacing(section.question)}
       </Link>
       <ol className={styles.railList}>
         {section.lessons.map((lesson) => (
@@ -24,7 +24,7 @@ function SectionRail({ section, current }: { section: Section; current: Lesson }
               aria-current={lesson.slug === current.slug ? 'page' : undefined}
               data-read={isLessonRead(progress, lessonKey(section, lesson))}
             >
-              {lesson.question}
+              {frenchSpacing(lesson.question)}
             </Link>
           </li>
         ))}
@@ -57,7 +57,7 @@ export function LessonPage() {
       <SectionRail section={section} current={lesson} />
 
       <article className={styles.lesson}>
-        <h1>{lesson.question}</h1>
+        <h1>{frenchSpacing(lesson.question)}</h1>
         <p className={styles.meta}>Environ {pluralize(lesson.minutes, 'minute')}</p>
 
         <p className={styles.summary}>
@@ -87,7 +87,7 @@ export function LessonPage() {
             J’ai lu cette page
           </label>
           <p>
-            Et ensuite : <Link to={nextTo}>{nextLabel}</Link>
+            Et ensuite : <Link to={nextTo}>{frenchSpacing(nextLabel)}</Link>
           </p>
         </div>
       </article>

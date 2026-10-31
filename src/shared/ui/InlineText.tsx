@@ -1,3 +1,4 @@
+import { frenchSpacing } from '@/shared/lib/text';
 import { ExternalLink } from './ExternalLink';
 import { parseInline } from './inlineText/parseInline';
 import { Term } from './Term';
@@ -9,11 +10,11 @@ export function InlineText({ text }: { text: string }) {
       {parseInline(text).map((node, index) => {
         switch (node.type) {
           case 'text':
-            return node.value;
+            return frenchSpacing(node.value);
           case 'strong':
-            return <strong key={index}>{node.value}</strong>;
+            return <strong key={index}>{frenchSpacing(node.value)}</strong>;
           case 'em':
-            return <em key={index}>{node.value}</em>;
+            return <em key={index}>{frenchSpacing(node.value)}</em>;
           case 'term':
             return <Term key={index} id={node.id} label={node.label} />;
           case 'link':

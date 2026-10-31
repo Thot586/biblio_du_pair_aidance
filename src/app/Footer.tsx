@@ -5,16 +5,22 @@ import styles from './Footer.module.css';
 const LOGOS = [
   {
     file: 'universite-lyon-1.svg',
+    width: 106,
+    height: 120,
     alt: 'Université Claude Bernard Lyon 1',
     href: 'https://www.univ-lyon1.fr/',
   },
   {
     file: 'le-vinatier.png',
+    width: 696,
+    height: 251,
     alt: 'Le Vinatier, psychiatrie universitaire Lyon Métropole',
     href: 'https://www.ch-le-vinatier.fr/',
   },
   {
     file: 'centre-ressource-rehabilitation.png',
+    width: 228,
+    height: 130,
     alt: 'Centre ressource de réhabilitation psychosociale',
     href: 'https://centre-ressource-rehabilitation.org/',
   },
@@ -40,6 +46,8 @@ export function Footer() {
                 <img
                   src={`${import.meta.env.BASE_URL}logos/${logo.file}`}
                   alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
                   loading="lazy"
                 />
               </a>

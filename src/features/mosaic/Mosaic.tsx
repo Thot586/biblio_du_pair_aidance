@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { course } from '@/content/course';
 import { sectionCompletion, useProgress } from '@/features/progress/progressStore';
+import { frenchSpacing } from '@/shared/lib/text';
 import { Tile } from './Tile';
 import styles from './Mosaic.module.css';
 
@@ -23,7 +24,7 @@ export function Mosaic() {
               <span className={styles.tile}>
                 <Tile pattern={index} completion={completion} />
               </span>
-              <span className={styles.question}>{section.question}</span>
+              <span className={styles.question}>{frenchSpacing(section.question)}</span>
               <span className={styles.status}>{statusLabel(completion)}</span>
             </Link>
           </li>
@@ -34,7 +35,7 @@ export function Mosaic() {
           <span className={styles.tile}>
             <Tile pattern={course.length} completion={1} alwaysFull />
           </span>
-          <span className={styles.question}>Où retrouver tous les outils ?</span>
+          <span className={styles.question}>{frenchSpacing('Où retrouver tous les outils ?')}</span>
           <span className={styles.status}>Boîte à outils</span>
         </Link>
       </li>

@@ -1,4 +1,5 @@
 import type { CalloutTone } from '@/content/types';
+import { frenchSpacing } from '@/shared/lib/text';
 import { InlineText } from './InlineText';
 import styles from './Callout.module.css';
 
@@ -30,7 +31,7 @@ export function Callout({ tone, title, text }: CalloutProps) {
         <path d={SHAPES[tone]} />
       </svg>
       <div className={styles.body}>
-        <p className={styles.title}>{title}</p>
+        <p className={styles.title}>{frenchSpacing(title)}</p>
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>
             <InlineText text={paragraph} />
