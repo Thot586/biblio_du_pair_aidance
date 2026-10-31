@@ -316,7 +316,8 @@ export function ApaGenerator() {
               <span className={styles.citation}>{withPage(citation.parenthetical, page)}</span>
             </li>
             <li>
-              Dans la phrase : Selon <span className={styles.citation}>{citation.narrative}</span>, …
+              Dans la phrase : Selon <span className={styles.citation}>{citation.narrative}</span>,
+              …
             </li>
           </ul>
           <Field

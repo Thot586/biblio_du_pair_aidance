@@ -72,7 +72,14 @@
   inset: 0.35rem 0.1rem;
 }
 
-.controls {
+.transport {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--space-2);
+  max-width: 22rem;
+}
+
+.options {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -119,7 +126,6 @@
   color: var(--color-primary-contrast);
   font-weight: 700;
   border-radius: 0 0.9rem 0 0;
-  min-width: 7.5rem;
   justify-content: center;
 }
 

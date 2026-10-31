@@ -16,24 +16,24 @@ export function AboutPage() {
       <h2>Qui a fait ce support ?</h2>
       <p>Conception : {AUTHORS.join(' et ')}.</p>
       <p>
-        Ce support s'appuie sur les ressources du DU et des bibliothèques partenaires, créditées sur
+        Ce support s’appuie sur les ressources du DU et des bibliothèques partenaires, créditées sur
         la page <Link to="/sources">Sources</Link>. Pour signaler une erreur :{' '}
         <a href={`mailto:${AUTHOR_CONTACT.email}`}>{AUTHOR_CONTACT.email}</a>.
       </p>
 
       <h2>Vos données</h2>
       <ul className={styles.list}>
-        <li>Pas de compte, pas de publicité, pas de mesure d'audience, pas de cookie.</li>
+        <li>Pas de compte, pas de publicité, pas de mesure d’audience, pas de cookie.</li>
         <li>
           Votre progression, vos réglages et votre liste de références restent dans le navigateur de
-          cet appareil. Nous n'y avons pas accès. Sur un poste partagé, pensez à les effacer depuis
+          cet appareil. Nous n’y avons pas accès. Sur un poste partagé, pensez à les effacer depuis
           le bouton Affichage.
         </li>
         <li>
           Si vous collez un DOI ou un titre dans un outil, votre navigateur interroge{' '}
           <ExternalLink href="https://www.crossref.org/">Crossref</ExternalLink>, une base
-          internationale de références. Seul ce texte est envoyé : n'y mettez jamais de nom de
-          personne accompagnée ni d'information de santé.
+          internationale de références. Seul ce texte est envoyé : n’y mettez jamais de nom de
+          personne accompagnée ni d’information de santé.
         </li>
         <li>
           Le site est hébergé par{' '}
@@ -44,9 +44,9 @@ export function AboutPage() {
 
       <h2>Accessibilité</h2>
       <p>
-        Le site se lit au clavier, sur téléphone et avec un lecteur d'écran. Le bouton Affichage
-        permet d'agrandir le texte, de changer de police ou de réduire les mouvements. Chaque
-        animation a son texte complet. Un problème ? Écrivez-nous à l'adresse ci-dessus.
+        Le site se lit au clavier, sur téléphone et avec un lecteur d’écran. Le bouton Affichage
+        permet d’agrandir le texte, de changer de police ou de réduire les mouvements. Chaque
+        animation a son texte complet. Un problème ? Écrivez-nous à l’adresse ci-dessus.
       </p>
 
       <h2>Mise à jour</h2>

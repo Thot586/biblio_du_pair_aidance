@@ -11,7 +11,7 @@ export function SourcesPage() {
       <h1>Sources</h1>
       <p>
         Ce support a été réécrit pour le rendre plus simple et plus progressif. Voici les documents
-        sur lesquels il s'appuie.
+        sur lesquels il s’appuie.
       </p>
       <ul className={styles.list}>
         {CREDITS.map((credit) => (

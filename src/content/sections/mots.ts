@@ -66,7 +66,7 @@ export const motsSection: Section = {
       question: 'Dois-je chercher en anglais ?',
       minutes: 6,
       summary:
-        'Vous pouvez faire un très bon mémoire avec des sources en français. L’anglais ouvre cependant l’accès à beaucoup plus de recherches, notamment sur PubMed. Quelques mots suffisent, et des outils vous aident à les trouver.',
+        'Vous pouvez faire un très bon mémoire avec des [[source|sources]] en français. L’anglais ouvre cependant l’accès à beaucoup plus de recherches, notamment sur PubMed. Quelques mots suffisent, et des outils vous aident à les trouver.',
       blocks: [
         {
           kind: 'paragraph',
@@ -91,7 +91,7 @@ export const motsSection: Section = {
         },
         {
           kind: 'paragraph',
-          text: 'Et pour un mot qui n’est pas dans ce tableau ? PubMed utilise sa propre liste de mots-clés, le [[mesh|MeSH]]. Le site HeTOP permet de la consulter en français. Regardons comment Sam s’y prend.',
+          text: 'Et pour un mot qui n’est pas dans ce tableau ? PubMed utilise sa propre liste de [[mot-cle|mots-clés]], le [[mesh|MeSH]]. Le site HeTOP permet de la consulter en français. Regardons comment Sam s’y prend.',
         },
         { kind: 'scene', scene: 'traduire-mesh' },
         {
@@ -219,7 +219,7 @@ export const motsSection: Section = {
       question: 'Pourquoi chaque base a-t-elle ses propres mots ?',
       minutes: 4,
       summary:
-        'Vous pouvez chercher avec vos propres mots, c’est le langage libre. Beaucoup de bases utilisent aussi une liste de mots-clés choisis par des spécialistes, le [[thesaurus|thésaurus]]. Utiliser ces mots rend la recherche plus précise.',
+        'Vous pouvez chercher avec vos propres mots, c’est le langage libre. Beaucoup de bases utilisent aussi une liste de [[mot-cle|mots-clés]] choisis par des spécialistes, le [[thesaurus|thésaurus]]. Utiliser ces mots rend la recherche plus précise.',
       blocks: [
         {
           kind: 'paragraph',

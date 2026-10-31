@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { to: '/', label: 'Le parcours', end: true },
   { to: '/outils', label: 'Boîte à outils', end: false },
   { to: '/glossaire', label: 'Glossaire', end: false },
-  { to: '/aide', label: "Qui peut m'aider ?", end: false },
+  { to: '/aide', label: 'Qui peut m’aider ?', end: false },
 ] as const;
 
 export function Header() {

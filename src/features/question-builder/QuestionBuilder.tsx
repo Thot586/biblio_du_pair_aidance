@@ -50,7 +50,7 @@ export function QuestionBuilder() {
         <h2 id="etape-reponses" className={panel.stepTitle}>
           1. Répondez à ce que vous pouvez
         </h2>
-        <p>Écrivez quelques mots, sans chercher la bonne formule. Rien n'est envoyé.</p>
+        <p>Écrivez quelques mots, sans chercher la bonne formule. Rien n’est envoyé.</p>
         {SUBJECT_FIELDS.map((field) => (
           <Field
             key={field.key}
@@ -143,7 +143,7 @@ export function QuestionBuilder() {
           </div>
         )}
         <p className={panel.note}>
-          Votre question reste sur cet appareil. Elle évoluera avec vos lectures : c'est normal.
+          Votre question reste sur cet appareil. Elle évoluera avec vos lectures : c’est normal.
         </p>
       </section>
     </div>

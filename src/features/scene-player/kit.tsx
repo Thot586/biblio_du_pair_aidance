@@ -181,6 +181,32 @@ export function Arrow({ from, to, progress = 1, color = 'accent', width = 4 }: A
   );
 }
 
+/** Une étape du trajet du pointeur : où aller, et pendant quelle partie de l'étape. */
+export interface Stop {
+  step: number;
+  x: number;
+  y: number;
+  from?: number;
+  to?: number;
+}
+
+/** Position du pointeur au moment `frame`, le long d'un trajet. */
+export function travel(
+  frame: SceneFrame,
+  start: readonly [number, number],
+  stops: readonly Stop[],
+) {
+  return stops.reduce<readonly [number, number]>(([x, y], stop) => {
+    const t = appear(frame, stop.step, stop.from ?? 0, stop.to ?? 0.5);
+    return [lerp(x, stop.x, t), lerp(y, stop.y, t)];
+  }, start);
+}
+
+/** Une ligne de texte stylisée, pour suggérer un paragraphe sans l'écrire. */
+export function Bar({ x, y, width }: { x: number; y: number; width: number }) {
+  return <rect x={x} y={y} width={width} height={10} rx={3} fill={sceneColor('line')} />;
+}
+
 /** Pointeur de souris, pour les visites d'écran. */
 export function Pointer({ x, y, pressed = false }: { x: number; y: number; pressed?: boolean }) {
   return (

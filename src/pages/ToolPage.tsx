@@ -20,7 +20,7 @@ export function ToolPage() {
       </p>
       <h1>{tool.title}</h1>
       <p>{tool.summary}</p>
-      <Suspense fallback={<p>Chargement de l'outil.</p>}>
+      <Suspense fallback={<p>Chargement de l’outil.</p>}>
         <ToolView id={tool.id} />
       </Suspense>
     </article>

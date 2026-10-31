@@ -213,7 +213,7 @@ const ENTRIES: readonly GlossaryEntry[] = [
     definition: 'Dire avec vos mots l’idée d’une autre personne, en citant sa source.',
     detail:
       'La norme APA préfère la reformulation à la citation exacte. Changer trois mots ne suffit pas : il faut vraiment réécrire, et toujours indiquer (Nom, année).',
-    forms: ['reformulation', 'reformuler'],
+    forms: ['reformulation'],
   },
   {
     id: 'plagiat',

@@ -9,7 +9,7 @@ function statusLabel(completion: number): string {
   return completion >= 1 ? 'Terminé' : 'En cours';
 }
 
-/** La carte du site : chaque tuile se colore à mesure qu'on parcourt la section. */
+/** La carte du site : chaque tuile se colore à mesure qu’on parcourt la section. */
 export function Mosaic() {
   const progress = useProgress();
 

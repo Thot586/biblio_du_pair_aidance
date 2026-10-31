@@ -23,7 +23,7 @@ export const citerSection: Section = {
         },
         {
           kind: 'paragraph',
-          text: 'Vous avez deux façons d’utiliser un texte. Vous pouvez recopier une phrase mot pour mot, entre guillemets : c’est une citation exacte. Ou vous pouvez dire l’idée avec vos mots : c’est une [[paraphrase|reformulation]]. Dans les deux cas, vous indiquez la source.',
+          text: 'Vous avez deux façons d’utiliser un texte. Vous pouvez recopier une phrase mot pour mot, entre guillemets : c’est une citation exacte. Ou vous pouvez dire l’idée avec vos mots : c’est une [[paraphrase|reformulation]]. Dans les deux cas, vous indiquez la [[source|source]].',
         },
         {
           kind: 'compare',
@@ -40,7 +40,7 @@ export const citerSection: Section = {
           kind: 'callout',
           tone: 'tip',
           title: 'Le réflexe qui protège',
-          text: 'Quand vous lisez, notez les idées avec vos propres mots, et notez toujours la référence à côté. Le plagiat involontaire vient presque toujours de notes mal tenues.',
+          text: 'Quand vous lisez, notez les idées avec vos propres mots, et notez toujours la [[reference|référence]] à côté. Le plagiat involontaire vient presque toujours de notes mal tenues.',
         },
       ],
       takeaways: [
@@ -58,7 +58,7 @@ export const citerSection: Section = {
       blocks: [
         {
           kind: 'paragraph',
-          text: 'Le principe tient en une phrase : chaque citation dans le texte renvoie à une ligne de la [[bibliographie]]. L’animation vous montre le lien entre les deux.',
+          text: 'Le principe tient en une phrase : chaque [[citation|citation dans le texte]] renvoie à une ligne de la [[bibliographie]]. L’animation vous montre le lien entre les deux.',
         },
         { kind: 'scene', scene: 'citer-texte-liste' },
         {
@@ -71,19 +71,19 @@ export const citerSection: Section = {
             ['Trois auteurs ou plus', '(Le Cardinal et al., 2013)'],
             ['Un organisme avec un sigle', 'Haute Autorité de santé (HAS, 2024), puis (HAS, 2024)'],
             ['Pas de date', '(Castro, s. d.)'],
-            ['Plusieurs sources à la fois', '(Castro, 2020; Le Cardinal et al., 2013)'],
+            ['Plusieurs [[source|sources]] à la fois', '(Castro, 2020; Le Cardinal et al., 2013)'],
           ],
         },
         { kind: 'heading', text: 'Reprendre les mots exacts d’un auteur' },
         {
           kind: 'paragraph',
-          text: 'La norme APA préfère la reformulation. Mais une phrase est parfois si juste qu’on a envie de la garder telle quelle. Dans ce cas, deux cas se présentent.',
+          text: 'La norme APA préfère la [[paraphrase|reformulation]]. Mais une phrase est parfois si juste qu’on a envie de la garder telle quelle. Dans ce cas, deux cas se présentent.',
         },
         {
           kind: 'list',
           items: [
             '**Moins de 40 mots** : vous mettez la phrase entre guillemets, avec le numéro de page : (Castro, 2020, p. 19).',
-            '**40 mots ou plus** : vous la placez dans un paragraphe à part, en retrait de 1,25 cm, sans guillemets, suivie de la référence et de la page.',
+            '**40 mots ou plus** : vous la placez dans un paragraphe à part, en retrait de 1,25 cm, sans guillemets, suivie de la [[reference|référence]] et de la page.',
           ],
         },
         {
@@ -140,7 +140,7 @@ export const citerSection: Section = {
           kind: 'callout',
           tone: 'rule',
           title: 'La règle suivie sur ce site',
-          text: `Il n’existe pas de traduction française officielle de la norme APA. Ce site suit le [guide de la BU Lyon 1](${LYON1_GUIDE}), mis à jour en juillet 2026. C’est lui qu’il faut consulter pour les cas particuliers.`,
+          text: `Il n’existe pas de traduction française officielle de la norme [[apa|APA]]. Ce site suit le [guide de la BU Lyon 1](${LYON1_GUIDE}), mis à jour en juillet 2026. C’est lui qu’il faut consulter pour les cas particuliers.`,
         },
         {
           kind: 'more',
@@ -169,7 +169,7 @@ export const citerSection: Section = {
       question: 'À quoi ressemble chaque type de référence ?',
       minutes: 8,
       summary:
-        'La forme change un peu selon le document. Voici un exemple réel pour chaque cas fréquent. Gardez cette page sous la main : vous y reviendrez en écrivant votre bibliographie.',
+        'La forme d’une [[reference|référence]] [[apa|APA]] change un peu selon le document. Voici un exemple réel pour chaque cas fréquent. Gardez cette page sous la main : vous y reviendrez en écrivant votre [[bibliographie|bibliographie]].',
       blocks: [
         { kind: 'heading', text: 'Les plus fréquents' },
         {
@@ -288,7 +288,7 @@ export const citerSection: Section = {
       takeaways: [
         'Article : c’est la revue qui est en italique. Livre : c’est le titre du livre.',
         'Une revue sans volume s’écrit avec le numéro entre parenthèses.',
-        'Le DOI s’écrit toujours sous forme de lien.',
+        'Le [[doi|DOI]] s’écrit toujours sous forme de lien.',
       ],
     },
     {
@@ -296,11 +296,11 @@ export const citerSection: Section = {
       question: 'J’ai trouvé une référence : comment l’ajouter ?',
       minutes: 5,
       summary:
-        'Si vous avez un [[doi|DOI]], collez-le dans le générateur : la référence se remplit toute seule. Sinon, vous pouvez partir du bouton « Citer » de Google Scholar ou de PubMed. Dans tous les cas, relisez le résultat.',
+        'Si vous avez un [[doi|DOI]], collez-le dans le générateur : la [[reference|référence]] se remplit toute seule. Sinon, vous pouvez partir du bouton « Citer » de Google Scholar ou de PubMed. Dans tous les cas, relisez le résultat.',
       blocks: [
         {
           kind: 'paragraph',
-          text: 'Vous avez trouvé un article, un livre, ou même une référence copiée dans la bibliographie d’un autre texte. Voici le chemin le plus simple, selon ce que vous avez sous la main.',
+          text: 'Vous avez trouvé un article, un livre, ou même une référence copiée dans la [[bibliographie|bibliographie]] d’un autre texte. Voici le chemin le plus simple, selon ce que vous avez sous la main.',
         },
         {
           kind: 'table',
@@ -311,11 +311,11 @@ export const citerSection: Section = {
             ['Un titre d’article', 'Collez-le dans le générateur, puis choisissez le bon résultat'],
             [
               'Un livre français',
-              'Cherchez-le dans le [Sudoc](https://www.sudoc.abes.fr/cbs/), puis recopiez les informations',
+              'Cherchez-le dans le [[sudoc|Sudoc]], puis recopiez les informations',
             ],
             [
               'Un résultat Google Scholar',
-              'Cliquez sur « Citer », copiez la ligne APA, puis vérifiez-la',
+              'Cliquez sur « Citer », copiez la ligne [[apa|APA]], puis vérifiez-la',
             ],
             [
               'Un résultat PubMed',
@@ -331,7 +331,7 @@ export const citerSection: Section = {
           kind: 'callout',
           tone: 'warning',
           title: 'Ne recopiez pas une référence sans vérifier',
-          text: 'Les boutons « Citer » font des erreurs : majuscules, noms mal découpés, éditeur manquant. Une bibliographie trouvée ailleurs peut aussi suivre une autre norme. Vérifiez auteur, année, titre et lien.',
+          text: 'Les boutons « Citer » font des erreurs : majuscules, noms mal découpés, [[editeur|éditeur]] manquant. Une bibliographie trouvée ailleurs peut aussi suivre une autre norme. Vérifiez auteur, année, titre et lien.',
         },
         {
           kind: 'callout',
@@ -368,7 +368,7 @@ export const citerSection: Section = {
               'Oui, comme une page web ou une vidéo',
             ],
             [
-              'Un entretien que vous avez mené, placé en annexe',
+              'Un entretien que vous avez mené, placé en [[annexe|annexe]]',
               'Selon la personne B. (Annexe 1)',
               'Non',
             ],
@@ -397,13 +397,13 @@ export const citerSection: Section = {
           blocks: [
             {
               kind: 'paragraph',
-              text: 'Votre expérience n’a pas besoin de référence : vous écrivez en votre nom. Veillez simplement à ce qu’elle serve votre réflexion. Les attendus du DU rappellent que le mémoire n’est pas une biographie.',
+              text: 'Votre expérience n’a pas besoin de [[reference|référence]] : vous écrivez en votre nom. Veillez simplement à ce qu’elle serve votre réflexion. Les attendus du DU rappellent que le mémoire n’est pas une biographie.',
             },
           ],
         },
       ],
       takeaways: [
-        'Votre lecteur peut retrouver le document ? Il va dans la bibliographie.',
+        'Votre lecteur peut retrouver le document ? Il va dans la [[bibliographie|bibliographie]].',
         'Entretien ou cours : communication personnelle, dans le texte seulement.',
         'Protégez toujours l’anonymat des personnes.',
       ],
@@ -413,7 +413,7 @@ export const citerSection: Section = {
       question: 'Zotero peut-il faire le travail à ma place ?',
       minutes: 6,
       summary:
-        '[[zotero|Zotero]] est un logiciel gratuit qui garde vos références et fabrique votre bibliographie dans Word. Si vous voulez aller vite sans rien installer, ZoteroBib fait une bibliographie simple en ligne.',
+        '[[zotero|Zotero]] est un logiciel gratuit qui garde vos [[reference|références]] et fabrique votre [[bibliographie|bibliographie]] dans Word. Si vous voulez aller vite sans rien installer, ZoteroBib fait une bibliographie simple en ligne.',
       blocks: [
         {
           kind: 'paragraph',
@@ -462,7 +462,7 @@ export const citerSection: Section = {
       question: 'Quelles sont les erreurs les plus fréquentes ?',
       minutes: 3,
       summary:
-        'La plupart des erreurs se ressemblent, et elles sont faciles à éviter. Avant de rendre votre mémoire, prenez dix minutes pour relire votre bibliographie avec cette liste.',
+        'La plupart des erreurs se ressemblent, et elles sont faciles à éviter. Avant de rendre votre mémoire, prenez dix minutes pour relire votre [[bibliographie|bibliographie]] avec cette liste.',
       blocks: [
         {
           kind: 'list',
@@ -470,7 +470,7 @@ export const citerSection: Section = {
             '**Un auteur cité dans le texte manque dans la bibliographie**, ou l’inverse. Vérifiez dans les deux sens.',
             '**L’année ne correspond pas** entre le texte et la liste.',
             '**Le titre est en italique** alors qu’il s’agit d’un article : pour un article, c’est la revue qui est en italique.',
-            '**« vol. » et « n° » sont écrits** dans la référence : gardez seulement les chiffres.',
+            '**« vol. » et « n° » sont écrits** dans la [[reference|référence]] : gardez seulement les chiffres.',
             '**Le prénom est écrit en entier** : il faut seulement l’initiale.',
             '**Les références ne sont pas classées** par ordre alphabétique.',
             '**La liste mélange plusieurs normes**, parce qu’elle vient de plusieurs outils.',

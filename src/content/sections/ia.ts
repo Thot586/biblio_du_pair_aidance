@@ -30,7 +30,7 @@ export const iaSection: Section = {
           blocks: [
             {
               kind: 'paragraph',
-              text: 'Certains outils, comme Perplexity ou Consensus, cherchent d’abord dans des documents, puis rédigent une réponse à partir de ce qu’ils ont trouvé. Vous pouvez donc remonter aux sources, ce qui est un vrai progrès. Il reste nécessaire de vérifier, car l’outil peut mal résumer un document.',
+              text: 'Certains outils, comme Perplexity ou Consensus, cherchent d’abord dans des documents, puis rédigent une réponse à partir de ce qu’ils ont trouvé. Vous pouvez donc remonter aux [[source|sources]], ce qui est un vrai progrès. Il reste nécessaire de vérifier, car l’outil peut mal résumer un document.',
             },
           ],
         },
@@ -74,7 +74,7 @@ export const iaSection: Section = {
           tone: 'rule',
           title: 'Les trois conditions du DU',
           text: [
-            '**1. Vous vérifiez et vous ajustez tout.** Chaque information, chaque référence, chaque phrase. Votre texte doit rester le vôtre, avec votre réflexion et votre voix.',
+            '**1. Vous vérifiez et vous ajustez tout.** Chaque information, chaque [[reference|référence]], chaque phrase. Votre texte doit rester le vôtre, avec votre réflexion et votre voix.',
             '**2. Vous protégez les données sensibles.** Aucune information qui permette de reconnaître une personne. Il faut [[anonymisation|anonymiser]].',
             '**3. Vous jouez la transparence.** Vous déclarez votre usage de l’IA dans une [[annexe]] de votre mémoire.',
           ],
@@ -91,7 +91,7 @@ export const iaSection: Section = {
             ],
             [
               'Chercher',
-              'Repérer des articles et des mots-clés',
+              'Repérer des articles et des [[mot-cle|mots-clés]]',
               'Vérifier que les documents existent',
             ],
             ['Lire', 'Résumer un document autorisé', 'Lire vous-même les textes importants'],
@@ -169,7 +169,7 @@ export const iaSection: Section = {
               'Souvent oui par défaut : vérifiez vos réglages',
             ],
             [
-              'Chercher avec les sources visibles',
+              'Chercher avec les [[source|sources]] visibles',
               'Perplexity, Consensus',
               'Perplexity : oui par défaut. Consensus annonce que non',
             ],
@@ -207,7 +207,7 @@ export const iaSection: Section = {
             },
             {
               kind: 'paragraph',
-              text: 'Ces informations viennent des éditeurs eux-mêmes, et personne ne les a contrôlées de façon indépendante. Même avec ce réglage, ne saisissez jamais de données sensibles.',
+              text: 'Ces informations viennent des [[editeur|éditeurs]] eux-mêmes, et personne ne les a contrôlées de façon indépendante. Même avec ce réglage, ne saisissez jamais de données sensibles.',
             },
           ],
         },
@@ -244,7 +244,7 @@ export const iaSection: Section = {
           items: [
             '**Vous sortir de la page blanche**, en vous posant des questions sur votre sujet.',
             '**Expliquer un texte difficile** avec des mots plus simples, ou en français pour un article en anglais.',
-            '**Vous proposer des mots-clés et des synonymes** pour vos recherches.',
+            '**Vous proposer des pistes de vocabulaire** : des [[mot-cle|mots-clés]] et des synonymes pour vos recherches.',
             '**Vous aider à organiser vos idées** quand vous en avez beaucoup.',
             '**Corriger votre orthographe** et clarifier vos phrases, ce qui aide en cas de dyslexie.',
             '**Vous entraîner à l’oral**, en jouant le rôle du jury.',
@@ -278,7 +278,7 @@ export const iaSection: Section = {
       blocks: [
         {
           kind: 'paragraph',
-          text: 'Regardons le piège le plus courant dans un mémoire : la fausse référence. L’IA vous donne un titre crédible, une revue qui existe, une année, parfois même un [[doi|DOI]]. Et pourtant, l’article n’a jamais été écrit.',
+          text: 'Regardons le piège le plus courant dans un mémoire : la fausse [[reference|référence]]. L’IA vous donne un titre crédible, une revue qui existe, une année, parfois même un [[doi|DOI]]. Et pourtant, l’article n’a jamais été écrit.',
         },
         { kind: 'scene', scene: 'hallucination' },
         {
@@ -322,7 +322,7 @@ export const iaSection: Section = {
               items: [
                 '**Ses connaissances peuvent être datées**, si elle ne cherche pas en ligne.',
                 '**Elle connaît mal le contexte français** de la pair-aidance, souvent moins documenté en ligne.',
-                '**Elle ne trouve pas ce qui n’est pas en ligne** : livres, mémoires, littérature grise.',
+                '**Elle ne trouve pas ce qui n’est pas en ligne** : livres, mémoires, [[litterature-grise|littérature grise]].',
                 '**Elle vous donne souvent raison**, même quand vous avez tort. Demandez-lui de vous contredire.',
               ],
             },
@@ -509,7 +509,7 @@ export const iaSection: Section = {
           before: { label: 'Une demande vague', text: 'Parle-moi de la pair-aidance.' },
           after: {
             label: 'Une demande claire',
-            text: 'Tu es documentaliste en santé mentale. Je prépare un mémoire de DU sur l’arrivée d’une personne pair-aidante dans une équipe d’addictologie. Propose-moi dix mots-clés en français et en anglais, sous forme de tableau, dans un langage simple.',
+            text: 'Tu es documentaliste en santé mentale. Je prépare un mémoire de DU sur l’arrivée d’une personne pair-aidante dans une équipe d’addictologie. Propose-moi dix [[mot-cle|mots-clés]] en français et en anglais, sous forme de tableau, dans un langage simple.',
           },
         },
         { kind: 'tool', tool: 'preparer-prompt' },
@@ -537,7 +537,7 @@ export const iaSection: Section = {
       question: 'Comment déclarer mon usage de l’IA ?',
       minutes: 4,
       summary:
-        'Une IA n’est pas une [[source]] : elle ne se cite pas et ne va pas dans la bibliographie. Vous indiquez plutôt, dans une [[annexe]], quel outil vous avez utilisé, à quelle étape, et avec quelle demande.',
+        'Une IA n’est pas une [[source]] : elle ne se cite pas et ne va pas dans la [[bibliographie|bibliographie]]. Vous indiquez plutôt, dans une [[annexe]], quel outil vous avez utilisé, à quelle étape, et avec quelle demande.',
       blocks: [
         {
           kind: 'paragraph',
@@ -550,7 +550,7 @@ export const iaSection: Section = {
           rows: [
             [
               'Le Chat',
-              'Trouver des mots-clés',
+              'Trouver des [[mot-cle|mots-clés]]',
               'Propose dix mots-clés sur…',
               'J’ai gardé quatre mots, vérifiés dans PubMed',
             ],

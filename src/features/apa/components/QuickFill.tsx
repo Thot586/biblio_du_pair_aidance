@@ -22,7 +22,7 @@ function describeWork(work: CrossrefWork): string {
   return [work.title?.[0], name, work['container-title']?.[0], year].filter(Boolean).join(', ');
 }
 
-/** Remplit le formulaire à partir d'un DOI ou d'un titre, grâce à Crossref. */
+/** Remplit le formulaire à partir d’un DOI ou d’un titre, grâce à Crossref. */
 export function QuickFill({ onFill }: { onFill: (entry: ReferenceEntry) => void }) {
   const [text, setText] = useState('');
   const [status, setStatus] = useState<Status>('idle');

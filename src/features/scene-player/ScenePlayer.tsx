@@ -50,7 +50,7 @@ export function ScenePlayer({ scene }: { scene: SceneDefinition }) {
               key={step.caption}
               type="button"
               className={styles.dot}
-              aria-label={`Aller à l'étape ${index + 1}`}
+              aria-label={`Aller à l’étape ${index + 1}`}
               aria-current={index === state.step ? 'step' : undefined}
               data-done={index <= state.step}
               onClick={() => dispatch({ type: 'goTo', step: index })}
@@ -58,7 +58,7 @@ export function ScenePlayer({ scene }: { scene: SceneDefinition }) {
           ))}
         </div>
 
-        <div className={styles.controls}>
+        <div className={styles.transport}>
           <button
             type="button"
             className={styles.iconButton}
@@ -95,9 +95,11 @@ export function ScenePlayer({ scene }: { scene: SceneDefinition }) {
               <path d="M15.5 5H18v14h-2.5zM5 5v14l10-7z" />
             </svg>
           </button>
+        </div>
 
+        <div className={styles.options}>
           <label className={styles.speed} htmlFor={speedFieldId}>
-            <span className="visually-hidden">Vitesse de l'animation</span>
+            <span className="visually-hidden">Vitesse de l’animation</span>
             <select
               id={speedFieldId}
               value={state.speed}
@@ -127,7 +129,7 @@ export function ScenePlayer({ scene }: { scene: SceneDefinition }) {
       </div>
 
       <div className={styles.transcript}>
-        <MoreDetails title="Lire tout le texte de l'animation">
+        <MoreDetails title="Lire tout le texte de l’animation">
           <ol>
             {steps.map((step) => (
               <li key={step.caption}>

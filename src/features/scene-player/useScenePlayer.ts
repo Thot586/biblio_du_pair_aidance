@@ -33,10 +33,11 @@ export function useScenePlayer(steps: readonly SceneStep[]) {
   }, [isRunning]);
 
   const duration = durations[state.step] ?? 1;
+  const hasStarted = isRunning || state.elapsedMs > 0;
   const frame: SceneFrame = {
     step: state.step,
-    // Mouvements réduits : l'image finale de l'étape s'affiche tout de suite.
-    progress: reducedMotion ? 1 : Math.min(1, state.elapsedMs / duration),
+    // Avant la lecture, et si les mouvements sont réduits, l'image de l'étape est déjà complète.
+    progress: reducedMotion || !hasStarted ? 1 : Math.min(1, state.elapsedMs / duration),
   };
 
   return { state, frame, dispatch, isRunning };

@@ -54,7 +54,7 @@ export const trierSection: Section = {
       question: 'Comment savoir si une source est fiable ?',
       minutes: 6,
       summary:
-        'Posez quatre questions à chaque document : qui l’a écrit, quand, où a-t-il été publié, et dans quel but ? Ces questions suffisent à écarter la plupart des sources douteuses.',
+        'Posez quatre questions à chaque document : qui l’a écrit, quand, où a-t-il été publié, et dans quel but ? Ces questions suffisent à écarter la plupart des [[source|sources]] douteuses.',
       blocks: [
         {
           kind: 'paragraph',
@@ -84,7 +84,7 @@ export const trierSection: Section = {
           blocks: [
             {
               kind: 'paragraph',
-              text: 'Une [[revue-scientifique|revue scientifique]] indique son comité de lecture, ses règles de publication et son éditeur. Dans le doute, vérifiez si elle apparaît dans PubMed ou dans Cairn, ou demandez à votre documentaliste.',
+              text: 'Une [[revue-scientifique|revue scientifique]] indique son comité de lecture, ses règles de publication et son [[editeur|éditeur]]. Dans le doute, vérifiez si elle apparaît dans PubMed ou dans Cairn, ou demandez à votre documentaliste.',
             },
             {
               kind: 'paragraph',
@@ -125,7 +125,7 @@ export const trierSection: Section = {
           kind: 'callout',
           tone: 'tip',
           title: 'Prenez des notes en lisant',
-          text: 'Notez la référence, l’idée principale et ce que cela apporte à votre question, en deux ou trois lignes avec vos propres mots. Votre rédaction sera bien plus facile, et vous éviterez le [[plagiat]] sans le vouloir.',
+          text: 'Notez la [[reference|référence]], l’idée principale et ce que cela apporte à votre question, en deux ou trois lignes avec vos propres mots. Votre rédaction sera bien plus facile, et vous éviterez le [[plagiat]] sans le vouloir.',
         },
         {
           kind: 'more',
@@ -162,7 +162,7 @@ export const trierSection: Section = {
             '**Cherchez le titre exact** dans Google Scholar : une version gratuite apparaît parfois à droite des résultats.',
             '**Essayez votre accès Lyon 1**, si vous en avez un : il ouvre de nombreuses revues.',
             '**Essayez [Unpaywall](https://unpaywall.org/)** : ce service repère les versions légales et gratuites d’un article.',
-            '**Écrivez à la bibliothèque du CRR**, avec la référence la plus complète possible.',
+            '**Écrivez à la bibliothèque du CRR**, avec la [[reference|référence]] la plus complète possible.',
           ],
         },
         {

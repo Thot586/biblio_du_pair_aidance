@@ -84,7 +84,7 @@ export function LessonPage() {
               checked={read}
               onChange={(event) => setLessonRead(key, event.target.checked)}
             />
-            J'ai lu cette page
+            J’ai lu cette page
           </label>
           <p>
             Et ensuite : <Link to={nextTo}>{nextLabel}</Link>

@@ -23,7 +23,7 @@ export function ToolboxPage() {
         ))}
       </ul>
       <p>
-        Il vous manque un mot ? Consultez <Link to="/glossaire">le glossaire</Link>. Besoin d'une
+        Il vous manque un mot ? Consultez <Link to="/glossaire">le glossaire</Link>. Besoin d’une
         personne ? Voyez <Link to="/aide">qui peut vous aider</Link>.
       </p>
     </article>

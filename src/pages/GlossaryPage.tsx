@@ -32,7 +32,7 @@ export function GlossaryPage() {
         <input type="search" value={search} onChange={(event) => setSearch(event.target.value)} />
       </label>
       {entries.length === 0 ? (
-        <p>Ce mot n'est pas encore dans le glossaire. Essayez un autre mot, plus court.</p>
+        <p>Ce mot n’est pas encore dans le glossaire. Essayez un autre mot, plus court.</p>
       ) : (
         <dl className={styles.list}>
           {entries.map((entry) => (

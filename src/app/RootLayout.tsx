@@ -9,7 +9,7 @@ export function RootLayout() {
   const main = useRef<HTMLElement>(null);
   const previousPath = useRef(pathname);
 
-  // Après un changement de page, le clavier et les lecteurs d'écran repartent du contenu.
+  // Après un changement de page, le clavier et les lecteurs d’écran repartent du contenu.
   useEffect(() => {
     if (previousPath.current === pathname) return;
     previousPath.current = pathname;

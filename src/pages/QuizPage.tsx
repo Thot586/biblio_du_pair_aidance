@@ -19,7 +19,7 @@ export function QuizPage() {
       </p>
       <h1>Ai-je bien compris ?</h1>
       <p>
-        Ce quiz n'est pas noté. Rien n'est envoyé. Vous pouvez le refaire autant de fois que vous
+        Ce quiz n’est pas noté. Rien n’est envoyé. Vous pouvez le refaire autant de fois que vous
         voulez.
       </p>
       <Quiz section={section} />

@@ -59,7 +59,7 @@ export const commencerSection: Section = {
       question: 'Que veulent dire source, référence et bibliographie ?',
       minutes: 4,
       summary:
-        'Une **source** est le document que vous avez lu. Sa **référence** est sa carte d’identité. La **bibliographie** est la liste de toutes ces références, à la fin de votre mémoire.',
+        'Une **source** est le document que vous avez lu. Sa **référence** est sa carte d’identité. La **bibliographie** est la liste de toutes ces [[reference|références]], à la fin de votre mémoire.',
       blocks: [
         {
           kind: 'paragraph',
@@ -86,7 +86,7 @@ export const commencerSection: Section = {
           blocks: [
             {
               kind: 'paragraph',
-              text: 'Dans les consignes du DU, « les sources » désigne tous les documents que vous utilisez. Un article, un livre, un rapport, une loi ou une vidéo peuvent être des sources. Une réponse d’IA n’en est pas une : nous verrons pourquoi dans la section sur l’IA.',
+              text: 'Dans les consignes du DU, « les [[source|sources]] » désigne tous les documents que vous utilisez. Un article, un livre, un rapport, une loi ou une vidéo peuvent être des sources. Une réponse d’IA n’en est pas une : nous verrons pourquoi dans la section sur l’IA.',
             },
           ],
         },
@@ -154,7 +154,7 @@ export const commencerSection: Section = {
         },
         {
           kind: 'paragraph',
-          text: 'Vous pouvez le tenir dans un cahier, dans un tableur ou dans un document Word. L’important est de noter vos recherches au fur et à mesure, et de garder la référence de ce que vous lisez dès que vous le lisez.',
+          text: 'Vous pouvez le tenir dans un cahier, dans un tableur ou dans un document Word. L’important est de noter vos recherches au fur et à mesure, et de garder la [[reference|référence]] de ce que vous lisez dès que vous le lisez.',
         },
         {
           kind: 'callout',

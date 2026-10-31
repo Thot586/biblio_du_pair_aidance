@@ -24,7 +24,7 @@ function LoadedScene({ id }: { id: SceneId }) {
 export function SceneBlockView({ id }: { id: SceneId }) {
   if (!sceneLoaders[id]) return null;
   return (
-    <Suspense fallback={<p>Chargement de l'animation.</p>}>
+    <Suspense fallback={<p>Chargement de l’animation.</p>}>
       <LoadedScene id={id} />
     </Suspense>
   );

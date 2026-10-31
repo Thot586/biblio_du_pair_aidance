@@ -27,7 +27,7 @@ function bubblePosition(trigger: DOMRect): CSSProperties {
 }
 
 /**
- * Un mot technique. Survol ou clavier : l'explication courte.
+ * Un mot technique. Survol ou clavier : l’explication courte.
  * Clic ou toucher : le détail, puis le lien vers le glossaire.
  */
 export function Term({ id, label }: { id: string; label?: string | undefined }) {

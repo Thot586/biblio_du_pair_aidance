@@ -29,7 +29,7 @@ export function Footer() {
           <p>Conception : {AUTHORS.join(' et ')}.</p>
           <p className={styles.links}>
             <Link to="/sources">Sources</Link>
-            <Link to="/aide">Qui peut m'aider ?</Link>
+            <Link to="/aide">Qui peut m’aider ?</Link>
             <Link to="/a-propos">À propos et confidentialité</Link>
           </p>
         </div>

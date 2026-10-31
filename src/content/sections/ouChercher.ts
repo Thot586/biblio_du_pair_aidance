@@ -34,7 +34,7 @@ export const ouChercherSection: Section = {
             ['Google Scholar', 'Un premier tour large', 'Français et anglais'],
             ['PubMed', 'Les études internationales en santé', 'Anglais'],
             ['Semantic Scholar', 'Comprendre vite un article en anglais', 'Anglais'],
-            ['Sudoc', 'Trouver où se trouve un livre ou une thèse', 'Français'],
+            ['[[sudoc|Sudoc]]', 'Trouver où se trouve un livre ou une thèse', 'Français'],
           ],
         },
         {
@@ -107,7 +107,7 @@ export const ouChercherSection: Section = {
         { kind: 'heading', text: 'SantéPsy' },
         {
           kind: 'paragraph',
-          text: 'SantéPsy est la base du réseau Ascodocpsy, spécialisée en psychiatrie et en santé mentale. Elle est libre d’accès. Vous pouvez commencer par un mot simple, puis affiner avec les filtres : type de document, date, mots-clés.',
+          text: 'SantéPsy est la base du réseau Ascodocpsy, spécialisée en psychiatrie et en santé mentale. Elle est libre d’accès. Vous pouvez commencer par un mot simple, puis affiner avec les filtres : type de document, date, [[mot-cle|mots-clés]].',
         },
         {
           kind: 'links',
@@ -165,7 +165,7 @@ export const ouChercherSection: Section = {
           kind: 'callout',
           tone: 'warning',
           title: 'Restez critique',
-          text: 'Google Scholar ne trie pas pour vous : on y trouve le meilleur comme le moins bon. Son bouton « Citer » est pratique, mais il fait parfois des erreurs. Relisez toujours la référence.',
+          text: 'Google Scholar ne trie pas pour vous : on y trouve le meilleur comme le moins bon. Son bouton « Citer » est pratique, mais il fait parfois des erreurs. Relisez toujours la [[reference|référence]].',
         },
         {
           kind: 'more',
@@ -173,7 +173,7 @@ export const ouChercherSection: Section = {
           blocks: [
             {
               kind: 'paragraph',
-              text: 'Vous le verrez peut-être dans d’anciens supports. Il ne figure pas dans l’aide de Google Scholar, et nos essais n’ont montré aucun effet clair. Préférez les guillemets, ou le champ « dans le titre » de la recherche avancée.',
+              text: 'Vous verrez peut-être cet [[operateurs|opérateur]] dans d’anciens supports. Il ne figure pas dans l’aide de Google Scholar, et nos essais n’ont montré aucun effet clair. Préférez les guillemets, ou le champ « dans le titre » de la recherche avancée.',
             },
           ],
         },
@@ -206,10 +206,13 @@ export const ouChercherSection: Section = {
           headers: ['Je veux…', 'Je fais…'],
           rows: [
             ['Chercher un mot dans le titre ou le résumé', 'J’écris "peer support"[tiab]'],
-            ['Chercher avec un mot-clé officiel', 'J’écris "Peer Group"[mh]'],
+            ['Chercher avec un [[mot-cle|mot-clé]] officiel', 'J’écris "Peer Group"[mh]'],
             ['Lire des textes gratuits', 'Je coche le filtre Free full text'],
             ['Garder les travaux récents', 'Je choisis une période dans le filtre de dates'],
-            ['Obtenir la référence', 'Je clique sur Cite, puis je choisis APA'],
+            [
+              'Obtenir la [[reference|référence]]',
+              'Je clique sur Cite, puis je choisis [[apa|APA]]',
+            ],
           ],
         },
         {
@@ -222,7 +225,7 @@ export const ouChercherSection: Section = {
           kind: 'callout',
           tone: 'warning',
           title: 'PubMed donne des références, pas toujours les textes',
-          text: 'Pour lire un article, il faut souvent passer par le lien de l’éditeur. La section sur le tri vous explique comment obtenir le [[texte-integral|texte complet]].',
+          text: 'Pour lire un article, il faut souvent passer par le lien de l’[[editeur|éditeur]]. La section sur le tri vous explique comment obtenir le [[texte-integral|texte complet]].',
         },
         {
           kind: 'more',
@@ -230,7 +233,7 @@ export const ouChercherSection: Section = {
           blocks: [
             {
               kind: 'paragraph',
-              text: '[tiab] signifie « title/abstract » : le mot est cherché dans le titre et le résumé. [mh] signifie « MeSH heading » : on cherche un [[mesh|mot-clé officiel]]. [ti] limite la recherche au titre.',
+              text: '[tiab] signifie « title/[[abstract|abstract]] » : le mot est cherché dans le titre et le résumé. [mh] signifie « MeSH heading » : on cherche un [[mesh|mot-clé officiel]]. [ti] limite la recherche au titre.',
             },
           ],
         },
@@ -256,7 +259,7 @@ export const ouChercherSection: Section = {
       question: 'Comment utiliser Semantic Scholar ?',
       minutes: 4,
       summary:
-        'Semantic Scholar est un moteur de recherche d’articles gratuit, qui s’appuie sur l’intelligence artificielle. Il est utile pour repérer vite les articles importants en anglais et, dans certains domaines, pour lire un résumé en une phrase.',
+        'Semantic Scholar est un [[moteur-de-recherche|moteur de recherche]] d’articles gratuit, qui s’appuie sur l’intelligence artificielle. Il est utile pour repérer vite les articles importants en anglais et, dans certains domaines, pour lire un résumé en une phrase.',
       blocks: [
         { kind: 'scene', scene: 'semantic-scholar' },
         {
@@ -283,7 +286,7 @@ export const ouChercherSection: Section = {
       ],
       takeaways: [
         'Utile pour explorer rapidement la recherche en anglais.',
-        'Pas d’opérateurs ET, OU : seuls les guillemets fonctionnent.',
+        'Pas d’[[operateurs|opérateurs]] ET, OU : seuls les guillemets fonctionnent.',
         'Son résumé automatique se vérifie toujours en lisant l’article.',
       ],
     },
@@ -292,7 +295,7 @@ export const ouChercherSection: Section = {
       question: 'Où trouver des mémoires, des thèses et des rapports ?',
       minutes: 4,
       summary:
-        'Pour la pair-aidance, ces documents sont très précieux, car la recherche y est encore jeune. On les appelle la [[litterature-grise|littérature grise]]. Le Sudoc, theses.fr, DUMAS et HAL vous aideront à les trouver.',
+        'Pour la pair-aidance, ces documents sont très précieux, car la recherche y est encore jeune. On les appelle la [[litterature-grise|littérature grise]]. Le [[sudoc|Sudoc]], theses.fr, DUMAS et HAL vous aideront à les trouver.',
       blocks: [
         {
           kind: 'paragraph',
@@ -310,12 +313,12 @@ export const ouChercherSection: Section = {
             ['[theses.fr](https://theses.fr/)', 'Les thèses soutenues en France depuis 1985'],
             [
               '[DUMAS](https://dumas.ccsd.cnrs.fr/)',
-              'Des mémoires et des thèses d’exercice en accès libre',
+              'Des mémoires et des thèses d’exercice en [[open-access|accès libre]]',
             ],
             ['[HAL](https://hal.science/)', 'Une archive ouverte de travaux scientifiques'],
             [
               '[BASE](https://www.base-search.net/)',
-              'Un moteur de recherche d’archives ouvertes du monde entier',
+              'Un [[moteur-de-recherche|moteur de recherche]] d’archives ouvertes du monde entier',
             ],
           ],
         },
@@ -323,7 +326,7 @@ export const ouChercherSection: Section = {
           kind: 'callout',
           tone: 'tip',
           title: 'Consultez aussi les supports du DU',
-          text: 'La bibliographie du guide du DU rassemble déjà des dossiers, des guides et des vidéos sur la pair-aidance. C’est un excellent point de départ.',
+          text: 'La [[bibliographie|bibliographie]] du guide du DU rassemble déjà des dossiers, des guides et des vidéos sur la pair-aidance. C’est un excellent point de départ.',
         },
       ],
       takeaways: [

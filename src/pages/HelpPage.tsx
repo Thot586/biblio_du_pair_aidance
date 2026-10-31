@@ -4,14 +4,14 @@ import { ExternalLink } from '@/shared/ui/ExternalLink';
 import styles from './SimplePage.module.css';
 
 export function HelpPage() {
-  usePageTitle("Qui peut m'aider ?");
+  usePageTitle('Qui peut m’aider ?');
 
   return (
     <article className={styles.page}>
-      <h1>Qui peut m'aider ?</h1>
+      <h1>Qui peut m’aider ?</h1>
       <p>
         Les documentalistes aident à chercher, à trouver un document et à faire sa bibliographie.
-        Leur demander de l'aide est normal, et c'est même une bonne façon d'avancer.
+        Leur demander de l’aide est normal, et c’est même une bonne façon d’avancer.
       </p>
       {CONTACT_PLACES.map((place) => (
         <section key={place.name}>
@@ -28,7 +28,7 @@ export function HelpPage() {
         </section>
       ))}
       <section>
-        <h2>À l'Université Lyon 1</h2>
+        <h2>À l’Université Lyon 1</h2>
         <p>
           Le portail des bibliothèques propose des ressources à distance, des tutoriels et des
           ateliers Zotero.
