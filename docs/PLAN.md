@@ -42,12 +42,26 @@ addictologie. Sa question : « Comment une personne pair-aidante trouve-t-elle s
 
 ## Règles de rédaction
 
-- Une idée par phrase, 18 mots en moyenne, voix active, vouvoiement.
-- Chaque leçon : la réponse d'abord, puis l'animation, puis le détail dans un « voir plus ».
-- Le titre d'une leçon est la question que se pose la personne.
-- Éviter le point médian : préférer des tournures épicènes ou « étudiantes et étudiants ».
+**La voix : une personne qui anime un atelier, pas un robot.**
+
+- On s'adresse à quelqu'un : « Prenons un exemple », « Regardons ensemble », « Vous vous demandez
+  peut-être… ».
+- On explique pourquoi avant d'expliquer comment.
+- On anticipe les blocages et on les rend normaux : « Si cela vous paraît flou, c'est normal au
+  début ».
+- On relie les idées entre elles : « Maintenant que vous avez votre question, cherchons les mots ».
+- On part d'un exemple concret, le plus souvent celui de Sam.
+- Bannis : les formules de slogan, les aphorismes, les antithèses à la chaîne (« ce n'est pas X,
+  c'est Y »), le ton publicitaire, les suites de phrases de cinq mots.
+
+**La forme.**
+
+- Des phrases simples, de longueur variée. Le vouvoiement. La voix active.
+- Chaque leçon commence par la réponse, puis l'animation, puis le détail dans un « voir plus ».
+- Le titre d'une leçon est la question que se pose la personne. Les titres restent courts.
+- Pas de point médian : des tournures épicènes, ou « étudiantes et étudiants ».
 - Chiffres et références : uniquement des sources vérifiées (DOI, titre, auteurs, année).
-- Faits datés : tout ce qui change vite (prix, limites des outils) porte sa date de vérification.
+- Faits datés : ce qui change vite (prix, limites des outils) porte sa date de vérification.
 
 ## Vérifications
 
