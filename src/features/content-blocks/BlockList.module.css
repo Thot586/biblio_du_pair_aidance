@@ -1,0 +1,159 @@
+.flow {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.heading {
+  margin-top: var(--space-4);
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.3em;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.tool {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--corner);
+}
+
+.toolTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-lead);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.toolLink {
+  font-weight: 700;
+  margin-top: var(--space-1);
+}
+
+.linksTitle {
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: var(--space-2);
+}
+
+.table th,
+.table td {
+  padding: var(--space-2) var(--space-3) var(--space-2) 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table thead th {
+  border-bottom: 2px solid var(--color-primary);
+  color: var(--color-heading);
+}
+
+.compare {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.before,
+.after {
+  padding: var(--space-3) var(--space-4);
+  display: grid;
+  gap: var(--space-1);
+}
+
+.before {
+  background: var(--color-warning-bg);
+}
+
+.after {
+  background: var(--color-surface-soft);
+  border-radius: var(--corner);
+}
+
+.compareLabel {
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-heading);
+}
+
+.why {
+  grid-column: 1 / -1;
+}
+
+.reference {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.referenceLabel {
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-heading);
+}
+
+.referenceText {
+  padding-left: 1.25rem;
+  text-indent: -1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.referenceInText {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 40rem) {
+  .compare {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Sur téléphone, chaque ligne du tableau devient un petit bloc : aucun défilement de côté. */
+@media (max-width: 39.99rem) {
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table th,
+  .table td {
+    display: block;
+  }
+
+  .table tr {
+    padding-block: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .table th,
+  .table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .table td::before {
+    content: attr(data-label) ' : ';
+    font-weight: 700;
+  }
+}

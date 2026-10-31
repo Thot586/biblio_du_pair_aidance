@@ -1,0 +1,53 @@
+.dialog {
+  width: min(30rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  padding: var(--space-5);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--corner);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.dialog::backdrop {
+  background: rgb(30 17 41 / 60%);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-1);
+}
+
+.legend {
+  padding: 0;
+  margin-bottom: var(--space-1);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2rem;
+  cursor: pointer;
+}
+
+.option input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--color-accent);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}

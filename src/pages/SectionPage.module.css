@@ -1,0 +1,50 @@
+.section {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--measure);
+}
+
+.promise {
+  font-size: var(--text-lead);
+  line-height: 1.5;
+}
+
+.lessons {
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: lesson;
+}
+
+.lesson {
+  counter-increment: lesson;
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  padding-block: var(--space-3);
+  border-top: 2px solid var(--color-border);
+}
+
+.lesson::before {
+  content: counter(lesson);
+  grid-row: span 2;
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-accent);
+}
+
+.lessonLink {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-heading);
+}
+
+.meta {
+  grid-column: 2;
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

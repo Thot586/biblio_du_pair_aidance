@@ -1,0 +1,27 @@
+.more {
+  border-top: 2px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.more + .more {
+  border-top: 0;
+}
+
+.summary {
+  cursor: pointer;
+  padding: var(--space-3) 0;
+  font-weight: 700;
+  color: var(--color-link);
+}
+
+.content {
+  padding-bottom: var(--space-4);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.content > ol,
+.content > ul {
+  margin: 0;
+  padding-left: 1.3em;
+}

@@ -1,0 +1,28 @@
+.page {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--measure);
+}
+
+.lead {
+  font-size: var(--text-lead);
+}
+
+.tools {
+  margin: var(--space-3) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tool {
+  padding-block: var(--space-3);
+  border-top: 2px solid var(--color-border);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-heading);
+}

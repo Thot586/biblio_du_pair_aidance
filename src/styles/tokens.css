@@ -1,0 +1,114 @@
+/*
+ * Charte : l'aubergine, le sarcelle et le rose reprennent l'identité du Vinatier.
+ * Les thèmes redéfinissent seulement les couleurs d'usage (--color-*).
+ */
+:root {
+  --aubergine: #382051;
+  --aubergine-profond: #1e1129;
+  --sarcelle: #2aa3b0;
+  --sarcelle-fonce: #0a5f6c;
+  --sarcelle-clair: #7fdbe6;
+  --rose: #f9d6da;
+  --rose-pale: #fdeef0;
+  --cerise: #a8124a;
+  --cerise-clair: #ff9dbd;
+  --blanc: #fff;
+
+  --color-bg: #fbfafc;
+  --color-surface: #fff;
+  --color-surface-soft: #f3eef6;
+  --color-text: #2b1a3a;
+  --color-text-muted: #5a4a69;
+  --color-heading: var(--aubergine);
+  --color-link: var(--sarcelle-fonce);
+  --color-border: #d9cfe2;
+  --color-focus: var(--cerise);
+  --color-accent: var(--sarcelle-fonce);
+  --color-accent-contrast: var(--blanc);
+  --color-primary: var(--aubergine);
+  --color-primary-contrast: var(--blanc);
+  --color-warning: var(--cerise);
+  --color-warning-bg: var(--rose-pale);
+  --color-success: var(--sarcelle-fonce);
+
+  --tile-empty: #e7dfee;
+  --tile-a: var(--aubergine);
+  --tile-b: var(--sarcelle);
+  --tile-c: var(--rose);
+
+  --scene-bg: #f6f2f9;
+  --scene-ink: var(--aubergine);
+  --scene-muted: #6b5a7b;
+  --scene-accent: #0e7c8a;
+  --scene-accent-soft: #bfe9ee;
+  --scene-warm: var(--cerise);
+  --scene-soft: var(--rose);
+  --scene-line: #bcaecb;
+  --scene-paper: #fff;
+
+  --font-body: 'Atkinson Hyperlegible Next Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Segoe UI', system-ui, sans-serif;
+
+  /* Échelle classique (Bringhurst) : 18 / 21 / 24 / 30 / 36 / 48 */
+  --text-sm: 0.889rem;
+  --text-base: 1rem;
+  --text-lead: 1.167rem;
+  --text-h3: 1.333rem;
+  --text-h2: 1.667rem;
+  --text-h1: clamp(2rem, 1.4rem + 2.8vw, 2.667rem);
+  --text-hero: clamp(2.333rem, 1.4rem + 4.5vw, 3.667rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --measure: 68ch;
+  --page-max: 72rem;
+  --gutter: 1rem;
+
+  /* Un seul coin arrondi : l'écho des quarts de cercle de la mosaïque. */
+  --corner: 0 1.25rem 0 0;
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --gutter: 2rem;
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-bg: var(--aubergine-profond);
+  --color-surface: #2a1a38;
+  --color-surface-soft: #33223f;
+  --color-text: #f2ecf6;
+  --color-text-muted: #c6b8d2;
+  --color-heading: #fff;
+  --color-link: var(--sarcelle-clair);
+  --color-border: #4f3d5f;
+  --color-focus: var(--cerise-clair);
+  --color-accent: var(--sarcelle-clair);
+  --color-accent-contrast: var(--aubergine-profond);
+  --color-primary: var(--rose);
+  --color-primary-contrast: var(--aubergine-profond);
+  --color-warning: var(--cerise-clair);
+  --color-warning-bg: #3f1a33;
+  --color-success: var(--sarcelle-clair);
+
+  --tile-empty: #3b2a4a;
+  --tile-a: #b79ccf;
+
+  --scene-bg: #2a1a38;
+  --scene-ink: #f2ecf6;
+  --scene-muted: #c6b8d2;
+  --scene-accent: var(--sarcelle-clair);
+  --scene-accent-soft: #1d4a55;
+  --scene-warm: var(--cerise-clair);
+  --scene-soft: #5a2f4e;
+  --scene-line: #6a5580;
+  --scene-paper: #3a2849;
+}

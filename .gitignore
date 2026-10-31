@@ -1,0 +1,15 @@
+node_modules
+dist
+coverage
+*.local
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+.vite
+.claude/settings.local.json
+
+# Les documents sources (articles, supports de cours) restent hors du dépôt.
+*.pdf
+*.docx
+*.pptx
+!public/**/*.pdf

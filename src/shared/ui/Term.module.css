@@ -1,0 +1,61 @@
+.term {
+  display: inline;
+}
+
+.trigger {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: help;
+  text-decoration: underline dotted var(--color-accent) 2px;
+  text-underline-offset: 0.2em;
+}
+
+.bubble {
+  position: fixed;
+  z-index: 40;
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--corner);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.bubbleTerm {
+  font-family: var(--font-display);
+}
+
+.hint {
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.more {
+  color: inherit;
+  font-weight: 700;
+}
+
+.bubble a {
+  color: inherit;
+}
+
+@media print {
+  .bubble {
+    display: none;
+  }
+
+  .trigger {
+    text-decoration: none;
+  }
+}

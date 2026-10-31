@@ -1,0 +1,27 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: var(--space-5) var(--gutter) var(--space-8);
+}
+
+.skipLink {
+  position: absolute;
+  left: var(--gutter);
+  top: -4rem;
+  z-index: 30;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.skipLink:focus {
+  top: var(--space-2);
+}

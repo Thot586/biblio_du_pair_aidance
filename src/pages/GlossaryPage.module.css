@@ -1,0 +1,42 @@
+.page {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--measure);
+}
+
+.search {
+  display: grid;
+  gap: var(--space-1);
+  font-weight: 700;
+}
+
+.search input {
+  min-height: 2.75rem;
+  padding: 0 var(--space-3);
+  border: 2px solid var(--color-primary);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-weight: 400;
+}
+
+.list {
+  margin: 0;
+}
+
+.entry {
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  scroll-margin-top: var(--space-4);
+}
+
+.term {
+  font-family: var(--font-display);
+  font-size: var(--text-lead);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.definition {
+  margin: var(--space-1) 0 0;
+}

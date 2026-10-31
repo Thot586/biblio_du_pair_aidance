@@ -1,0 +1,34 @@
+.field {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.label {
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.input:hover {
+  border-color: var(--color-accent);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
