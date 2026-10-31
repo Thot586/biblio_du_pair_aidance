@@ -19,6 +19,7 @@ export default defineConfig([
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      'jsx-a11y/label-has-associated-control': ['error', { depth: 3 }],
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',

@@ -264,6 +264,14 @@ const ENTRIES: readonly GlossaryEntry[] = [
     forms: ['revue scientifique', 'revues scientifiques'],
   },
   {
+    id: 'savoir-experientiel',
+    term: 'Savoir expérientiel',
+    definition: 'Ce qu’une personne a appris en vivant une situation, par exemple la maladie.',
+    detail:
+      'C’est le cœur de la pair-aidance. Il complète les savoirs issus de la recherche et de la formation, et votre mémoire vous invite à le relier à vos lectures.',
+    forms: ['savoir expérientiel', 'savoirs expérientiels'],
+  },
+  {
     id: 'silence',
     term: 'Silence',
     definition: 'Trop peu de résultats, alors que des documents existent sans doute.',
