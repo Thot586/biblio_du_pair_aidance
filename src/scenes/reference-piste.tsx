@@ -139,7 +139,8 @@ const scene: SceneDefinition = {
       durationMs: 4000,
     },
     {
-      caption: 'À la fin du mémoire, la bibliographie donne la référence complète de ce document.',
+      caption:
+        'À la fin du mémoire, la [[bibliographie|bibliographie]] donne la référence complète de ce document.',
       durationMs: 5000,
     },
     {

@@ -192,7 +192,7 @@ const scene: SceneDefinition = {
     },
     { caption: 'Sam garde les dix dernières années, avec le filtre de dates.', durationMs: 4000 },
     {
-      caption: 'Le bouton Cite donne la référence en APA. Sam vérifie les majuscules.',
+      caption: 'Le bouton Cite donne la référence en [[apa|APA]]. Sam vérifie les majuscules.',
       durationMs: 5000,
     },
   ],

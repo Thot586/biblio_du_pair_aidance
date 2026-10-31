@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import type { SceneId } from '@/content/types';
 import { STAGE } from '@/features/scene-player/kit';
+import { stripInline } from '@/shared/ui/inlineText/parseInline';
 import { sceneLoaders } from './registry';
 
 const SCENE_IDS = Object.keys(sceneLoaders) as SceneId[];
@@ -29,7 +30,7 @@ describe.each(SCENE_IDS)('l’animation %s', (id) => {
     expect(scene.title.length).toBeGreaterThan(3);
     expect(scene.steps.length).toBeGreaterThanOrEqual(3);
     for (const step of scene.steps) {
-      expect(step.caption.length).toBeLessThanOrEqual(150);
+      expect(stripInline(step.caption).length).toBeLessThanOrEqual(150);
       expect(step.durationMs).toBeGreaterThanOrEqual(2500);
     }
     expect(new Set(scene.steps.map((step) => step.caption)).size).toBe(scene.steps.length);

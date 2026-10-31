@@ -16,7 +16,7 @@
     "test:watch": "vitest",
     "check": "npm run typecheck && npm run lint && npm run test",
     "check:liens": "node scripts/check-links.mjs",
-    "deploy": "npm run check && npm run build && gh-pages -d dist --nojekyll"
+    "deploy": "npm run check && npm run build && gh-pages -d dist --nojekyll -m \"Publie le site\""
   },
   "dependencies": {
     "@fontsource-variable/atkinson-hyperlegible-next": "^5.3.0",

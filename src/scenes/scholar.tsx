@@ -170,7 +170,7 @@ const scene: SceneDefinition = {
       durationMs: 5000,
     },
     {
-      caption: 'Le bouton « Citer » donne la référence en APA. Il faudra la relire.',
+      caption: 'Le bouton « Citer » donne la référence en [[apa|APA]]. Il faudra la relire.',
       durationMs: 4000,
     },
   ],

@@ -112,7 +112,7 @@ const scene: SceneDefinition = {
     },
     {
       caption:
-        'Puis vous décidez où chercher : une bibliothèque, une base de données, un moteur de recherche.',
+        'Puis vous décidez où chercher : une bibliothèque, une [[base-de-donnees|base de données]], un [[moteur-de-recherche|moteur de recherche]].',
       durationMs: 5000,
     },
     {

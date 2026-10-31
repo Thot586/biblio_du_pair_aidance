@@ -117,7 +117,7 @@ const scene: SceneDefinition = {
       durationMs: 5000,
     },
     {
-      caption: 'Cette citation renvoie à une ligne de votre bibliographie.',
+      caption: 'Cette citation renvoie à une ligne de votre [[bibliographie|bibliographie]].',
       durationMs: 4000,
     },
     {

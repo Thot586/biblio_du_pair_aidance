@@ -141,7 +141,7 @@ const scene: SceneDefinition = {
   steps: [
     {
       caption:
-        'Une recherche trop large donne du bruit : beaucoup de résultats, mais peu d’utiles.',
+        'Une recherche trop large donne du [[bruit|bruit]] : beaucoup de résultats, mais peu d’utiles.',
       durationMs: 5000,
     },
     {
@@ -149,7 +149,8 @@ const scene: SceneDefinition = {
       durationMs: 4000,
     },
     {
-      caption: 'À l’inverse, une recherche trop étroite donne du silence : presque rien.',
+      caption:
+        'À l’inverse, une recherche trop étroite donne du [[silence|silence]] : presque rien.',
       durationMs: 4000,
     },
     {

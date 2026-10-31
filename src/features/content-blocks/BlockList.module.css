@@ -133,6 +133,10 @@
     display: none;
   }
 
+  .table caption {
+    display: block;
+  }
+
   .table,
   .table tbody,
   .table tr,

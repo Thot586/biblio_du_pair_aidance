@@ -55,16 +55,16 @@ describe('une section', () => {
 describe('une leçon', () => {
   it('s’affiche, enregistre la lecture et propose la suite', async () => {
     const user = userEvent.setup();
-    renderAt('/question/preciser');
+    renderAt('/question/bonne-question');
 
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-      'Comment préciser mon sujet ?',
+      'À quoi ressemble une bonne question ?',
     );
     const read = screen.getByRole('checkbox', { name: 'J’ai lu cette page' });
     await user.click(read);
     expect(read).toBeChecked();
     expect(screen.getByText(/Et ensuite/)).toHaveTextContent(
-      'À quoi ressemble une bonne question ?',
+      'Comment explorer mon sujet avec une carte mentale ?',
     );
   });
 

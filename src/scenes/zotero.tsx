@@ -176,10 +176,16 @@ const scene: SceneDefinition = {
   title: 'Zotero en cinq gestes',
   steps: [
     { caption: 'Sam ouvre un article dans son navigateur.', durationMs: 4000 },
-    { caption: 'Un clic sur le bouton de Zotero enregistre la référence.', durationMs: 4000 },
+    {
+      caption: 'Un clic sur le bouton de [[zotero|Zotero]] enregistre la référence.',
+      durationMs: 4000,
+    },
     { caption: 'Sam la retrouve dans sa bibliothèque Zotero, avec les autres.', durationMs: 4000 },
     { caption: 'Dans Word, Sam insère la citation en deux clics.', durationMs: 4000 },
-    { caption: 'Zotero écrit la bibliographie tout seul. Il reste à la relire.', durationMs: 4000 },
+    {
+      caption: 'Zotero écrit la [[bibliographie|bibliographie]] tout seul. Il reste à la relire.',
+      durationMs: 4000,
+    },
   ],
   Visual: ZoteroVisual,
 };

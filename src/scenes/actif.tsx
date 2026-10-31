@@ -97,7 +97,7 @@ const scene: SceneDefinition = {
   title: 'La méthode ACTIF',
   steps: [
     {
-      caption: 'A comme Action : que voulez-vous obtenir ? Par exemple, des mots-clés.',
+      caption: 'A comme Action : que voulez-vous obtenir ? Par exemple, des [[mot-cle|mots-clés]].',
       durationMs: 4000,
     },
     {
