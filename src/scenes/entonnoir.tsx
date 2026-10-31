@@ -75,23 +75,26 @@ const scene: SceneDefinition = {
   title: 'Du sujet à la question',
   steps: [
     {
-      caption: 'Sam part d’un sujet très large : la pair-aidance.',
-      durationMs: 3500,
+      caption:
+        'Au départ, Sam a un sujet très large : la pair-aidance. On pourrait en parler pendant des heures.',
+      durationMs: 4000,
     },
     {
-      caption: 'Sam choisit un domaine : l’addictologie, là où Sam travaille.',
-      durationMs: 3500,
+      caption: 'Sam choisit d’abord un domaine bien connu : l’addictologie, son lieu de travail.',
+      durationMs: 4000,
     },
     {
-      caption: 'Sam choisit un cadre : le travail dans une équipe de soin.',
-      durationMs: 3500,
+      caption: 'Puis Sam précise le cadre : le travail au sein d’une équipe.',
+      durationMs: 4000,
     },
     {
-      caption: 'Sam choisit un moment : l’arrivée dans cette équipe.',
-      durationMs: 3500,
+      caption:
+        'Enfin, Sam choisit un moment : l’arrivée dans cette équipe, ces premiers mois souvent délicats.',
+      durationMs: 4000,
     },
     {
-      caption: 'Il reste une question précise. Sam sait maintenant quoi chercher et quoi lire.',
+      caption:
+        'Et voilà sa question ! Sam sait maintenant ce qu’il faut chercher et ce qu’il faut lire.',
       durationMs: 5000,
     },
   ],

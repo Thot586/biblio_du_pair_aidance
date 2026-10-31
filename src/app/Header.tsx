@@ -17,7 +17,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link to="/" className={styles.brand}>
-          Biblio et IA pour le DU de pair-aidance
+          Recherche documentaire et IA
         </Link>
         <nav aria-label="Navigation principale" className={styles.nav}>
           {NAV_ITEMS.map(({ to, label, end }) => (

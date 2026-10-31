@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { AUTHOR_CONTACT } from '@/content/contacts';
-import { AUTHORS, LAST_CHECKED, SITE_TITLE } from '@/content/site';
+import { AUTHORS, LAST_CHECKED, SITE_FULL_TITLE } from '@/content/site';
 import { usePageTitle } from '@/shared/lib/usePageTitle';
 import { ExternalLink } from '@/shared/ui/ExternalLink';
 import styles from './SimplePage.module.css';
@@ -11,7 +11,7 @@ export function AboutPage() {
   return (
     <article className={styles.page}>
       <h1>À propos et confidentialité</h1>
-      <p>{SITE_TITLE}.</p>
+      <p>{SITE_FULL_TITLE}.</p>
 
       <h2>Qui a fait ce support ?</h2>
       <p>Conception : {AUTHORS.join(' et ')}.</p>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { AUTHORS, SITE_TITLE } from '@/content/site';
+import { AUTHORS, SITE_FULL_TITLE } from '@/content/site';
 import styles from './Footer.module.css';
 
 const LOGOS = [
@@ -25,7 +25,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.text}>
-          <p className={styles.title}>{SITE_TITLE}</p>
+          <p className={styles.title}>{SITE_FULL_TITLE}</p>
           <p>Conception : {AUTHORS.join(' et ')}.</p>
           <p className={styles.links}>
             <Link to="/sources">Sources</Link>

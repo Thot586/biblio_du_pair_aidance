@@ -5,18 +5,23 @@
 }
 
 .title {
-  max-width: 24ch;
+  max-width: 18ch;
   font-size: var(--text-hero);
   font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.02em;
-  text-wrap: pretty;
+}
+
+.subtitle {
+  font-size: var(--text-lead);
+  font-weight: 700;
+  color: var(--color-accent);
 }
 
 .lead {
-  max-width: 46ch;
+  max-width: 58ch;
   font-size: var(--text-lead);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .block {

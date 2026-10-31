@@ -5,54 +5,58 @@ export const questionSection: Section = {
   slug: 'question',
   question: 'Comment trouver ma question de recherche ?',
   promise:
-    'À la fin de cette section, vous aurez transformé un thème qui vous tient à cœur en une question claire, à laquelle votre mémoire peut répondre.',
+    'C’est souvent l’étape la plus difficile, et aussi la plus utile. Dans cette section, nous allons partir d’un thème qui vous tient à cœur pour arriver à une question claire, à laquelle votre mémoire pourra répondre.',
   lessons: [
     {
       slug: 'sujet-ou-question',
       question: 'Quelle différence entre un sujet et une question ?',
       minutes: 4,
       summary:
-        'Un **sujet** est un thème large. Une **question de recherche** dit précisément ce que vous voulez comprendre. C’est elle qui guide vos lectures et votre mémoire.',
+        'Un **sujet** est un thème large, comme « la pair-aidance ». Une **question de recherche** dit précisément ce que vous voulez comprendre sur ce thème. C’est elle qui guidera vos lectures, puis votre écriture.',
       blocks: [
         {
           kind: 'paragraph',
-          text: '« La pair-aidance » est un sujet. Des livres entiers en parlent. Votre mémoire fait 25 à 30 pages : vous devez donc choisir un angle.',
+          text: 'Beaucoup de personnes commencent avec un sujet et se lancent directement dans les lectures. Elles se sentent alors vite submergées, parce que tout semble intéressant. Votre mémoire fait 25 à 30 pages : vous ne pourrez pas tout dire sur la pair-aidance, et personne ne vous le demande. Il s’agit de choisir un angle.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pour voir comment on passe de l’un à l’autre, suivons Sam. Sam est une personne imaginaire de la promotion, qui travaille en addictologie. Nous retrouverons cet exemple tout au long du parcours.',
         },
         { kind: 'scene', scene: 'entonnoir' },
         {
           kind: 'compare',
-          before: { label: 'Un sujet', text: 'La pair-aidance en addictologie.' },
+          before: { label: 'Le sujet de Sam', text: 'La pair-aidance en addictologie.' },
           after: {
-            label: 'Une question de recherche',
+            label: 'Sa question de recherche',
             text: 'Comment une personne pair-aidante trouve-t-elle sa place dans une équipe d’addictologie ?',
           },
-          why: 'La question dit de qui on parle, où, et ce qu’on veut comprendre. Elle indique aussi quoi lire, et quoi laisser de côté.',
+          why: 'Vous voyez la différence ? Avec la question, Sam sait de qui on parle, où cela se passe et ce qu’il faut comprendre. Sam sait donc aussi ce qu’il faut lire, et ce qu’on peut laisser de côté.',
         },
         {
           kind: 'callout',
           tone: 'rule',
-          title: 'Ce que le DU attend',
-          text: 'Votre mémoire doit faire un lien clair avec la pair-aidance. Il montre aussi comment vous reliez votre expérience à votre travail, sans devenir une biographie.',
+          title: 'Ce que le DU attend de vous',
+          text: 'Votre mémoire doit avoir un lien clair avec la pair-aidance. Il doit aussi montrer comment vous reliez votre expérience à votre travail, sans pour autant devenir une biographie.',
         },
         {
           kind: 'more',
-          title: 'Question de recherche ou problématique : est-ce pareil ?',
+          title: 'On m’a parlé de « problématique » : est-ce la même chose ?',
           blocks: [
             {
               kind: 'paragraph',
-              text: 'Les consignes du DU parlent de [[problematique|problématique]]. C’est la question qui oriente tout le mémoire. Votre réponse devient l’idée que vous défendez, avec des arguments et des exemples.',
+              text: 'Presque. Les consignes du DU parlent de [[problematique|problématique]] : c’est la question qui oriente tout le mémoire, et votre réponse devient l’idée que vous allez défendre avec des arguments et des exemples.',
             },
             {
               kind: 'paragraph',
-              text: 'Pour commencer, pensez simplement « ma question ». Elle prendra sa forme finale au fil de vos lectures.',
+              text: 'Pour l’instant, pensez simplement « ma question ». Elle prendra sa forme définitive au fil de vos lectures.',
             },
           ],
         },
       ],
       takeaways: [
-        'Un sujet est large. Une question est précise.',
-        'Une bonne question vous dit quoi lire, et quoi laisser de côté.',
-        'Votre question peut changer pendant vos lectures : c’est normal.',
+        'Le sujet, c’est le thème. La question, c’est ce que vous voulez comprendre sur ce thème.',
+        'Une bonne question vous évite de tout lire : elle vous dit quoi garder et quoi laisser.',
+        'Votre question va sans doute évoluer pendant vos lectures, et c’est très bien ainsi.',
       ],
     },
     {
@@ -60,31 +64,43 @@ export const questionSection: Section = {
       question: 'Comment préciser mon sujet ?',
       minutes: 5,
       summary:
-        'Posez six petites questions à votre sujet : Quoi ? Qui ? Où ? Quand ? Comment ? Pourquoi ? Vos réponses font apparaître un angle précis.',
+        'Le plus simple est de poser six petites questions à votre sujet : Quoi ? Qui ? Où ? Quand ? Comment ? Pourquoi ? En y répondant, vous verrez apparaître un angle plus précis.',
       blocks: [
+        {
+          kind: 'paragraph',
+          text: 'Si vous avez l’impression que votre sujet est encore flou, c’est normal à ce stade. Plutôt que de chercher la bonne formule du premier coup, commencez par y voir plus clair. Voici comment Sam s’y est pris.',
+        },
         { kind: 'scene', scene: 'qqoqcp' },
         {
           kind: 'table',
-          caption: 'Les réponses de Sam, étudiant fictif de la promotion',
-          headers: ['Question', 'Ce qu’elle demande', 'Réponse de Sam'],
+          caption: 'Les réponses de Sam',
+          headers: ['Question', 'Ce qu’elle vous demande', 'La réponse de Sam'],
           rows: [
-            ['Quoi ?', 'Le thème', 'La place de la pair-aidance en addictologie'],
+            ['Quoi ?', 'Quel est votre thème ?', 'La place de la pair-aidance en addictologie'],
             [
               'Qui ?',
-              'Les personnes concernées',
+              'Quelles personnes sont concernées ?',
               'Une personne pair-aidante et l’équipe soignante',
             ],
-            ['Où ?', 'Le lieu', 'Un service d’addictologie, en France'],
-            ['Quand ?', 'La période', 'Les premiers mois après l’arrivée dans l’équipe'],
-            ['Comment ?', 'Le point de vue', 'À partir de ce que vivent les personnes'],
-            ['Pourquoi ?', 'L’intérêt', 'Aider les équipes à mieux accueillir les pair-aidants'],
+            ['Où ?', 'Dans quel lieu ?', 'Un service d’addictologie, en France'],
+            ['Quand ?', 'À quel moment ?', 'Les premiers mois après l’arrivée dans l’équipe'],
+            ['Comment ?', 'Sous quel angle ?', 'À partir de ce que vivent les personnes'],
+            [
+              'Pourquoi ?',
+              'Pourquoi est-ce important ?',
+              'Pour aider les équipes à mieux accueillir les pair-aidants',
+            ],
           ],
         },
         {
           kind: 'callout',
           tone: 'tip',
-          title: 'Une réponse vous manque ?',
-          text: 'Ce n’est pas grave. C’est souvent une bonne piste de lecture. Notez-la et continuez.',
+          title: 'Et si je n’ai pas toutes les réponses ?',
+          text: 'Ce n’est pas grave du tout. Une réponse qui vous manque est souvent une bonne piste de lecture : notez-la, et passez à la suite.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'À vous maintenant. L’atelier ci-dessous vous pose ces six questions, puis vous aide à en tirer une première question de recherche. Vous pourrez y revenir autant de fois que vous voulez.',
         },
         { kind: 'tool', tool: 'atelier-question' },
         {
@@ -93,15 +109,15 @@ export const questionSection: Section = {
           blocks: [
             {
               kind: 'paragraph',
-              text: 'On l’appelle **QQOQCP**, avec les premières lettres des six questions. Les documentalistes du Centre ressource de réhabilitation l’utilisent dans leur atelier de recherche documentaire.',
+              text: 'On l’appelle souvent **QQOQCP**, d’après les premières lettres des six questions. Les documentalistes du Centre ressource de réhabilitation l’utilisent dans leur atelier de recherche documentaire avec les promotions du DU.',
             },
           ],
         },
       ],
       takeaways: [
-        'Six questions suffisent pour préciser un sujet.',
-        'Une réponse manquante est une piste de lecture.',
-        'L’atelier du site transforme vos réponses en question.',
+        'Six questions simples suffisent à préciser un sujet : Quoi, Qui, Où, Quand, Comment, Pourquoi.',
+        'Une réponse qui vous manque n’est pas un problème : c’est une piste de lecture.',
+        'L’atelier du site vous aide à passer de vos réponses à une première question.',
       ],
     },
     {
@@ -109,21 +125,27 @@ export const questionSection: Section = {
       question: 'À quoi ressemble une bonne question ?',
       minutes: 6,
       summary:
-        'Une bonne question est ouverte, précise et neutre. Elle commence souvent par « Comment » ou « En quoi ». Et vous pouvez y répondre dans le temps que vous avez.',
+        'Une bonne question est ouverte, précise et neutre, et vous pouvez y répondre dans le temps dont vous disposez. Elle commence souvent par « Comment » ou « En quoi ».',
       blocks: [
-        { kind: 'heading', text: 'Cinq vérifications' },
+        {
+          kind: 'paragraph',
+          text: 'Vous avez une première version de votre question ? Très bien. Regardons maintenant si elle tient la route. Voici cinq points que vous pouvez vérifier vous-même.',
+        },
         {
           kind: 'list',
           ordered: true,
           items: [
-            '**Elle est ouverte.** On ne peut pas y répondre par oui ou non.',
-            '**Elle est précise.** On sait de qui et de quoi on parle.',
-            '**Elle est neutre.** Elle ne contient pas déjà la réponse.',
-            '**Elle est faisable.** Vous trouverez assez de sources dans le temps que vous avez.',
-            '**Elle parle de pair-aidance**, et de ce que vous avez vécu ou observé.',
+            '**Elle est ouverte** : on ne peut pas y répondre simplement par oui ou par non.',
+            '**Elle est précise** : on comprend de qui et de quoi vous parlez.',
+            '**Elle est neutre** : elle ne contient pas déjà votre réponse.',
+            '**Elle est faisable** : vous trouverez assez de documents dans le temps que vous avez.',
+            '**Elle parle de pair-aidance** : le lien avec votre expérience ou vos observations est clair.',
           ],
         },
-        { kind: 'heading', text: 'Trois questions à retravailler' },
+        {
+          kind: 'paragraph',
+          text: 'Pour vous entraîner, regardons trois questions qui posent problème, et la façon de les retravailler.',
+        },
         {
           kind: 'compare',
           before: { label: 'Trop large', text: 'Quel est le rôle des pair-aidants ?' },
@@ -131,17 +153,19 @@ export const questionSection: Section = {
             label: 'Plus précise',
             text: 'Quel rôle une personne pair-aidante joue-t-elle à la sortie d’une hospitalisation en psychiatrie ?',
           },
+          why: 'La première version pourrait occuper un livre entier. La seconde choisit un moment précis du parcours.',
         },
         {
           kind: 'compare',
           before: {
-            label: 'Fermée : oui ou non',
+            label: 'Fermée',
             text: 'La pair-aidance est-elle utile en addictologie ?',
           },
           after: {
             label: 'Ouverte',
             text: 'En quoi une personne pair-aidante change-t-elle le parcours de soins en addictologie ?',
           },
+          why: 'À la première, on pourrait répondre « oui » et s’arrêter là. La seconde invite à explorer et à argumenter.',
         },
         {
           kind: 'compare',
@@ -153,19 +177,20 @@ export const questionSection: Section = {
             label: 'Neutre',
             text: 'Comment les soignants perçoivent-ils l’arrivée d’une personne pair-aidante dans leur équipe ?',
           },
+          why: 'La première affirme que les soignants rejettent les pair-aidants. C’est peut-être ce que vous avez vécu, mais c’est justement ce qu’il faut aller vérifier.',
         },
         {
           kind: 'callout',
           tone: 'tip',
-          title: 'Demandez un avis',
-          text: 'Faites lire votre question à une personne de votre promotion. Si elle la comprend sans explication, c’est bon signe.',
+          title: 'Un bon réflexe : demander un avis',
+          text: 'Faites lire votre question à une personne de votre promotion, ou à un proche. Si elle la comprend sans que vous ayez besoin de l’expliquer, c’est très bon signe.',
         },
         { kind: 'tool', tool: 'atelier-question' },
       ],
       takeaways: [
-        'Évitez les questions qui se répondent par oui ou non.',
-        'Dites de qui et de quoi vous parlez.',
-        'Ne mettez pas votre réponse dans la question.',
+        'Évitez les questions auxquelles on peut répondre par oui ou par non.',
+        'Dites de qui et de quoi vous parlez, le plus concrètement possible.',
+        'Gardez votre avis pour la fin du mémoire : la question doit rester neutre.',
       ],
     },
     {
@@ -173,130 +198,141 @@ export const questionSection: Section = {
       question: 'Comment explorer mon sujet avec une carte mentale ?',
       minutes: 5,
       summary:
-        'Une [[carte-mentale|carte mentale]] est un dessin de vos idées. Votre sujet est au centre, et les branches montrent ce qui s’y rattache. Elle vous donne aussi vos futurs mots-clés.',
+        'Une [[carte-mentale|carte mentale]] est un dessin de vos idées : votre sujet au centre, et tout ce qui s’y rattache sur des branches. C’est aussi une excellente façon de trouver vos futurs [[mot-cle|mots-clés]].',
       blocks: [
+        {
+          kind: 'paragraph',
+          text: 'Certaines personnes réfléchissent mieux avec un dessin qu’avec une liste. Si c’est votre cas, ou si la page blanche vous bloque, essayez la carte mentale. Les promotions du DU la pratiquent en atelier, et elle débloque souvent les choses.',
+        },
         { kind: 'scene', scene: 'carte-mentale' },
-        { kind: 'heading', text: 'Comment faire' },
+        {
+          kind: 'paragraph',
+          text: 'Voici comment vous y prendre, en dix minutes environ.',
+        },
         {
           kind: 'list',
           ordered: true,
           items: [
-            'Écrivez votre sujet au centre d’une feuille.',
-            'Tracez quatre branches : le sujet qui vous intéresse, les personnes, les outils, le contexte de travail.',
-            'Ajoutez des mots sur chaque branche, sans les trier.',
-            'Entourez ce qui vous attire le plus.',
+            'Écrivez votre sujet au milieu d’une feuille.',
+            'Tracez quatre branches : ce qui vous intéresse, les personnes concernées, les outils, le contexte de travail.',
+            'Ajoutez des mots sur chaque branche, comme ils viennent, sans les trier.',
+            'Relisez, puis entourez ce qui vous attire le plus.',
           ],
         },
         {
           kind: 'callout',
-          tone: 'tip',
-          title: 'Une feuille et un crayon suffisent',
-          text: 'Vous n’avez pas besoin de logiciel. Une photo de votre carte peut rejoindre vos notes.',
+          tone: 'example',
+          title: 'Ce que la carte a apporté à Sam',
+          text: 'En dessinant sa carte, Sam a noté « accueil », « secret partagé » et « place dans les réunions ». Sam n’y avait pas pensé au départ. Ces trois mots sont devenus de vraies pistes de lecture.',
         },
         {
           kind: 'callout',
-          tone: 'example',
-          title: 'Ce que la carte de Sam a fait apparaître',
-          text: 'En dessinant sa carte, Sam a noté « accueil », « secret partagé » et « place dans les réunions ». Ces trois mots sont devenus des pistes de lecture.',
+          tone: 'tip',
+          title: 'Faut-il un logiciel ?',
+          text: 'Non, une feuille et un crayon suffisent largement. Prenez simplement votre carte en photo pour la garder avec vos notes.',
         },
       ],
       takeaways: [
-        'Écrivez sans trier, le tri viendra ensuite.',
-        'Les mots de vos branches serviront pour vos recherches.',
+        'Écrivez d’abord sans trier : le tri viendra ensuite.',
+        'Les mots de vos branches vous serviront directement pour vos recherches.',
       ],
     },
   ],
   quiz: [
     {
       id: 'sujet',
-      prompt: 'Laquelle de ces phrases est une question de recherche ?',
+      prompt: 'Parmi ces trois propositions, laquelle est une question de recherche ?',
       choices: [
         {
           text: 'La stigmatisation en santé mentale.',
           correct: false,
-          feedback: 'C’est un sujet : on ne sait pas encore ce que vous voulez comprendre.',
+          feedback:
+            'Ici, nous avons un sujet. Il est intéressant, mais on ne sait pas encore ce que vous voulez comprendre.',
         },
         {
           text: 'Comment des personnes pair-aidantes vivent-elles leur première année en équipe mobile ?',
           correct: true,
-          feedback: 'On sait de qui on parle, où, et ce qu’on veut comprendre.',
+          feedback: 'On sait de qui on parle, où cela se passe et ce qu’on cherche à comprendre.',
         },
         {
           text: 'Les pair-aidants sont-ils utiles ?',
           correct: false,
-          feedback: 'On peut y répondre par oui ou non, et elle reste très large.',
+          feedback:
+            'Celle-ci est trop large, et on pourrait y répondre par oui ou par non. Comment la préciseriez-vous ?',
         },
       ],
     },
     {
       id: 'fermee',
-      prompt: 'Pourquoi éviter une question à laquelle on répond par oui ou non ?',
+      prompt:
+        'Pourquoi vaut-il mieux éviter une question à laquelle on répond par oui ou par non ?',
       choices: [
         {
           text: 'Parce qu’elle laisse peu de place pour développer votre réflexion.',
           correct: true,
-          feedback: 'Une question ouverte permet d’explorer et d’argumenter.',
+          feedback:
+            'C’est bien cela. Une question ouverte vous laisse de la place pour explorer et argumenter.',
         },
         {
-          text: 'Parce que le jury n’aime pas les points d’interrogation.',
+          text: 'Parce que ce type de question est interdit dans le DU.',
           correct: false,
           feedback:
-            'Le point d’interrogation n’est pas le problème. Une question ouverte permet simplement d’aller plus loin.',
+            'Rien ne l’interdit, c’est un conseil de méthode. Une question ouverte vous aidera simplement à aller plus loin.',
         },
       ],
     },
     {
       id: 'neutre',
-      prompt: 'Quelle question contient déjà sa réponse ?',
+      prompt: 'Laquelle de ces deux questions contient déjà sa réponse ?',
       choices: [
         {
           text: 'Comment les familles perçoivent-elles la pair-aidance ?',
           correct: false,
-          feedback: 'Cette question est neutre : elle ne dit pas ce que les familles pensent.',
+          feedback: 'Celle-ci est neutre : elle ne dit pas à l’avance ce que pensent les familles.',
         },
         {
           text: 'Pourquoi les hôpitaux refusent-ils de recruter des pair-aidants ?',
           correct: true,
           feedback:
-            'Elle affirme que les hôpitaux refusent. C’est à vérifier, pas à poser au départ.',
+            'Elle part du principe que les hôpitaux refusent. C’est peut-être vrai, mais c’est justement ce qu’il faudrait vérifier.',
         },
       ],
     },
     {
       id: 'qqoqcp',
-      prompt: 'Vous ne savez pas répondre à la question « Où ? ». Que faites-vous ?',
+      prompt: 'Vous ne savez pas quoi répondre à la question « Où ? ». Que faites-vous ?',
       choices: [
         {
           text: 'Vous changez de sujet.',
           correct: false,
-          feedback: 'Pas besoin. Une réponse manquante est normale au début.',
+          feedback: 'Surtout pas ! Une réponse qui manque est tout à fait normale au début.',
         },
         {
           text: 'Vous le notez : c’est une piste de lecture.',
           correct: true,
-          feedback: 'Vos lectures vous aideront à répondre.',
+          feedback: 'Exactement. Vos lectures vous aideront à y répondre.',
         },
       ],
     },
     {
       id: 'carte',
-      prompt: 'À quoi sert une carte mentale ?',
+      prompt: 'À quoi peut vous servir une carte mentale ?',
       multiple: true,
       choices: [
         {
-          text: 'À voir tout ce qui touche à votre sujet.',
+          text: 'À voir d’un coup d’œil tout ce qui touche à votre sujet.',
           correct: true,
-          feedback: 'Elle donne une vue d’ensemble sur une seule page.',
+          feedback: 'Oui, tout tient sur une seule page.',
         },
         {
           text: 'À trouver des mots-clés pour vos recherches.',
           correct: true,
-          feedback: 'Les mots des branches deviennent vos mots de recherche.',
+          feedback: 'Oui, les mots de vos branches deviendront vos mots de recherche.',
         },
         {
           text: 'À rédiger directement votre mémoire.',
           correct: false,
-          feedback: 'Elle prépare votre réflexion, mais elle ne remplace pas la rédaction.',
+          feedback: 'Elle prépare votre réflexion, mais la rédaction viendra plus tard.',
         },
       ],
     },
