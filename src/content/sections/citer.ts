@@ -197,21 +197,21 @@ export const citerSection: Section = {
           kind: 'reference',
           label: 'Un livre collectif',
           reference:
-            'Franck, N., & Cellard, C. (Eds.). (2020). *Pair-aidance en santé mentale*. Elsevier Masson.',
+            'Franck, N., & Cellard, C. (Eds.). (2020). *Pair-aidance en santé mentale : une entraide professionnalisée*. Elsevier Masson.',
           inText: '(Franck & Cellard, 2020)',
         },
         {
           kind: 'reference',
           label: 'Un chapitre de ce livre',
           reference:
-            'Durand, B. (2020). Concept de pair-aidance professionnelle. In N. Franck & C. Cellard (Eds.), *Pair-aidance en santé mentale* (p. 47-60). Elsevier Masson. https://doi.org/10.1016/B978-2-294-77119-4.00004-3',
+            'Durand, B. (2020). Concept de pair-aidance professionnelle. In N. Franck & C. Cellard (Eds.), *Pair-aidance en santé mentale : une entraide professionnalisée* (p. 47-60). Elsevier Masson. https://doi.org/10.1016/B978-2-294-77119-4.00004-3',
           inText: '(Durand, 2020)',
         },
         {
           kind: 'reference',
           label: 'Une thèse en ligne',
           reference:
-            'Rodier, P. (2023). *Pair-aidance en santé mentale et médicaments utilisés en psychiatrie : Quel positionnement dans la pratique professionnelle ?* [Thèse d’exercice en pharmacie, Université de Montpellier]. DUMAS. https://dumas.ccsd.cnrs.fr/dumas-04314075v1',
+            'Rodier, P. (2023). *Pair-aidance en santé mentale et médicaments utilisés en psychiatrie : quel positionnement dans la pratique professionnelle ?* [Thèse d’exercice en pharmacie, Université de Montpellier]. DUMAS. https://dumas.ccsd.cnrs.fr/dumas-04314075v1',
           inText: '(Rodier, 2023)',
         },
         {
