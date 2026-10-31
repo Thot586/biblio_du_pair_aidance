@@ -1,4 +1,4 @@
-import { render, screen, waitFor, within } from '@testing-library/react';
+import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import axe from 'axe-core';
 import { createMemoryRouter, RouterProvider } from 'react-router';
@@ -122,6 +122,20 @@ describe('les pages de service', () => {
     await user.type(screen.getByRole('searchbox'), 'thesaurus');
     expect(screen.getByText('Thésaurus')).toBeInTheDocument();
     expect(screen.queryByText('DOI')).not.toBeInTheDocument();
+  });
+
+  it('laisse la page sur le mot visé par un lien vers le glossaire', async () => {
+    const scrollToTop = vi.spyOn(window, 'scrollTo').mockImplementation(() => undefined);
+    const scrollToWord = vi.fn();
+    Element.prototype.scrollIntoView = scrollToWord;
+    const router = createMemoryRouter(routes, { initialEntries: ['/aide'] });
+    render(<RouterProvider router={router} />);
+
+    await act(() => router.navigate('/glossaire#doi'));
+
+    expect(scrollToWord).toHaveBeenCalled();
+    expect(scrollToTop).not.toHaveBeenCalled();
+    scrollToTop.mockRestore();
   });
 
   it('donne les contacts des documentalistes', () => {

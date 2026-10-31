@@ -5,17 +5,18 @@ import { Header } from './Header';
 import styles from './RootLayout.module.css';
 
 export function RootLayout() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const main = useRef<HTMLElement>(null);
   const previousPath = useRef(pathname);
 
   // Après un changement de page, le clavier et les lecteurs d’écran repartent du contenu.
+  // Une adresse avec un repère, comme un mot du glossaire, garde la position choisie par la page.
   useEffect(() => {
     if (previousPath.current === pathname) return;
     previousPath.current = pathname;
-    window.scrollTo(0, 0);
+    if (!hash) window.scrollTo(0, 0);
     main.current?.focus({ preventScroll: true });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <div className={styles.page}>

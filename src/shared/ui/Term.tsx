@@ -1,30 +1,14 @@
-import { useCallback, useEffect, useId, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { findGlossaryEntry } from '@/content/glossary';
+import { bubblePosition } from './bubblePosition';
 import { InlineText } from './InlineText';
 import { stripInline } from './inlineText/parseInline';
 import styles from './Term.module.css';
 
 type TermMode = 'closed' | 'preview' | 'detail';
 
-const BUBBLE_WIDTH_REM = 20;
-const VIEWPORT_MARGIN_PX = 16;
-const GAP_PX = 6;
 const CLOSE_DELAY_MS = 180;
-
-function bubblePosition(trigger: DOMRect): CSSProperties {
-  const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-  const width = Math.min(BUBBLE_WIDTH_REM * rem, window.innerWidth - 2 * VIEWPORT_MARGIN_PX);
-  const left = Math.max(
-    VIEWPORT_MARGIN_PX,
-    Math.min(trigger.left, window.innerWidth - VIEWPORT_MARGIN_PX - width),
-  );
-  const spaceBelow = window.innerHeight - trigger.bottom;
-  const openAbove = spaceBelow < 200 && trigger.top > spaceBelow;
-  return openAbove
-    ? { left, width, bottom: window.innerHeight - trigger.top + GAP_PX }
-    : { left, width, top: trigger.bottom + GAP_PX };
-}
 
 /**
  * Un mot technique. Survol ou clavier : l’explication courte.
@@ -33,21 +17,27 @@ function bubblePosition(trigger: DOMRect): CSSProperties {
 export function Term({ id, label }: { id: string; label?: string | undefined }) {
   const entry = findGlossaryEntry(id);
   const [mode, setMode] = useState<TermMode>('closed');
-  const [position, setPosition] = useState<CSSProperties>({});
   const root = useRef<HTMLSpanElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
+  const bubble = useRef<HTMLSpanElement>(null);
   const closeTimer = useRef<number | undefined>(undefined);
   const bubbleId = useId();
 
   const place = useCallback(() => {
-    if (trigger.current) setPosition(bubblePosition(trigger.current.getBoundingClientRect()));
+    if (!trigger.current || !bubble.current) return;
+    const { left, top } = bubblePosition(
+      trigger.current.getBoundingClientRect(),
+      { width: bubble.current.offsetWidth, height: bubble.current.offsetHeight },
+      { width: window.innerWidth, height: window.innerHeight },
+    );
+    bubble.current.style.left = `${left}px`;
+    bubble.current.style.top = `${top}px`;
   }, []);
 
   const cancelClose = () => window.clearTimeout(closeTimer.current);
 
   const openPreview = () => {
     cancelClose();
-    place();
     setMode((current) => (current === 'closed' ? 'preview' : current));
   };
 
@@ -61,9 +51,11 @@ export function Term({ id, label }: { id: string; label?: string | undefined }) 
 
   const toggleDetail = () => {
     cancelClose();
-    place();
     setMode((current) => (current === 'detail' ? 'closed' : 'detail'));
   };
+
+  // La taille de la bulle dépend de son contenu : on la mesure avant de l’afficher à l’écran.
+  useLayoutEffect(() => place(), [mode, place]);
 
   useEffect(() => {
     if (mode === 'closed') return undefined;
@@ -109,7 +101,7 @@ export function Term({ id, label }: { id: string; label?: string | undefined }) 
         {label ?? entry.term}
       </button>
       {mode !== 'closed' && (
-        <span id={bubbleId} className={styles.bubble} style={position}>
+        <span ref={bubble} id={bubbleId} className={styles.bubble}>
           <strong className={styles.bubbleTerm}>{entry.term}</strong>
           <span>{stripInline(entry.definition)}</span>
           {mode === 'preview' ? (
