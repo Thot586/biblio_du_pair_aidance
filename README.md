@@ -40,8 +40,14 @@ npm install
 npm run dev          # site local
 npm run check        # types, lint, tests
 npm run check:liens  # liens externes
-npm run deploy       # contrôle, construit et publie sur GitHub Pages
 ```
+
+## Publication
+
+Le site est publié sur GitHub Pages à chaque envoi sur `main`. Le workflow
+`.github/workflows/pages.yml` lance `npm run check` puis `npm run build`, et ne publie que si le
+contrôle passe. Dans les réglages du dépôt, Pages doit avoir pour source « GitHub Actions ». Pour
+republier sans modification : onglet Actions, « Publier le site », « Run workflow ».
 
 ## Technique
 

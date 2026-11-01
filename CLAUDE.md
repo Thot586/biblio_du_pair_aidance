@@ -7,7 +7,7 @@ français. Voir `docs/PLAN.md` pour les décisions et les règles de rédaction.
 
 - `npm run dev` : serveur local.
 - `npm run check` : types, lint et tests. À lancer avant chaque commit.
-- `npm run deploy` : contrôle, construit, puis publie `dist/` sur la branche `gh-pages`.
+- Publication : automatique à chaque envoi sur `main` (`.github/workflows/pages.yml` : contrôle, construit, publie). Il n'y a plus de commande `deploy` ni de branche `gh-pages` à alimenter.
 - `npm run check:liens` : vérifie les liens externes du contenu.
 
 ## Organisation
