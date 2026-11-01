@@ -86,9 +86,11 @@
   color: var(--aubergine);
 }
 
-/* « Aa » est le signe que l'on retrouve partout pour les réglages du texte. */
+/* Le signe des réglages : une icône dessinée, pour qu'elle ne se lise pas comme un mot. */
 .displayIcon {
-  font-weight: 700;
+  flex: none;
+  width: 1.35em;
+  height: 1.35em;
 }
 
 .nav {

@@ -39,6 +39,17 @@ export function ChevronIcon({ className }: IconProps) {
   );
 }
 
+/** Deux curseurs : le signe habituel des réglages. Il ne se lit pas comme du texte. */
+export function SlidersIcon({ className }: IconProps) {
+  return (
+    <Icon className={className}>
+      <path d="M4 7h9M19 7h1M4 17h1M11 17h9" />
+      <circle cx="16" cy="7" r="2.6" />
+      <circle cx="8" cy="17" r="2.6" />
+    </Icon>
+  );
+}
+
 export function CheckIcon({ className }: IconProps) {
   return (
     <Icon className={className}>

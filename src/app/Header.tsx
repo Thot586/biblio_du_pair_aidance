@@ -4,6 +4,7 @@ import { course } from '@/content/course';
 import { onOpenDisplaySettings } from '@/features/preferences/displaySettings';
 import { PreferencesDialog } from '@/features/preferences/PreferencesDialog';
 import { SiteSearch } from '@/features/search/SiteSearch';
+import { SlidersIcon } from '@/shared/ui/icons';
 import styles from './Header.module.css';
 import { useMenuFit } from './useMenuFit';
 
@@ -66,9 +67,7 @@ export function Header() {
           className={styles.displayButton}
           onClick={() => dialog.current?.showModal()}
         >
-          <span aria-hidden="true" className={styles.displayIcon}>
-            Aa
-          </span>
+          <SlidersIcon className={styles.displayIcon} />
           Affichage
         </button>
       </div>

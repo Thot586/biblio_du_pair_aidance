@@ -32,12 +32,16 @@ function hasDisplayBlock(blocks: readonly Block[]): boolean {
 }
 
 describe('la fenêtre Affichage', () => {
-  it('s’ouvre avec le bouton du haut, qui annonce le réglage du texte', async () => {
+  it('s’ouvre avec le bouton du haut, dont l’icône ne se lit pas comme un mot', async () => {
     const user = userEvent.setup();
     renderAt('/');
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    await user.click(within(screen.getByRole('banner')).getByRole('button', { name: 'Affichage' }));
+    const button = within(screen.getByRole('banner')).getByRole('button', { name: 'Affichage' });
+    expect(button).toHaveTextContent(/^Affichage$/);
+    expect(button.querySelector('svg[aria-hidden="true"]')).not.toBeNull();
+
+    await user.click(button);
     expect(screen.getByRole('dialog', { name: 'Affichage' })).toBeInTheDocument();
   });
 

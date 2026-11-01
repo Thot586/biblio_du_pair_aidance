@@ -52,7 +52,8 @@ aussi collé en haut de l'écran pendant la lecture : changer de page ne demande
 chercher « OpenDyslexic » : on nomme donc le besoin, et le réglage se trouve à plusieurs endroits,
 toujours sous le même nom, « Affichage » :
 
-- le bouton « Aa Affichage » de l'en-tête ;
+- le bouton « Affichage » de l'en-tête, précédé d'une icône de curseurs (`SlidersIcon`). Un « Aa »
+  écrit en lettres, ou même dessiné, se lit comme le début du libellé et change avec la police ;
 - un lien « Affichage : texte, police, couleurs » dans le pied de page de toutes les pages, qui
   sert aussi d'accès sur téléphone quand la rangée du haut a défilé ;
 - un bouton dans la leçon qui parle de dyslexie (bloc `display`) ;
