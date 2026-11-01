@@ -5,6 +5,7 @@
  * Mini-syntaxe des textes (`InlineText`) :
  *   **gras**   *italique*   [[doi]] ou [[doi|le DOI]] pour un terme du glossaire
  *   [texte du lien](https://adresse)
+ * Un terme ou un lien peut se trouver à l'intérieur d'un gras ou d'une italique.
  */
 export type InlineText = string;
 

@@ -95,6 +95,20 @@ describe('le glossaire', () => {
     expect(unknown).toEqual([]);
   });
 
+  it('ne laisse aucune marque de mise en forme à l’écran', () => {
+    const texts = [
+      ...allLessons.flatMap(({ lesson, path }) =>
+        lessonTexts(lesson).map((text) => ({ where: path, text })),
+      ),
+      ...glossary.flatMap((entry) => [
+        { where: `glossaire : ${entry.id}`, text: entry.definition },
+        { where: `glossaire : ${entry.id}`, text: entry.detail },
+      ]),
+    ];
+    const shown = texts.filter(({ text }) => /\[\[|\]\]|\*\*|\]\(/.test(stripInline(text)));
+    expect(shown.map(({ where, text }) => `${where} : ${text.slice(0, 70)}`)).toEqual([]);
+  });
+
   it('rend chaque mot technique survolable au moins une fois par leçon', () => {
     const missing = allLessons.flatMap(({ lesson, path }) => {
       const raw = lessonMarkableTexts(lesson).join('\n');
