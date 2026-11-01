@@ -13,8 +13,8 @@ Conception : Dr FENOHASINA T.J. Félicien et Mme LONG Aude.
 - Une recherche sur tout le site, qui accepte les fautes et les questions en langage courant.
 - Des animations avec lecture, pause, retour et vitesse, accompagnées de leur texte.
 - Des quiz sans note et des termes techniques expliqués au survol et au clic.
-- Sept outils : atelier de question, mots de recherche, choix de l'outil, générateur de références
-  APA, vérification d'une référence, préparation d'une demande à une IA, déclaration d'usage de l'IA.
+- Sept outils : atelier de question, mots de recherche, choix de l'outil, mise en forme d'une
+  référence APA, vérification d'une référence, préparation d'une demande à une IA, déclaration d'usage de l'IA.
 
 Aucun compte, aucune mesure d'audience : la progression reste dans le navigateur.
 

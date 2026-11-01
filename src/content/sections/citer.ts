@@ -129,14 +129,14 @@ export const citerSection: Section = {
       question: 'Comment écrire une référence ?',
       minutes: 6,
       summary:
-        'Une [[reference|référence]] répond toujours à quatre questions dans le même ordre : qui a écrit, quand, quoi, et où c’est publié. Le générateur du site l’écrit pour vous, et vous montre à quoi sert chaque morceau.',
+        'Une [[reference|référence]] répond toujours à quatre questions dans le même ordre : qui a écrit, quand, quoi, et où c’est publié. L’outil du site la met en forme pour vous, et vous montre à quoi sert chaque morceau.',
       blocks: [
         {
           kind: 'paragraph',
           text: 'Une référence peut sembler pleine de pièges, avec ses points, ses virgules et ses italiques. Pourtant, la logique est toujours la même. Regardons comment elle se construit.',
         },
         { kind: 'scene', scene: 'anatomie-reference' },
-        { kind: 'tool', tool: 'generateur-apa' },
+        { kind: 'tool', tool: 'mise-en-forme-apa' },
         {
           kind: 'callout',
           tone: 'rule',
@@ -297,7 +297,7 @@ export const citerSection: Section = {
       question: 'J’ai trouvé une référence : comment l’ajouter ?',
       minutes: 5,
       summary:
-        'Si vous avez un [[doi|DOI]], collez-le dans le générateur : la [[reference|référence]] se remplit toute seule. Sinon, vous pouvez partir du bouton « Citer » de Google Scholar ou de PubMed. Dans tous les cas, relisez le résultat.',
+        'Si vous avez un [[doi|DOI]], collez-le dans l’outil [Mettre ma référence en APA](/outils/generateur-apa) : la [[reference|référence]] se remplit toute seule. Sinon, vous pouvez partir du bouton « Citer » de Google Scholar ou de PubMed. Dans tous les cas, relisez le résultat.',
       blocks: [
         {
           kind: 'paragraph',
@@ -308,8 +308,11 @@ export const citerSection: Section = {
           caption: 'Que faire selon ce que vous avez',
           headers: ['Ce que vous avez', 'Le plus simple'],
           rows: [
-            ['Un DOI', 'Collez-le dans le [générateur APA](/outils/generateur-apa)'],
-            ['Un titre d’article', 'Collez-le dans le générateur, puis choisissez le bon résultat'],
+            [
+              'Un DOI',
+              'Collez-le dans l’outil [Mettre ma référence en APA](/outils/generateur-apa)',
+            ],
+            ['Un titre d’article', 'Collez-le dans l’outil, puis choisissez le bon résultat'],
             [
               'Un livre français',
               'Cherchez-le dans le [[sudoc|Sudoc]], puis recopiez les informations',
@@ -342,7 +345,7 @@ export const citerSection: Section = {
         },
       ],
       takeaways: [
-        'Un DOI ou un titre suffit pour remplir le générateur.',
+        'Avec un DOI ou un titre, l’outil remplit la référence pour vous.',
         'Les boutons « Citer » aident, mais il faut toujours relire.',
         'Votre liste contient seulement ce que vous avez lu et cité.',
       ],
@@ -418,7 +421,7 @@ export const citerSection: Section = {
       blocks: [
         {
           kind: 'paragraph',
-          text: 'Pour un mémoire de 5 à 25 références, le générateur de ce site suffit largement. Zotero devient très utile si vous avez beaucoup de lectures, ou si vous comptez continuer à écrire après le DU. Regardons ce qu’il fait.',
+          text: 'Pour un mémoire de 5 à 25 références, l’outil de ce site suffit largement. Zotero devient très utile si vous avez beaucoup de lectures, ou si vous comptez continuer à écrire après le DU. Regardons ce qu’il fait.',
         },
         { kind: 'scene', scene: 'zotero' },
         {
@@ -426,7 +429,7 @@ export const citerSection: Section = {
           caption: 'Lequel choisir ?',
           headers: ['Outil', 'Pour qui ?', 'Installation'],
           rows: [
-            ['Le générateur de ce site', 'Vous voulez apprendre et garder la main', 'Aucune'],
+            ['L’outil de ce site', 'Vous voulez apprendre et garder la main', 'Aucune'],
             [
               '[ZoteroBib](https://zbib.org/)',
               'Vous voulez une liste rapide, sans compte',

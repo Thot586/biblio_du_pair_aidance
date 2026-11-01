@@ -18,7 +18,7 @@ import { CopyButton } from '@/shared/ui/CopyButton';
 import { pluralize } from '@/shared/lib/text';
 import { ReferenceText } from './ReferenceText';
 import panel from '@/shared/ui/Panel.module.css';
-import styles from './ApaGenerator.module.css';
+import styles from './ApaFormatter.module.css';
 
 const SIZE_MESSAGES: Record<ListSizeStatus, string> = {
   tooFew: `Le DU demande au moins ${REFERENCES_MINIMUM} références. Continuez, vous êtes sur la bonne voie.`,

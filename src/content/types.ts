@@ -40,7 +40,7 @@ export type ToolId =
   | 'atelier-question'
   | 'constructeur-equation'
   | 'choisir-outil'
-  | 'generateur-apa'
+  | 'mise-en-forme-apa'
   | 'verifier-reference'
   | 'preparer-prompt'
   | 'declaration-ia';

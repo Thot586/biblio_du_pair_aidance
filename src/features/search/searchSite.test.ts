@@ -78,7 +78,11 @@ describe('la recherche du site', () => {
 
   it('trouve un outil par la façon de dire son besoin', () => {
     expect(bestResultFor('je ne sais pas où chercher', 'tool')?.to).toBe('/outils/quel-outil');
-    expect(bestResultFor('générateur', 'tool')?.to).toBe('/outils/generateur-apa');
+    expect(bestResultFor('mettre en apa', 'tool')?.to).toBe('/outils/generateur-apa');
+  });
+
+  it('retrouve l’outil APA sous le nom qu’on lui donne ailleurs', () => {
+    expect(bestResultFor('générateur apa', 'tool')?.to).toBe('/outils/generateur-apa');
   });
 
   it('trouve les personnes à contacter', () => {

@@ -5,6 +5,8 @@ export interface ToolEntry {
   slug: string;
   title: string;
   summary: string;
+  /** Les autres noms qu'on donne à l'outil ailleurs : la recherche du site les connaît. */
+  aliases?: readonly string[];
 }
 
 /** Liste des outils interactifs : uniquement du texte, pour rester léger partout. */
@@ -29,11 +31,13 @@ export const TOOLS: readonly ToolEntry[] = [
     summary: 'Dites ce que vous cherchez, et voyez par où commencer.',
   },
   {
-    id: 'generateur-apa',
+    id: 'mise-en-forme-apa',
+    // L'adresse garde son premier nom : les liens déjà partagés continuent de fonctionner.
     slug: 'generateur-apa',
-    title: 'Générateur de références APA',
+    title: 'Mettre ma référence en APA',
     summary:
       'Remplissez quelques champs ou collez un DOI : votre référence APA est prête à copier.',
+    aliases: ['générateur de références APA', 'citation', 'bibliographie'],
   },
   {
     id: 'verifier-reference',
@@ -78,7 +82,7 @@ export const TOOL_GROUPS: readonly ToolGroup[] = [
   },
   {
     title: 'Citer mes sources',
-    tools: [findTool('generateur-apa'), findTool('verifier-reference')],
+    tools: [findTool('mise-en-forme-apa'), findTool('verifier-reference')],
   },
   {
     title: 'Utiliser une IA avec prudence',

@@ -99,7 +99,9 @@ function toolDocuments(): SearchDocument[] {
       to,
       title: tool.title,
       excerpt: tool.summary,
-      keywords: `outil ${needs.map((shortcut) => shortcut.label).join(' ')}`,
+      keywords: ['outil', ...(tool.aliases ?? []), ...needs.map((shortcut) => shortcut.label)].join(
+        ' ',
+      ),
       body: '',
     };
   });

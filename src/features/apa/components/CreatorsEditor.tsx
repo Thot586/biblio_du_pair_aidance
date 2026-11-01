@@ -1,7 +1,7 @@
 import type { Creator, PersonName } from '../domain/types';
 import { Button } from '@/shared/ui/Button';
 import { Field } from '@/shared/ui/Field';
-import styles from './ApaGenerator.module.css';
+import styles from './ApaFormatter.module.css';
 
 const EMPTY_PERSON: PersonName = { kind: 'person', family: '', given: '' };
 

@@ -1,5 +1,5 @@
 import type { Segment } from '../domain/types';
-import styles from './ApaGenerator.module.css';
+import styles from './ApaFormatter.module.css';
 
 /** La référence avec ses morceaux en couleur : on voit à quoi sert chaque partie. */
 export function ReferenceText({ segments }: { segments: readonly Segment[] }) {

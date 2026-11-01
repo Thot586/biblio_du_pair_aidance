@@ -20,7 +20,7 @@ import { QuickFill } from './QuickFill';
 import { ReferenceLegend, ReferenceText } from './ReferenceText';
 import { ReferenceListPanel } from './ReferenceListPanel';
 import panel from '@/shared/ui/Panel.module.css';
-import styles from './ApaGenerator.module.css';
+import styles from './ApaFormatter.module.css';
 
 const EMPTY_PERSON: Creator = { kind: 'person', family: '', given: '' };
 
@@ -147,7 +147,7 @@ function SpokenSourceHelper() {
   );
 }
 
-export function ApaGenerator() {
+export function ApaFormatter() {
   const [entry, setEntry] = useState<ReferenceEntry>(() => emptyEntry('article'));
   const [page, setPage] = useState('');
   const [added, setAdded] = useState(false);

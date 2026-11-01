@@ -261,6 +261,30 @@ describe('la boîte à outils', () => {
     expect([...grouped].sort()).toEqual(TOOLS.map((tool) => tool.id).sort());
   });
 
+  it('nomme l’outil APA par ce qu’il fait, sans le mot « générateur »', () => {
+    renderAt('/outils');
+    expect(screen.getByRole('link', { name: /Mettre ma référence en APA/ })).toHaveAttribute(
+      'href',
+      '/outils/generateur-apa',
+    );
+    expect(screen.queryByText(/générateur/i)).not.toBeInTheDocument();
+  });
+
+  it('ouvre l’outil APA depuis son ancienne adresse, avec son nouveau titre', () => {
+    renderAt('/outils/generateur-apa');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+      'Mettre ma référence en APA',
+    );
+  });
+
+  it('n’emploie pas « générateur » dans les leçons sur la bibliographie', () => {
+    for (const lesson of ['ecrire-une-reference', 'reference-trouvee', 'zotero']) {
+      const { unmount } = renderAt(`/citer/${lesson}`);
+      expect(screen.queryByText(/générateur/i)).not.toBeInTheDocument();
+      unmount();
+    }
+  });
+
   it('nomme les groupes selon ce que la personne veut faire', () => {
     renderAt('/outils');
     for (const group of TOOL_GROUPS) {

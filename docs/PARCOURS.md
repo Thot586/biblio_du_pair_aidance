@@ -58,6 +58,12 @@ les fautes, les accents oubliés, les pluriels et les questions en langage coura
 **La progression s'enregistre sans effort.** Passer à la page suivante marque la page comme lue. La
 case « J'ai lu cette page » reste là pour qui lit à la carte.
 
+**Un outil porte le nom de ce que la personne fait, à la première personne** : « Mettre ma référence
+en APA », « Mes mots de recherche ». On évite « générateur » : sur un site qui apprend que l'IA
+générative invente des références, il laisse croire que l'outil en invente aussi, ou qu'il faut le
+déclarer comme un usage de l'IA. On évite aussi « assistant », qui désigne les IA. Le mot que les gens
+tapent ailleurs reste cherchable, grâce à `aliases` dans `features/tools/catalog.ts`.
+
 ## Quand on ajoute quelque chose
 
 - Une nouvelle page de contenu ou un nouvel outil doit entrer dans la recherche

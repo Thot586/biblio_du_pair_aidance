@@ -17,9 +17,9 @@ const ToolChooser = lazy(() =>
     default: module.ToolChooser,
   })),
 );
-const ApaGenerator = lazy(() =>
-  import('@/features/apa/components/ApaGenerator').then((module) => ({
-    default: module.ApaGenerator,
+const ApaFormatter = lazy(() =>
+  import('@/features/apa/components/ApaFormatter').then((module) => ({
+    default: module.ApaFormatter,
   })),
 );
 const ReferenceChecker = lazy(() =>
@@ -46,8 +46,8 @@ export function ToolView({ id }: { id: ToolId }) {
       return <SearchBuilder />;
     case 'choisir-outil':
       return <ToolChooser />;
-    case 'generateur-apa':
-      return <ApaGenerator />;
+    case 'mise-en-forme-apa':
+      return <ApaFormatter />;
     case 'verifier-reference':
       return <ReferenceChecker />;
     case 'preparer-prompt':
