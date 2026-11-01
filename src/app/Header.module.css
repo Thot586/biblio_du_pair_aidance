@@ -35,6 +35,8 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
+  /* Le nom peut se réduire pour laisser sa place à la recherche et au menu (voir plus bas). */
+  min-width: 0;
   min-height: 2.5rem;
   font-family: var(--font-display);
   font-weight: 700;
@@ -166,12 +168,22 @@
   }
 }
 
+/*
+ * Dès que le nom est écrit à côté du logo, il cède de la place plutôt que de pousser la recherche
+ * ou le menu : il passe à la ligne, puis se termine par « … » si un mot ne tient plus.
+ */
 @media (min-width: 40rem) {
+  .inner {
+    grid-template-columns: minmax(0, max-content) minmax(8rem, 1fr) auto;
+  }
+
   .brandName {
     position: static;
     width: auto;
     height: auto;
-    overflow: visible;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
     clip-path: none;
     white-space: normal;
   }
@@ -185,20 +197,13 @@
   }
 }
 
-/* Tablette : le nom tient sur une ligne et se termine par « … » s'il manque de la place. */
+/* Tablette : la rangée est courte, le nom tient sur une ligne. */
 @media (min-width: 40rem) and (max-width: 69.99rem) {
-  .brand {
-    min-width: 0;
-  }
-
   .brandName {
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  /* En très grand texte, le nom a toute une ligne : il passe à la ligne plutôt que de se couper. */
+  /* En très grand texte, le nom a toute une ligne pour lui : il peut passer à la ligne. */
   :global(html[data-text-size='xlarge']) .brandName {
     overflow: visible;
     text-overflow: clip;

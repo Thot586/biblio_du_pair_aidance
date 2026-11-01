@@ -92,9 +92,10 @@ tapent ailleurs reste cherchable, grâce à `aliases` dans `features/tools/catal
 - Tout ce qui se cale par rapport au haut de l'écran (liste latérale, ancres, bulles, fenêtres)
   part de `--header-pinned`, défini dans `styles/tokens.css`. Ne jamais écrire une hauteur d'en-tête
   en dur.
-- Sur tablette, le nom du site se termine par « … » plutôt que de laisser la recherche devenir trop
-  étroite (la police pour dyslexiques en grand texte la réduisait à 4 px). La recherche garde au
-  moins 5 rem.
+- Le nom du site cède de la place plutôt que de pousser la recherche ou le menu : il passe à la
+  ligne, puis se termine par « … » (sur tablette, il reste sur une seule ligne). Sans cela, la
+  police pour dyslexiques en grand texte réduisait la recherche à 4 px sur tablette. La recherche
+  garde au moins 5 rem sur téléphone et 8 rem dès 640 px.
 - Un cinquième lien dans le menu, ou un libellé plus long, change les cas où le menu tient sur une
   rangée. Rien à régler : `useMenuFit` le mesure, et l'en-tête défile si le menu passe à la ligne.
 
@@ -112,8 +113,8 @@ tapent ailleurs reste cherchable, grâce à `aliases` dans `features/tools/catal
   - **Ordinateur** : la rangée unique reste entière (72 px), avec la recherche.
   - **L'en-tête ne se colle pas** sur un écran peu haut (téléphone couché, page très agrandie),
     en très grand texte, ni quand le menu passe à la ligne. Avec la police pour dyslexiques, cela
-    arrive sur téléphone et sur ordinateur (1280 et 1440 px mesurés), pas sur tablette. Dans ces
-    cas, la barre prendrait trop de place.
+    arrive sur téléphone et sur ordinateur jusqu'à 1280 px environ, pas sur tablette ni sur un
+    grand écran. Dans ces cas, la barre prendrait trop de place.
   - Les ancres, le focus au clavier, la liste latérale et les bulles tiennent compte de la barre.
 - **Pas de recherche collée sur téléphone.** Elle revient en remontant : la garder aurait fait
   passer la barre de 45 à 108 px.
