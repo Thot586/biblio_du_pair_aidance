@@ -29,7 +29,7 @@ Le mot « étape » reste réservé aux six étapes de la recherche, enseignées
 **L'essentiel d'abord.** Sur chaque page, ce qui compte le plus arrive en premier. Une leçon commence
 par « L'essentiel », puis l'animation, puis le détail. Une section commence par son bouton d'action.
 
-**Une seule action principale par écran.** C'est le bouton plein (`LinkButton`). Le reste est
+**Une seule action principale par écran.** C'est le bouton plein (`LinkButton`, ou `PagerLink` en bas de page). Le reste est
 secondaire : bouton en contour, ligne ou lien.
 
 **Toujours savoir où l'on est.** Un lien du menu reste allumé, le fil d'Ariane (`Breadcrumb`) donne

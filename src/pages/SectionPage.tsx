@@ -54,7 +54,7 @@ function SectionPager({ section, finished }: { section: Section; finished: boole
           primary={finished}
           direction="next"
           to="/"
-          label="Dernière section"
+          label="Pour terminer"
           title="Retour au parcours"
         />
       )}
