@@ -22,6 +22,13 @@ describe('bubblePosition', () => {
     expect(top + tallBubble.height).toBeLessThanOrEqual(smallPhone.height);
   });
 
+  it('ne passe pas sous la barre collée en haut de l’écran', () => {
+    const word = wordAt(290);
+
+    expect(bubblePosition(word, bubble, smallPhone).top).toBe(34);
+    expect(bubblePosition(word, bubble, smallPhone, 40).top).toBe(302);
+  });
+
   it('ne déborde pas à droite de l’écran', () => {
     expect(bubblePosition(wordAt(100, 300), bubble, phone).left).toBe(86);
   });

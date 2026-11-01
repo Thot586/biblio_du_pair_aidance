@@ -10,6 +10,8 @@ html {
   font-size: 112.5%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Un lien d'ancre ou un champ atteint au clavier ne se cache pas sous la barre collée en haut. */
+  scroll-padding-top: calc(var(--header-pinned) + var(--space-3));
 }
 
 html[data-text-size='large'] {

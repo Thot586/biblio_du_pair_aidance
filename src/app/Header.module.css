@@ -1,6 +1,17 @@
+/*
+ * L'en-tête reste collé en haut pendant la lecture, pour naviguer sans remonter.
+ * Téléphone et tablette : il est décalé vers le haut de la hauteur de sa première rangée (logo,
+ * recherche, affichage), qui défile : seuls les liens du menu restent à l'écran, soit --header-pinned.
+ * Ordinateur : sa rangée unique reste entière. Voir tokens.css pour les cas où il ne se colle pas.
+ */
 .header {
+  --header-top-row: 2.75rem;
+  position: sticky;
+  top: calc(-1 * (var(--space-2) + var(--header-top-row) + var(--space-1)));
+  z-index: 20;
   background: var(--aubergine);
   color: #fff;
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.16);
 }
 
 /* Téléphone : le logo, la recherche et l'affichage, puis les quatre liens, toujours visibles. */
@@ -10,6 +21,7 @@
   padding: var(--space-2) var(--gutter) 0;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-rows: var(--header-top-row) auto;
   grid-template-areas:
     'brand search display'
     'nav nav nav';
@@ -80,7 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.5rem;
+  min-height: var(--nav-row);
   padding: 0 var(--space-1);
   color: #fff;
   text-decoration: none;
@@ -119,10 +131,25 @@
   }
 }
 
+/* Écran peu haut : l'en-tête défile comme le reste de la page. */
+@media (max-height: 32rem) {
+  .header {
+    position: static;
+  }
+}
+
+/* En très grand texte, ou si le menu passe à la ligne, l'en-tête défile comme le reste de la page. */
+:global(html[data-text-size='xlarge']) .header,
+:global(html[data-menu-wrapped]) .header {
+  position: static;
+}
+
 /* En très grand texte, chaque élément garde toute la largeur dont il a besoin. */
+
 @media (max-width: 69.99rem) {
   :global(html[data-text-size='xlarge']) .inner {
     grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: none;
     grid-template-areas:
       'brand display'
       'search search'
@@ -145,16 +172,21 @@
   }
 
   .navLink {
-    min-height: 2.75rem;
     padding: 0 var(--space-2);
   }
 }
 
 /* Ordinateur : tout tient sur une ligne, avec la recherche en haut à droite. */
 @media (min-width: 70rem) {
+  .header {
+    top: 0;
+  }
+
   .inner {
     grid-template-columns: auto auto minmax(10rem, 1fr) auto;
+    grid-template-rows: none;
     grid-template-areas: 'brand nav search display';
+    min-height: var(--header-pinned);
     padding-block: var(--space-2);
     gap: var(--space-4);
   }

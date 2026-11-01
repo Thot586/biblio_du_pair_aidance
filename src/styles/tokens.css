@@ -71,6 +71,14 @@
   --page-max: 72rem;
   --gutter: 1rem;
 
+  /*
+   * La rangée des liens du menu, et la hauteur qui reste collée en haut de l'écran pendant la
+   * lecture. Tout ce qui se cale par rapport au haut de l'écran (liste des pages, ancres, bulles)
+   * part de --header-pinned. Elle vaut 0 quand l'en-tête ne se colle pas (voir plus bas).
+   */
+  --nav-row: 2.5rem;
+  --header-pinned: var(--nav-row);
+
   /* Un seul coin arrondi : l'écho des quarts de cercle de la mosaïque. */
   --corner: 0 1.25rem 0 0;
 }
@@ -79,7 +87,30 @@
   :root {
     --gutter: 2rem;
     --text-lead: 1.167rem;
+    --nav-row: 2.75rem;
   }
+}
+
+/* Ordinateur : l'en-tête tient sur une seule rangée, et elle reste entière. */
+@media (min-width: 70rem) {
+  :root {
+    --header-pinned: 4rem;
+  }
+}
+
+/*
+ * L'en-tête ne se colle pas quand il prendrait trop de place : écran peu haut (téléphone couché,
+ * page très agrandie), très grand texte, et menu qui passe à la ligne (useMenuFit).
+ */
+@media (max-height: 32rem) {
+  :root {
+    --header-pinned: 0px;
+  }
+}
+
+html[data-text-size='xlarge'],
+html[data-menu-wrapped] {
+  --header-pinned: 0px;
 }
 
 :root[data-theme='dark'] {

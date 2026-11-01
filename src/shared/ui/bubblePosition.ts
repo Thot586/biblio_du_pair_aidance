@@ -11,8 +11,9 @@ type WordBox = Pick<DOMRect, 'left' | 'top' | 'bottom'>;
 /**
  * La bulle s’ouvre sous le mot, au-dessus s’il manque de la place.
  * Si aucun des deux côtés ne suffit, elle se cale en bas de l’écran pour que rien ne soit coupé.
+ * `topInset` est la hauteur collée en haut de l’écran (la barre de navigation) : la bulle ne passe pas dessous.
  */
-export function bubblePosition(word: WordBox, bubble: Size, viewport: Size) {
+export function bubblePosition(word: WordBox, bubble: Size, viewport: Size, topInset = 0) {
   const maxLeft = viewport.width - VIEWPORT_MARGIN_PX - bubble.width;
   const maxTop = viewport.height - VIEWPORT_MARGIN_PX - bubble.height;
   const below = word.bottom + GAP_PX;
@@ -20,7 +21,7 @@ export function bubblePosition(word: WordBox, bubble: Size, viewport: Size) {
 
   let top = maxTop;
   if (below <= maxTop) top = below;
-  else if (above >= VIEWPORT_MARGIN_PX) top = above;
+  else if (above >= topInset + VIEWPORT_MARGIN_PX) top = above;
 
   return { left: Math.max(VIEWPORT_MARGIN_PX, Math.min(word.left, maxLeft)), top };
 }

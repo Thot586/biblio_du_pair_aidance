@@ -144,9 +144,9 @@
   .rail {
     display: block;
     position: sticky;
-    top: var(--space-4);
+    top: calc(var(--header-pinned) + var(--space-4));
     align-self: start;
-    max-height: calc(100vh - var(--space-6));
+    max-height: calc(100vh - var(--header-pinned) - var(--space-6));
     overflow-y: auto;
     padding-block: var(--space-2);
   }

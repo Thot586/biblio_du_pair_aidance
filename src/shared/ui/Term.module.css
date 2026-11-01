@@ -21,8 +21,8 @@
   gap: var(--space-1);
   /* 32 px : la marge de 16 px de bubblePosition, de chaque côté de l’écran. */
   width: min(20rem, calc(100vw - 32px));
-  max-height: calc(100vh - 32px);
-  max-height: calc(100dvh - 32px);
+  max-height: calc(100vh - 32px - var(--header-pinned));
+  max-height: calc(100dvh - 32px - var(--header-pinned));
   overflow-y: auto;
   padding: var(--space-3);
   background: var(--color-primary);

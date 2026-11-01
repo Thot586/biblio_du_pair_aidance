@@ -25,10 +25,16 @@ export function Term({ id, label }: { id: string; label?: string | undefined }) 
 
   const place = useCallback(() => {
     if (!trigger.current || !bubble.current) return;
+    // La barre de navigation reste collée en haut de l’écran : la bulle ne doit pas passer dessous.
+    const pinnedTop = Math.max(
+      0,
+      document.querySelector('header')?.getBoundingClientRect().bottom ?? 0,
+    );
     const { left, top } = bubblePosition(
       trigger.current.getBoundingClientRect(),
       { width: bubble.current.offsetWidth, height: bubble.current.offsetHeight },
       { width: window.innerWidth, height: window.innerHeight },
+      pinnedTop,
     );
     bubble.current.style.left = `${left}px`;
     bubble.current.style.top = `${top}px`;

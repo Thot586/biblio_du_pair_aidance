@@ -4,6 +4,7 @@ import { course } from '@/content/course';
 import { PreferencesDialog } from '@/features/preferences/PreferencesDialog';
 import { SiteSearch } from '@/features/search/SiteSearch';
 import styles from './Header.module.css';
+import { useMenuFit } from './useMenuFit';
 
 const NAV_ITEMS = [
   { to: '/outils', label: 'Boîte à outils' },
@@ -21,7 +22,9 @@ function isInCourse(pathname: string): boolean {
 
 export function Header() {
   const dialog = useRef<HTMLDialogElement>(null);
+  const menu = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
+  useMenuFit(menu);
 
   return (
     <header className={styles.header}>
@@ -33,7 +36,7 @@ export function Header() {
           </svg>
           <span className={styles.brandName}>Recherche documentaire et IA</span>
         </Link>
-        <nav aria-label="Navigation principale" className={styles.nav}>
+        <nav ref={menu} aria-label="Navigation principale" className={styles.nav}>
           <Link
             to="/"
             className={styles.navLink}

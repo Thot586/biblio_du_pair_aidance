@@ -45,11 +45,12 @@ chaque section a un `shortTitle`.
 - Un texte fixe ne prend jamais la couleur des liens.
 - Une icône seule ne suffit que si elle est universelle, comme la loupe. Sinon, elle a un texte.
 
-**Le menu reste visible.** Quatre liens, jamais de menu caché, y compris sur téléphone.
+**Le menu reste visible.** Quatre liens, jamais de menu caché, y compris sur téléphone. Il reste
+aussi collé en haut de l'écran pendant la lecture : changer de page ne demande pas de remonter.
 
 **La page ne change pas toute seule.** La recherche se lance à la validation, jamais pendant la
-frappe. Aucun élément ne reste fixé à l'écran pendant la lecture, en dehors de la liste des pages de
-la section sur ordinateur.
+frappe. Seuls restent fixés à l'écran pendant la lecture la barre de navigation et, sur ordinateur,
+la liste des pages de la section.
 
 **Une recherche ratée n'est pas une impasse.** La plupart des gens ne reformulent pas : la page sans
 résultat propose donc un conseil, des situations et une personne à contacter. La recherche accepte
@@ -73,13 +74,30 @@ tapent ailleurs reste cherchable, grâce à `aliases` dans `features/tools/catal
 - Une nouvelle page de niveau 2 ou plus reçoit un `Breadcrumb`.
 - Une nouvelle situation fréquente va dans `content/shortcuts.ts`. Six suffisent : au-delà, on ne les
   lit plus.
+- Tout ce qui se cale par rapport au haut de l'écran (liste latérale, ancres, bulles, fenêtres)
+  part de `--header-pinned`, défini dans `styles/tokens.css`. Ne jamais écrire une hauteur d'en-tête
+  en dur.
+- Un cinquième lien dans le menu, ou un libellé plus long, change les cas où le menu tient sur une
+  rangée. Rien à régler : `useMenuFit` le mesure, et l'en-tête défile si le menu passe à la ligne.
 
 ## Ce qui a été choisi, et écarté
 
 - **Pas de barre fixe en bas de l'écran sur téléphone.** Elle s'empilerait sur la barre de Safari,
   et elle occuperait l'écran pendant toute la lecture. Le menu est en haut, en deux rangées.
-- **Pas d'en-tête fixe.** Il prendrait de la place pendant la lecture, et les ancres passeraient
-  dessous.
+- **Le menu reste collé en haut** (décision du 1er novembre 2026, qui remplace « pas d'en-tête
+  fixe »). Le premier choix craignait la place perdue et les ancres cachées. Sur une page longue,
+  remonter pour changer de page coûte pourtant plus que 45 px, et la demande est venue d'une lecture
+  sur téléphone. Pour limiter le coût :
+  - **Téléphone et tablette** : seule la rangée des quatre liens reste à l'écran (45 px). La
+    rangée du logo, de la recherche et de l'affichage défile avec la page, et revient en remontant.
+    L'en-tête entier ferait 108 px, soit plus de 12 % d'un écran de 844 px.
+  - **Ordinateur** : la rangée unique reste entière (72 px), avec la recherche.
+  - **L'en-tête ne se colle pas** sur un écran peu haut (téléphone couché, page très agrandie),
+    en très grand texte, ni quand le menu passe à la ligne (police pour dyslexiques sur
+    téléphone). Dans ces cas, la barre prendrait trop de place.
+  - Les ancres, le focus au clavier, la liste latérale et les bulles tiennent compte de la barre.
+- **Pas de recherche collée sur téléphone.** Elle revient en remontant : la garder aurait fait
+  passer la barre de 45 à 108 px.
 - **Pas de suggestions pendant la frappe.** Une page de résultats a sa propre adresse, le retour
   arrière la retrouve, et elle laisse la place pour aider quand rien n'est trouvé.
 - **« Parcours » reste dans le menu**, même si le logo mène au même endroit. C'est le seul lien qui
