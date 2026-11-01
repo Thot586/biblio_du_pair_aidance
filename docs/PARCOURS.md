@@ -37,6 +37,20 @@ le chemin, et la position est écrite en clair. La page en cours n'est jamais un
 le fil d'Ariane se réduit au niveau parent, pour ne pas passer à la ligne : c'est pour cela que
 chaque section a un `shortTitle`.
 
+**Un lien dit où il mène.** Un lien ne se résume jamais à son sens (« Page précédente ») ni à un
+verbe (« Ouvrir l'outil ») : il porte le titre de sa destination, dans les deux sens. Une personne
+qui parcourt la liste des liens, ou qui lit au lecteur d'écran, ne lit pas ce qui les entoure.
+
+- Les boutons de bas de page sont des `PagerLink` : le sens en petit, puis le titre. Le titre est
+  obligatoire dans le composant.
+- Quand le titre est déjà affiché à côté du lien (la carte d'un outil), on l'ajoute au lien en
+  texte masqué (`visually-hidden`), sans l'afficher deux fois.
+- `pages/linkNames.test.tsx` fait échouer la construction du site si un lien a un nom générique,
+  ou si deux liens d'une page ont le même nom et des destinations différentes. En ajoutant un
+  nouveau type de lien, on complète la liste de noms génériques de ce test.
+- Les boutons « Étape précédente » et « Étape suivante » du lecteur d'animation sont laissés tels
+  quels : ils sont dans le lecteur, qui donne leur contexte.
+
 **Ce qui se clique doit se voir sans survol.** Sur un téléphone, il n'y a pas de survol.
 
 - Une liste de destinations utilise `LinkRow` : toute la ligne est cliquable, avec son cadre, son

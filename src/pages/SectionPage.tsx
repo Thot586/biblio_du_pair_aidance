@@ -16,6 +16,7 @@ import { LinkButton } from '@/shared/ui/Button';
 import { CheckIcon } from '@/shared/ui/icons';
 import { InlineText } from '@/shared/ui/InlineText';
 import { LinkRow, LinkRowList } from '@/shared/ui/LinkRow';
+import { PagerLink } from '@/shared/ui/PagerLink';
 import { NotFoundPage } from './NotFoundPage';
 import styles from './SectionPage.module.css';
 
@@ -33,13 +34,30 @@ function SectionPager({ section, finished }: { section: Section; finished: boole
   return (
     <nav aria-label="Sections voisines" className={styles.pager}>
       {previous && (
-        <LinkButton variant="secondary" to={`/${previous.slug}`}>
-          Section précédente
-        </LinkButton>
+        <PagerLink
+          direction="previous"
+          to={`/${previous.slug}`}
+          label="Section précédente"
+          title={previous.question}
+        />
       )}
-      <LinkButton variant={finished ? 'primary' : 'secondary'} to={next ? `/${next.slug}` : '/'}>
-        {next ? `Section suivante : ${next.shortTitle}` : 'Retour au parcours'}
-      </LinkButton>
+      {next ? (
+        <PagerLink
+          primary={finished}
+          direction="next"
+          to={`/${next.slug}`}
+          label="Section suivante"
+          title={next.question}
+        />
+      ) : (
+        <PagerLink
+          primary={finished}
+          direction="next"
+          to="/"
+          label="Dernière section"
+          title="Retour au parcours"
+        />
+      )}
     </nav>
   );
 }

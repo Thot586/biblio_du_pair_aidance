@@ -1,0 +1,43 @@
+/*
+ * S'ajoute à l'apparence d'un bouton (Button.module.css) : sur deux lignes, le sens puis le titre.
+ * Le sélecteur à attribut passe devant celui du bouton, quel que soit l'ordre de chargement.
+ */
+.pager[data-variant] {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  font-size: var(--text-sm);
+}
+
+.back,
+.forward {
+  flex: none;
+  width: 1em;
+  height: 1em;
+}
+
+/* La flèche des icônes pointe vers la droite : on la retourne pour « précédent ». */
+.back {
+  transform: scaleX(-1);
+}
+
+/* Côte à côte : le précédent à gauche, le suivant à droite, même quand il est seul. */
+@media (min-width: 40rem) {
+  .pager[data-variant] {
+    max-width: calc(50% - var(--space-2));
+  }
+
+  .pager[data-direction='next'] {
+    align-items: flex-end;
+    margin-left: auto;
+    text-align: right;
+  }
+}

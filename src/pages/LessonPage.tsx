@@ -6,9 +6,9 @@ import { isLessonRead, setLessonRead, useProgress } from '@/features/progress/pr
 import { usePageTitle } from '@/shared/lib/usePageTitle';
 import { frenchSpacing, pluralize } from '@/shared/lib/text';
 import { Breadcrumb } from '@/shared/ui/Breadcrumb';
-import { LinkButton } from '@/shared/ui/Button';
 import { InlineText } from '@/shared/ui/InlineText';
 import { MoreDetails } from '@/shared/ui/MoreDetails';
+import { PagerLink } from '@/shared/ui/PagerLink';
 import { NotFoundPage } from './NotFoundPage';
 import styles from './LessonPage.module.css';
 
@@ -38,21 +38,37 @@ function LessonPager({ section, lesson }: { section: Section; lesson: Lesson }) 
   const index = section.lessons.indexOf(lesson);
   const previous = section.lessons[index - 1];
   const next = section.lessons[index + 1];
-  const nextTo = next ? `/${section.slug}/${next.slug}` : `/${section.slug}/quiz`;
-  const nextLabel = next
-    ? `Page suivante : ${next.question}`
-    : 'Vérifier ce que j’ai compris avec le quiz';
+  const markRead = () => setLessonRead(lessonKey(section, lesson), true);
 
   return (
     <nav aria-label="Pages voisines" className={styles.pager}>
       {previous && (
-        <LinkButton variant="secondary" to={`/${section.slug}/${previous.slug}`}>
-          Page précédente
-        </LinkButton>
+        <PagerLink
+          direction="previous"
+          to={`/${section.slug}/${previous.slug}`}
+          label="Page précédente"
+          title={previous.question}
+        />
       )}
-      <LinkButton to={nextTo} onClick={() => setLessonRead(lessonKey(section, lesson), true)}>
-        {frenchSpacing(nextLabel)}
-      </LinkButton>
+      {next ? (
+        <PagerLink
+          primary
+          direction="next"
+          to={`/${section.slug}/${next.slug}`}
+          label="Page suivante"
+          title={next.question}
+          onClick={markRead}
+        />
+      ) : (
+        <PagerLink
+          primary
+          direction="next"
+          to={`/${section.slug}/quiz`}
+          label="Pour terminer"
+          title="Vérifier ce que j’ai compris avec le quiz"
+          onClick={markRead}
+        />
+      )}
     </nav>
   );
 }

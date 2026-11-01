@@ -169,10 +169,18 @@ describe('une section', () => {
 
   it('mène à la section suivante', () => {
     renderAt('/question');
-    expect(screen.getByRole('link', { name: 'Section suivante : Mes mots' })).toHaveAttribute(
-      'href',
-      '/mots',
-    );
+    expect(
+      screen.getByRole('link', {
+        name: /^Section suivante\s*:\s*Quels mots utiliser pour chercher/,
+      }),
+    ).toHaveAttribute('href', '/mots');
+  });
+
+  it('nomme aussi la section précédente', () => {
+    renderAt('/mots');
+    expect(
+      screen.getByRole('link', { name: /^Section précédente\s*:\s*Comment trouver ma question/ }),
+    ).toHaveAttribute('href', '/question');
   });
 
   it('montre où l’on se trouve', () => {
@@ -220,15 +228,25 @@ describe('une leçon', () => {
 
     await user.click(screen.getByRole('link', { name: /^Page suivante/ }));
 
-    await user.click(await screen.findByRole('link', { name: 'Page précédente' }));
+    await user.click(await screen.findByRole('link', { name: /^Page précédente/ }));
     expect(await screen.findByRole('checkbox', { name: 'J’ai lu cette page' })).toBeChecked();
     clearProgress();
+  });
+
+  it('nomme la page précédente comme la page suivante', () => {
+    renderAt('/question/bonne-question');
+    expect(screen.getByRole('link', { name: /^Page précédente/ })).toHaveTextContent(
+      'Comment préciser mon sujet ?',
+    );
+    expect(screen.getByRole('link', { name: /^Page suivante/ })).toHaveTextContent(
+      'Comment explorer mon sujet avec une carte mentale ?',
+    );
   });
 
   it('mène au quiz depuis la dernière page d’une section', () => {
     renderAt('/citer/erreurs-frequentes');
     expect(
-      screen.getByRole('link', { name: 'Vérifier ce que j’ai compris avec le quiz' }),
+      screen.getByRole('link', { name: /Vérifier ce que j’ai compris avec le quiz/ }),
     ).toHaveAttribute('href', '/citer/quiz');
   });
 

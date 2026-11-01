@@ -60,6 +60,7 @@ function BlockView({ block }: { block: Block }) {
           <span>{tool.summary}</span>
           <Link to={`/outils/${tool.slug}`} className={styles.toolLink}>
             Ouvrir l’outil
+            <span className="visually-hidden"> : {tool.title}</span>
           </Link>
         </p>
       );
