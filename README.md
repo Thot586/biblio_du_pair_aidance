@@ -10,6 +10,7 @@ Conception : Dr FENOHASINA T.J. Félicien et Mme LONG Aude.
 ## Ce que contient le site
 
 - Un parcours en sept sections, chacune sous forme de question, lisibles dans n'importe quel ordre.
+- Une recherche sur tout le site, qui accepte les fautes et les questions en langage courant.
 - Des animations avec lecture, pause, retour et vitesse, accompagnées de leur texte.
 - Des quiz sans note et des termes techniques expliqués au survol et au clic.
 - Sept outils : atelier de question, mots de recherche, choix de l'outil, générateur de références
@@ -20,8 +21,9 @@ Aucun compte, aucune mesure d'audience : la progression reste dans le navigateur
 ## Modifier le contenu
 
 Le contenu est dans `src/content/`, séparé du code. Pour corriger une phrase, modifiez le fichier de
-la section dans `src/content/sections/`. Les règles de rédaction sont dans `docs/PLAN.md`, les
-scénarios des animations dans `docs/SCENES.md`.
+la section dans `src/content/sections/`. Les règles de rédaction sont dans `docs/PLAN.md`, le
+parcours et la navigation dans `docs/PARCOURS.md`, les scénarios des animations dans
+`docs/SCENES.md`.
 
 Dans les textes :
 
