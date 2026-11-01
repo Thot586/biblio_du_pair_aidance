@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
 import type { Block } from '@/content/types';
+import { openDisplaySettings } from '@/features/preferences/displaySettings';
 import { findTool } from '@/features/tools/catalog';
+import { Button } from '@/shared/ui/Button';
 import { Callout } from '@/shared/ui/Callout';
 import { ExternalLink } from '@/shared/ui/ExternalLink';
 import { InlineText } from '@/shared/ui/InlineText';
@@ -74,6 +76,14 @@ function BlockView({ block }: { block: Block }) {
               </li>
             ))}
           </ul>
+        </div>
+      );
+    case 'display':
+      return (
+        <div className={styles.action}>
+          <Button variant="secondary" onClick={openDisplaySettings}>
+            {block.label}
+          </Button>
         </div>
       );
     case 'table':

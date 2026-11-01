@@ -89,6 +89,15 @@ describe('la recherche du site', () => {
     expect(bestResultFor('documentaliste', 'page')?.to).toBe('/aide');
   });
 
+  it('mène aux réglages d’affichage quand on cherche la police ou la taille du texte', () => {
+    for (const query of ['police dyslexique', 'agrandir le texte', 'opendyslexic', 'mode sombre']) {
+      expect(
+        resultsFor(query).map((result) => result.to),
+        query,
+      ).toContain('/a-propos');
+    }
+  });
+
   it('trouve chatgpt dans la section sur l’IA', () => {
     expect(bestResultFor('chatgpt', 'course')?.to).toMatch(/^\/ia/);
   });

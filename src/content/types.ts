@@ -97,6 +97,12 @@ export interface LinksBlock {
   links: ExternalLinkData[];
 }
 
+/** Un bouton qui ouvre la fenêtre « Affichage » (taille du texte, police, couleurs). */
+export interface DisplayBlock {
+  kind: 'display';
+  label: string;
+}
+
 export interface TableBlock {
   kind: 'table';
   caption: string;
@@ -134,6 +140,7 @@ export type Block =
   | SceneBlock
   | ToolBlock
   | LinksBlock
+  | DisplayBlock
   | TableBlock
   | CompareBlock
   | ReferenceExampleBlock;

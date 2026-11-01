@@ -25,6 +25,8 @@ function blockTexts(block: Block): string[] {
       return [block.before.text, block.after.text, block.why ?? ''];
     case 'links':
       return block.links.flatMap((link) => [link.label, link.description ?? '']);
+    case 'display':
+      return [block.label];
     case 'reference':
     case 'scene':
     case 'tool':

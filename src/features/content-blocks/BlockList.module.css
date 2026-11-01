@@ -35,6 +35,11 @@
   margin-top: var(--space-1);
 }
 
+/* Le bouton garde sa largeur : dans la grille du contenu, il s'étirerait sur toute la ligne. */
+.action {
+  justify-self: start;
+}
+
 .linksTitle {
   font-weight: 700;
   margin-bottom: var(--space-2);

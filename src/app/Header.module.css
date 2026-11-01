@@ -20,7 +20,8 @@
   margin: 0 auto;
   padding: var(--space-2) var(--gutter) 0;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  /* Le nom du site se raccourcit avant que la recherche ne devienne trop étroite pour servir. */
+  grid-template-columns: minmax(0, max-content) minmax(5rem, 1fr) auto;
   grid-template-rows: var(--header-top-row) auto;
   grid-template-areas:
     'brand search display'
@@ -64,6 +65,9 @@
 
 .displayButton {
   grid-area: display;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
   min-height: 2.5rem;
   padding: 0 var(--space-2);
   border: 2px solid #fff;
@@ -78,6 +82,11 @@
 .displayButton:hover {
   background: #fff;
   color: var(--aubergine);
+}
+
+/* « Aa » est le signe que l'on retrouve partout pour les réglages du texte. */
+.displayIcon {
+  font-weight: 700;
 }
 
 .nav {
@@ -173,6 +182,27 @@
 
   .navLink {
     padding: 0 var(--space-2);
+  }
+}
+
+/* Tablette : le nom tient sur une ligne et se termine par « … » s'il manque de la place. */
+@media (min-width: 40rem) and (max-width: 69.99rem) {
+  .brand {
+    min-width: 0;
+  }
+
+  .brandName {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* En très grand texte, le nom a toute une ligne : il passe à la ligne plutôt que de se couper. */
+  :global(html[data-text-size='xlarge']) .brandName {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
   }
 }
 

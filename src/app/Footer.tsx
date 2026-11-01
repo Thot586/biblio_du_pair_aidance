@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { AUTHORS, SITE_FULL_TITLE } from '@/content/site';
+import { DisplaySettingsLink } from '@/features/preferences/DisplaySettingsLink';
 import styles from './Footer.module.css';
 
 const LOGOS = [
@@ -37,6 +38,7 @@ export function Footer() {
             <Link to="/sources">Sources</Link>
             <Link to="/aide">Qui peut m’aider ?</Link>
             <Link to="/a-propos">À propos et confidentialité</Link>
+            <DisplaySettingsLink>Affichage : texte, police, couleurs</DisplaySettingsLink>
           </p>
         </div>
         <ul className={styles.logos}>

@@ -115,6 +115,11 @@ export const iaSection: Section = {
               kind: 'paragraph',
               text: 'Oui, les consignes du DU le prévoient explicitement. Vous pouvez utiliser ces outils pour vous corriger, et vous pouvez aussi vous faire relire par une personne de confiance.',
             },
+            {
+              kind: 'paragraph',
+              text: 'Pour lire plus confortablement ce site, le bouton **Affichage** change la taille du texte et les couleurs. Il propose aussi une police au dessin particulier, souvent choisie en cas de dyslexie : OpenDyslexic. Essayez-la, et gardez-la seulement si elle vous convient.',
+            },
+            { kind: 'display', label: 'Changer la police de lecture' },
           ],
         },
         {

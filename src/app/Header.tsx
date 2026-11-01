@@ -1,6 +1,7 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
 import { course } from '@/content/course';
+import { onOpenDisplaySettings } from '@/features/preferences/displaySettings';
 import { PreferencesDialog } from '@/features/preferences/PreferencesDialog';
 import { SiteSearch } from '@/features/search/SiteSearch';
 import styles from './Header.module.css';
@@ -25,6 +26,15 @@ export function Header() {
   const menu = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
   useMenuFit(menu);
+
+  // Le pied de page, une leçon ou « À propos » ouvrent la même fenêtre que le bouton.
+  useEffect(
+    () =>
+      onOpenDisplaySettings(() => {
+        if (!dialog.current?.open) dialog.current?.showModal();
+      }),
+    [],
+  );
 
   return (
     <header className={styles.header}>
@@ -56,6 +66,9 @@ export function Header() {
           className={styles.displayButton}
           onClick={() => dialog.current?.showModal()}
         >
+          <span aria-hidden="true" className={styles.displayIcon}>
+            Aa
+          </span>
           Affichage
         </button>
       </div>

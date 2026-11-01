@@ -38,6 +38,8 @@ function blockText(block: Block): string {
       return [block.caption, ...block.headers, ...block.rows.flat()].join(' ');
     case 'compare':
       return [block.before.text, block.after.text, block.why ?? ''].join(' ');
+    case 'display':
+      return block.label;
     case 'reference':
     case 'scene':
     case 'tool':
@@ -166,7 +168,7 @@ const PAGE_DOCUMENTS: readonly SearchDocument[] = [
     title: 'À propos et confidentialité',
     excerpt: 'Qui a conçu ce support, et ce que deviennent vos données.',
     keywords: 'confidentialité données auteurs conception',
-    body: '',
+    body: 'accessibilité affichage taille du texte police dyslexie OpenDyslexic couleurs thème sombre mouvements animations lecteur d’écran',
   },
 ];
 

@@ -48,6 +48,21 @@ chaque section a un `shortTitle`.
 **Le menu reste visible.** Quatre liens, jamais de menu caché, y compris sur téléphone. Il reste
 aussi collé en haut de l'écran pendant la lecture : changer de page ne demande pas de remonter.
 
+**Les réglages de lecture se trouvent là où le besoin apparaît.** Une personne qui lit mal ne va pas
+chercher « OpenDyslexic » : on nomme donc le besoin, et le réglage se trouve à plusieurs endroits,
+toujours sous le même nom, « Affichage » :
+
+- le bouton « Aa Affichage » de l'en-tête ;
+- un lien « Affichage : texte, police, couleurs » dans le pied de page de toutes les pages, qui
+  sert aussi d'accès sur téléphone quand la rangée du haut a défilé ;
+- un bouton dans la leçon qui parle de dyslexie (bloc `display`) ;
+- le bouton cité dans « À propos », qui ouvre lui aussi la fenêtre (`DisplaySettingsLink`).
+
+Pour renvoyer vers ces réglages, on ouvre la fenêtre (`openDisplaySettings`) : on n'écrit jamais
+« cliquez sur Affichage » sans bouton. Rien ne s'ouvre seul à la première visite. Le texte qui
+présente la police ne dit pas qu'elle « aide à lire » : sans référence vérifiée, il dit seulement
+que certaines personnes la trouvent plus confortable.
+
 **La page ne change pas toute seule.** La recherche se lance à la validation, jamais pendant la
 frappe. Seuls restent fixés à l'écran pendant la lecture la barre de navigation et, sur ordinateur,
 la liste des pages de la section.
@@ -77,6 +92,9 @@ tapent ailleurs reste cherchable, grâce à `aliases` dans `features/tools/catal
 - Tout ce qui se cale par rapport au haut de l'écran (liste latérale, ancres, bulles, fenêtres)
   part de `--header-pinned`, défini dans `styles/tokens.css`. Ne jamais écrire une hauteur d'en-tête
   en dur.
+- Sur tablette, le nom du site se termine par « … » plutôt que de laisser la recherche devenir trop
+  étroite (la police pour dyslexiques en grand texte la réduisait à 4 px). La recherche garde au
+  moins 5 rem.
 - Un cinquième lien dans le menu, ou un libellé plus long, change les cas où le menu tient sur une
   rangée. Rien à régler : `useMenuFit` le mesure, et l'en-tête défile si le menu passe à la ligne.
 
@@ -93,8 +111,9 @@ tapent ailleurs reste cherchable, grâce à `aliases` dans `features/tools/catal
     L'en-tête entier ferait 108 px, soit plus de 12 % d'un écran de 844 px.
   - **Ordinateur** : la rangée unique reste entière (72 px), avec la recherche.
   - **L'en-tête ne se colle pas** sur un écran peu haut (téléphone couché, page très agrandie),
-    en très grand texte, ni quand le menu passe à la ligne (police pour dyslexiques sur
-    téléphone). Dans ces cas, la barre prendrait trop de place.
+    en très grand texte, ni quand le menu passe à la ligne. Avec la police pour dyslexiques, cela
+    arrive sur téléphone et sur ordinateur (1280 et 1440 px mesurés), pas sur tablette. Dans ces
+    cas, la barre prendrait trop de place.
   - Les ancres, le focus au clavier, la liste latérale et les bulles tiennent compte de la barre.
 - **Pas de recherche collée sur téléphone.** Elle revient en remontant : la garder aurait fait
   passer la barre de 45 à 108 px.

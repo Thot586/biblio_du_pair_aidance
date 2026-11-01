@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { AUTHOR_CONTACT } from '@/content/contacts';
 import { AUTHORS, LAST_CHECKED, SITE_FULL_TITLE } from '@/content/site';
+import { DisplaySettingsLink } from '@/features/preferences/DisplaySettingsLink';
 import { usePageTitle } from '@/shared/lib/usePageTitle';
 import { ExternalLink } from '@/shared/ui/ExternalLink';
 import styles from './SimplePage.module.css';
@@ -27,7 +28,7 @@ export function AboutPage() {
         <li>
           Votre progression, vos réglages et votre liste de références restent dans le navigateur de
           cet appareil. Nous n’y avons pas accès. Sur un poste partagé, pensez à les effacer depuis
-          le bouton Affichage.
+          le bouton <DisplaySettingsLink>Affichage</DisplaySettingsLink>.
         </li>
         <li>
           Si vous collez un DOI ou un titre dans un outil, votre navigateur interroge{' '}
@@ -44,9 +45,11 @@ export function AboutPage() {
 
       <h2>Accessibilité</h2>
       <p>
-        Le site se lit au clavier, sur téléphone et avec un lecteur d’écran. Le bouton Affichage
-        permet d’agrandir le texte, de changer de police ou de réduire les mouvements. Chaque
-        animation a son texte complet. Un problème ? Écrivez-nous à l’adresse ci-dessus.
+        Le site se lit au clavier, sur téléphone et avec un lecteur d’écran. Le bouton{' '}
+        <DisplaySettingsLink>Affichage</DisplaySettingsLink> permet d’agrandir le texte, de choisir
+        une police plus confortable (OpenDyslexic), de changer les couleurs ou de réduire les
+        mouvements. Chaque animation a son texte complet. Un problème ? Écrivez-nous à l’adresse
+        ci-dessus.
       </p>
 
       <h2>Mise à jour</h2>

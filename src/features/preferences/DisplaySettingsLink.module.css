@@ -1,0 +1,16 @@
+/* Même apparence qu'un lien du texte : couleur des liens, soulignement. */
+.link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration-thickness: 0.16em;
+}

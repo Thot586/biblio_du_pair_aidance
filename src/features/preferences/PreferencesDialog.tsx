@@ -8,6 +8,8 @@ import styles from './PreferencesDialog.module.css';
 interface Option<K extends keyof Preferences> {
   value: Preferences[K];
   label: string;
+  /** Le nom d'une police s'écrit dans cette police : on la voit avant de la choisir. */
+  inOwnFont?: boolean;
 }
 
 const TEXT_SIZES: Option<'textSize'>[] = [
@@ -24,8 +26,11 @@ const THEMES: Option<'theme'>[] = [
 
 const FONTS: Option<'readingFont'>[] = [
   { value: 'standard', label: 'Police du site' },
-  { value: 'dyslexic', label: 'OpenDyslexic' },
+  { value: 'dyslexic', label: 'OpenDyslexic', inOwnFont: true },
 ];
+
+const FONT_HINT =
+  'OpenDyslexic est une police au dessin particulier, souvent proposée aux personnes dyslexiques. Certaines la trouvent plus confortable, d’autres non : essayez-la et gardez ce qui vous convient.';
 
 function update<K extends keyof Preferences>(key: K, value: Preferences[K]): void {
   preferencesStore.update((current) => ({ ...current, [key]: value }));
@@ -35,15 +40,24 @@ function ChoiceGroup<K extends keyof Preferences>({
   name,
   legend,
   options,
+  hint,
 }: {
   name: K;
   legend: string;
   options: Option<K>[];
+  /** Une phrase qui explique le choix, lue avec le groupe par les lecteurs d'écran. */
+  hint?: string;
 }) {
   const preferences = useStore(preferencesStore);
+  const hintId = `aide-${name}`;
   return (
-    <fieldset className={styles.group}>
+    <fieldset className={styles.group} aria-describedby={hint ? hintId : undefined}>
       <legend className={styles.legend}>{legend}</legend>
+      {hint && (
+        <p id={hintId} className={styles.hint}>
+          {hint}
+        </p>
+      )}
       {options.map((option) => (
         <label key={String(option.value)} className={styles.option}>
           <input
@@ -52,7 +66,7 @@ function ChoiceGroup<K extends keyof Preferences>({
             checked={preferences[name] === option.value}
             onChange={() => update(name, option.value)}
           />
-          {option.label}
+          <span className={option.inOwnFont ? styles.dyslexicName : undefined}>{option.label}</span>
         </label>
       ))}
     </fieldset>
@@ -66,9 +80,14 @@ export function PreferencesDialog({ ref }: { ref: Ref<HTMLDialogElement> }) {
     <dialog ref={ref} className={styles.dialog} aria-labelledby="titre-affichage">
       <form method="dialog" className={styles.form}>
         <h2 id="titre-affichage">Affichage</h2>
-        <p>Ces réglages restent sur cet appareil.</p>
+        <p>Pour lire plus confortablement. Ces réglages restent sur cet appareil.</p>
         <ChoiceGroup name="textSize" legend="Taille du texte" options={TEXT_SIZES} />
-        <ChoiceGroup name="readingFont" legend="Police de lecture" options={FONTS} />
+        <ChoiceGroup
+          name="readingFont"
+          legend="Police de lecture"
+          options={FONTS}
+          hint={FONT_HINT}
+        />
         <ChoiceGroup name="theme" legend="Couleurs" options={THEMES} />
         <label className={styles.option}>
           <input

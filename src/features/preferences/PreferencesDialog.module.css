@@ -32,6 +32,16 @@
   color: var(--color-heading);
 }
 
+.hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* On voit la police avant de la choisir, même quand elle n'est pas encore active. */
+.dyslexicName {
+  font-family: 'OpenDyslexic', var(--font-body);
+}
+
 .option {
   display: flex;
   align-items: center;
