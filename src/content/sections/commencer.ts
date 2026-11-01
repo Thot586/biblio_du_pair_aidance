@@ -4,6 +4,7 @@ export const commencerSection: Section = {
   id: 'commencer',
   slug: 'commencer',
   question: 'Par où commencer ?',
+  shortTitle: 'Commencer',
   promise:
     'Si vous n’avez jamais fait de recherche documentaire, vous êtes au bon endroit. Prenons le temps de voir à quoi cela sert, quels mots on utilise, et comment se déroule une recherche du début à la fin.',
   lessons: [

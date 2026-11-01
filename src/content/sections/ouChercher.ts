@@ -4,6 +4,7 @@ export const ouChercherSection: Section = {
   id: 'ou-chercher',
   slug: 'ou-chercher',
   question: 'Où chercher : quel outil choisir ?',
+  shortTitle: 'Où chercher',
   promise:
     'Il existe beaucoup d’outils, et c’est sans doute ce qui impressionne le plus au début. Rassurez-vous, trois ou quatre suffisent pour un mémoire. Voyons lesquels choisir, et comment vous en servir.',
   lessons: [

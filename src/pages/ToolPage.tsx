@@ -1,8 +1,9 @@
 import { Suspense } from 'react';
-import { Link, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { TOOLS } from '@/features/tools/catalog';
 import { ToolView } from '@/features/tools/ToolView';
 import { usePageTitle } from '@/shared/lib/usePageTitle';
+import { Breadcrumb } from '@/shared/ui/Breadcrumb';
 import { NotFoundPage } from './NotFoundPage';
 import styles from './SimplePage.module.css';
 
@@ -15,9 +16,7 @@ export function ToolPage() {
 
   return (
     <article className={styles.page}>
-      <p>
-        <Link to="/outils">Boîte à outils</Link>
-      </p>
+      <Breadcrumb crumbs={[{ label: 'Boîte à outils', to: '/outils' }, { label: tool.title }]} />
       <h1>{tool.title}</h1>
       <p>{tool.summary}</p>
       <Suspense fallback={<p>Chargement de l’outil.</p>}>

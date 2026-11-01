@@ -34,6 +34,9 @@ Le site doit rassurer, rester facile à lire et ne jamais surcharger la vue.
 
 Hors périmètre : méthodes d'enquête (entretien, questionnaire, observation).
 
+Le parcours de la personne dans le site, et ce qu'il faut respecter en ajoutant une page, sont
+décrits dans `docs/PARCOURS.md`.
+
 ## Fil rouge
 
 Sam, personne fictive de la promotion, travaille en addictologie. Son sujet : la pair-aidance en
@@ -57,7 +60,8 @@ addictologie. Sa question : « Comment une personne pair-aidante trouve-t-elle s
 **La forme.**
 
 - Des phrases simples, de longueur variée. Le vouvoiement. La voix active.
-- Chaque leçon commence par la réponse, puis l'animation, puis le détail dans un « voir plus ».
+- Chaque leçon commence par « L'essentiel » (la réponse et les points à retenir), puis l'animation,
+  puis le détail dans un « voir plus ».
 - Le titre d'une leçon est la question que se pose la personne. Les titres restent courts.
 - Pas de point médian : des tournures épicènes, ou « étudiantes et étudiants ».
 - Chiffres et références : uniquement des sources vérifiées (DOI, titre, auteurs, année).

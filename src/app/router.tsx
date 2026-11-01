@@ -7,6 +7,7 @@ import { HomePage } from '@/pages/HomePage';
 import { LessonPage } from '@/pages/LessonPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { QuizPage } from '@/pages/QuizPage';
+import { SearchPage } from '@/pages/SearchPage';
 import { SectionPage } from '@/pages/SectionPage';
 import { SourcesPage } from '@/pages/SourcesPage';
 import { ToolboxPage } from '@/pages/ToolboxPage';
@@ -32,6 +33,7 @@ export const routes: RouteObject[] = [
       { path: 'outils', element: <ToolboxPage /> },
       { path: 'outils/:toolSlug', element: <ToolPage /> },
       { path: 'glossaire', element: <GlossaryPage /> },
+      { path: 'recherche', element: <SearchPage /> },
       { path: 'aide', element: <HelpPage /> },
       { path: 'sources', element: <SourcesPage /> },
       { path: 'a-propos', element: <AboutPage /> },

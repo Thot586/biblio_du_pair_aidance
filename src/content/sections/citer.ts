@@ -7,6 +7,7 @@ export const citerSection: Section = {
   id: 'citer',
   slug: 'citer',
   question: 'Comment citer et faire ma bibliographie ?',
+  shortTitle: 'Citer',
   promise:
     'La norme APA a mauvaise réputation, mais elle repose sur une logique simple. Nous allons voir comment citer dans votre texte, comment écrire une référence pour chaque type de document, et comment vous faire aider par des outils.',
   lessons: [

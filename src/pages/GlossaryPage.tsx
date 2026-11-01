@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useLocation } from 'react-router';
+import { useMemo, useState } from 'react';
 import { glossary } from '@/content/glossary';
 import { usePageTitle } from '@/shared/lib/usePageTitle';
 import { normalizeForSearch } from '@/shared/lib/text';
@@ -8,7 +7,6 @@ import styles from './GlossaryPage.module.css';
 
 export function GlossaryPage() {
   usePageTitle('Glossaire');
-  const { hash } = useLocation();
   const [search, setSearch] = useState('');
 
   const entries = useMemo(() => {
@@ -19,16 +17,12 @@ export function GlossaryPage() {
     );
   }, [search]);
 
-  useEffect(() => {
-    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
-  }, [hash]);
-
   return (
     <article className={styles.page}>
       <h1>Glossaire</h1>
       <p>Les mots de la recherche, expliqués simplement.</p>
       <label className={styles.search}>
-        Chercher un mot
+        Filtrer cette liste
         <input type="search" value={search} onChange={(event) => setSearch(event.target.value)} />
       </label>
       {entries.length === 0 ? (

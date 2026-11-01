@@ -3,18 +3,26 @@
   color: #fff;
 }
 
+/* Téléphone : le logo, la recherche et l'affichage, puis les quatre liens, toujours visibles. */
 .inner {
   max-width: var(--page-max);
   margin: 0 auto;
-  padding: var(--space-3) var(--gutter);
-  display: flex;
-  flex-wrap: wrap;
+  padding: var(--space-2) var(--gutter) 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    'brand search display'
+    'nav nav nav';
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2) var(--space-5);
+  gap: var(--space-1) var(--space-2);
 }
 
 .brand {
+  grid-area: brand;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.5rem;
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.2;
@@ -22,37 +30,36 @@
   text-decoration: none;
 }
 
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-1) var(--space-4);
-  font-size: var(--text-sm);
+.logo {
+  flex: none;
+  width: 1.9rem;
+  height: 1.9rem;
 }
 
-.navLink {
-  padding: var(--space-2) 0;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 3px solid transparent;
+/* Le nom reste lu par les lecteurs d'écran quand le logo le remplace à l'écran. */
+.brandName {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
-.navLink:hover {
-  border-bottom-color: var(--rose);
-}
-
-.navLink[aria-current='page'] {
-  border-bottom-color: var(--sarcelle);
+.search {
+  grid-area: search;
 }
 
 .displayButton {
-  min-height: 2.25rem;
-  padding: 0 var(--space-3);
+  grid-area: display;
+  min-height: 2.5rem;
+  padding: 0 var(--space-2);
   border: 2px solid #fff;
   border-radius: 0 0.75rem 0 0;
   background: transparent;
   color: #fff;
   font: inherit;
+  font-size: var(--text-sm);
   cursor: pointer;
 }
 
@@ -61,6 +68,98 @@
   color: var(--aubergine);
 }
 
+.nav {
+  grid-area: nav;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--text-sm);
+}
+
+.navLink {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0 var(--space-1);
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+
+.navLink:hover {
+  border-bottom-color: var(--rose);
+}
+
+.navLink[aria-current] {
+  font-weight: 700;
+  border-bottom-color: var(--sarcelle);
+}
+
 .header :focus-visible {
   outline-color: var(--rose);
+}
+
+/* Sur le plus petit écran, le champ de recherche a besoin de la place du logo. */
+@media (max-width: 22.5rem) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'search display'
+      'nav nav';
+  }
+
+  .brand {
+    display: none;
+  }
+
+  .navLink {
+    padding: 0;
+  }
+}
+
+/* En très grand texte, chaque élément garde toute la largeur dont il a besoin. */
+@media (max-width: 69.99rem) {
+  :global(html[data-text-size='xlarge']) .inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'brand display'
+      'search search'
+      'nav nav';
+  }
+}
+
+@media (min-width: 40rem) {
+  .brandName {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+  }
+
+  .displayButton {
+    padding: 0 var(--space-3);
+  }
+
+  .navLink {
+    min-height: 2.75rem;
+    padding: 0 var(--space-2);
+  }
+}
+
+/* Ordinateur : tout tient sur une ligne, avec la recherche en haut à droite. */
+@media (min-width: 70rem) {
+  .inner {
+    grid-template-columns: auto auto minmax(10rem, 1fr) auto;
+    grid-template-areas: 'brand nav search display';
+    padding-block: var(--space-2);
+    gap: var(--space-4);
+  }
+
+  .navLink {
+    flex: none;
+  }
 }

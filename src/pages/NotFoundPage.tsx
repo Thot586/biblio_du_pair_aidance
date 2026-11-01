@@ -6,8 +6,8 @@ export function NotFoundPage() {
     <article className={styles.page}>
       <h1>Cette page n’existe pas</h1>
       <p>
-        Le lien est peut-être ancien. Repartez de <Link to="/">la page d’accueil</Link>, ou cherchez
-        un mot dans <Link to="/glossaire">le glossaire</Link>.
+        Le lien est peut-être ancien. Essayez le champ de recherche en haut de la page, ou repartez
+        du <Link to="/">parcours</Link>.
       </p>
     </article>
   );

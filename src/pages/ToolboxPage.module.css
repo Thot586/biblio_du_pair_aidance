@@ -1,28 +1,20 @@
 .page {
   display: grid;
-  gap: var(--space-4);
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1fr);
   max-width: var(--measure);
 }
 
 .lead {
   font-size: var(--text-lead);
+  line-height: 1.5;
 }
 
-.tools {
-  margin: var(--space-3) 0;
-  padding: 0;
-  list-style: none;
+.group {
+  display: grid;
+  gap: var(--space-3);
 }
 
-.tool {
-  padding-block: var(--space-3);
-  border-top: 2px solid var(--color-border);
-}
-
-.title {
-  font-family: var(--font-display);
+.group h2 {
   font-size: var(--text-h3);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-heading);
 }

@@ -60,3 +60,28 @@ export function findTool(id: ToolId): ToolEntry {
   if (!tool) throw new Error(`Outil inconnu : ${id}`);
   return tool;
 }
+
+export interface ToolGroup {
+  title: string;
+  tools: readonly ToolEntry[];
+}
+
+/** Les outils, rangés selon ce que la personne veut faire. */
+export const TOOL_GROUPS: readonly ToolGroup[] = [
+  {
+    title: 'Préparer ma recherche',
+    tools: [
+      findTool('atelier-question'),
+      findTool('constructeur-equation'),
+      findTool('choisir-outil'),
+    ],
+  },
+  {
+    title: 'Citer mes sources',
+    tools: [findTool('generateur-apa'), findTool('verifier-reference')],
+  },
+  {
+    title: 'Utiliser une IA avec prudence',
+    tools: [findTool('preparer-prompt'), findTool('declaration-ia')],
+  },
+];

@@ -4,6 +4,7 @@ export const questionSection: Section = {
   id: 'question',
   slug: 'question',
   question: 'Comment trouver ma question de recherche ?',
+  shortTitle: 'Ma question',
   promise:
     'C’est souvent l’étape la plus difficile, et aussi la plus utile. Dans cette section, nous allons partir d’un thème qui vous tient à cœur pour arriver à une question claire, à laquelle votre mémoire pourra répondre.',
   lessons: [

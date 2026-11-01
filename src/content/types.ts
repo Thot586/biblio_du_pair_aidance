@@ -168,6 +168,8 @@ export interface Section {
   id: SectionId;
   slug: string;
   question: string;
+  /** Un ou deux mots : le fil d'Ariane ne doit jamais passer à la ligne. */
+  shortTitle: string;
   /** Ce que la personne saura faire à la fin. */
   promise: InlineText;
   lessons: Lesson[];

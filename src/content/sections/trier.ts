@@ -4,6 +4,7 @@ export const trierSection: Section = {
   id: 'trier',
   slug: 'trier',
   question: 'Comment trier ce que je trouve ?',
+  shortTitle: 'Trier',
   promise:
     'Vous avez lancé vos premières recherches, et les résultats arrivent. Comment savoir ce qui mérite votre temps ? Voyons comment ajuster une recherche, juger un document, lire un article efficacement et obtenir le texte complet.',
   lessons: [

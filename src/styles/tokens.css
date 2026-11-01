@@ -52,11 +52,11 @@
   /* Échelle classique (Bringhurst) : 18 / 21 / 24 / 30 / 36 / 48 */
   --text-sm: 0.889rem;
   --text-base: 1rem;
-  --text-lead: 1.167rem;
+  --text-lead: 1.056rem;
   --text-h3: 1.333rem;
   --text-h2: 1.667rem;
   --text-h1: clamp(2rem, 1.4rem + 2.8vw, 2.667rem);
-  --text-hero: clamp(2.333rem, 1.4rem + 4.5vw, 3.667rem);
+  --text-hero: clamp(2rem, 1.2rem + 4.5vw, 3.667rem);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -78,6 +78,7 @@
 @media (min-width: 40rem) {
   :root {
     --gutter: 2rem;
+    --text-lead: 1.167rem;
   }
 }
 

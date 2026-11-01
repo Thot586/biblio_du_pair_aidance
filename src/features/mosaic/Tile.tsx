@@ -75,12 +75,6 @@ export const TILE_PATTERNS: readonly (readonly [Piece, Piece, Piece, Piece])[] =
     ['square', 'a'],
     ['quarterTopRight', 'b'],
   ],
-  [
-    ['quarterTopRight', 'a'],
-    ['quarterTopLeft', 'b'],
-    ['quarterBottomLeft', 'c'],
-    ['quarterBottomRight', 'a'],
-  ],
 ];
 
 const CELL_ORIGINS = [
@@ -101,13 +95,11 @@ interface TileProps {
   pattern: number;
   /** Part parcourue, entre 0 et 1. */
   completion: number;
-  /** Tuile décorative, sans lien avec la progression. */
-  alwaysFull?: boolean;
 }
 
-export function Tile({ pattern, completion, alwaysFull = false }: TileProps) {
+export function Tile({ pattern, completion }: TileProps) {
   const pieces = TILE_PATTERNS[pattern % TILE_PATTERNS.length] ?? TILE_PATTERNS[0];
-  const filled = alwaysFull ? 4 : filledPieces(completion);
+  const filled = filledPieces(completion);
   return (
     <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" style={{ display: 'block' }}>
       {pieces?.map(([shape, color], index) => {

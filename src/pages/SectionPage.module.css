@@ -1,7 +1,19 @@
 .section {
   display: grid;
   gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr);
   max-width: var(--measure);
+}
+
+.top {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.meta {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
 }
 
 .promise {
@@ -9,42 +21,35 @@
   line-height: 1.5;
 }
 
-.lessons {
-  margin: var(--space-4) 0 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: lesson;
-}
-
-.lesson {
-  counter-increment: lesson;
+.mark {
   display: grid;
-  grid-template-columns: 2.5rem minmax(0, 1fr);
-  padding-block: var(--space-3);
-  border-top: 2px solid var(--color-border);
-}
-
-.lesson::before {
-  content: counter(lesson);
-  grid-row: span 2;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
   font-family: var(--font-display);
-  font-size: var(--text-h3);
   font-weight: 700;
-  line-height: 1.1;
-  color: var(--color-accent);
-}
-
-.lessonLink {
-  font-family: var(--font-display);
-  font-size: var(--text-h3);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-heading);
-}
-
-.meta {
-  grid-column: 2;
-  margin-top: var(--space-1);
-  font-size: var(--text-sm);
   color: var(--color-text-muted);
+}
+
+.mark[data-done='true'] {
+  color: var(--color-success);
+}
+
+.check {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.pager {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+@media (min-width: 40rem) {
+  .pager {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

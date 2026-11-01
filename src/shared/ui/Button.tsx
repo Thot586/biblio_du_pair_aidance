@@ -22,14 +22,16 @@ export function Button({ variant = 'primary', className, type = 'button', ...res
 export function LinkButton({
   to,
   variant = 'primary',
+  onClick,
   children,
 }: {
   to: string;
   variant?: Variant;
+  onClick?: () => void;
   children: ReactNode;
 }) {
   return (
-    <Link to={to} className={styles.button} data-variant={variant}>
+    <Link to={to} className={styles.button} data-variant={variant} onClick={onClick}>
       {children}
     </Link>
   );

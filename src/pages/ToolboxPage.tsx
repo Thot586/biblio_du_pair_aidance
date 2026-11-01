@@ -1,6 +1,6 @@
-import { Link } from 'react-router';
-import { TOOLS } from '@/features/tools/catalog';
+import { TOOL_GROUPS } from '@/features/tools/catalog';
 import { usePageTitle } from '@/shared/lib/usePageTitle';
+import { LinkRow, LinkRowList } from '@/shared/ui/LinkRow';
 import styles from './ToolboxPage.module.css';
 
 export function ToolboxPage() {
@@ -8,24 +8,25 @@ export function ToolboxPage() {
 
   return (
     <article className={styles.page}>
-      <h1>Où retrouver tous les outils ?</h1>
+      <h1>Boîte à outils</h1>
       <p className={styles.lead}>
-        Ces outils fonctionnent dans votre navigateur. Ce que vous écrivez reste sur votre appareil.
+        Que voulez-vous faire ? Ces outils fonctionnent dans votre navigateur : ce que vous écrivez
+        reste sur votre appareil.
       </p>
-      <ul className={styles.tools}>
-        {TOOLS.map((tool) => (
-          <li key={tool.id} className={styles.tool}>
-            <Link to={`/outils/${tool.slug}`} className={styles.title}>
-              {tool.title}
-            </Link>
-            <p>{tool.summary}</p>
-          </li>
-        ))}
-      </ul>
-      <p>
-        Il vous manque un mot ? Consultez <Link to="/glossaire">le glossaire</Link>. Besoin d’une
-        personne ? Voyez <Link to="/aide">qui peut vous aider</Link>.
-      </p>
+      {TOOL_GROUPS.map((group) => (
+        <section key={group.title} className={styles.group}>
+          <h2>{group.title}</h2>
+          <LinkRowList>
+            {group.tools.map((tool) => (
+              <li key={tool.id}>
+                <LinkRow to={`/outils/${tool.slug}`} title={tool.title}>
+                  {tool.summary}
+                </LinkRow>
+              </li>
+            ))}
+          </LinkRowList>
+        </section>
+      ))}
     </article>
   );
 }

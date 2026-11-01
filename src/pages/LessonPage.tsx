@@ -5,33 +5,54 @@ import { BlockList } from '@/features/content-blocks/BlockList';
 import { isLessonRead, setLessonRead, useProgress } from '@/features/progress/progressStore';
 import { usePageTitle } from '@/shared/lib/usePageTitle';
 import { frenchSpacing, pluralize } from '@/shared/lib/text';
+import { Breadcrumb } from '@/shared/ui/Breadcrumb';
+import { LinkButton } from '@/shared/ui/Button';
 import { InlineText } from '@/shared/ui/InlineText';
+import { MoreDetails } from '@/shared/ui/MoreDetails';
 import { NotFoundPage } from './NotFoundPage';
 import styles from './LessonPage.module.css';
 
-function SectionRail({ section, current }: { section: Section; current: Lesson }) {
+function SectionPageList({ section, current }: { section: Section; current: Lesson }) {
   const progress = useProgress();
   return (
-    <nav aria-label="Dans cette section" className={styles.rail}>
-      <Link to={`/${section.slug}`} className={styles.railTitle}>
-        {frenchSpacing(section.question)}
-      </Link>
-      <ol className={styles.railList}>
-        {section.lessons.map((lesson) => (
-          <li key={lesson.slug}>
-            <Link
-              to={`/${section.slug}/${lesson.slug}`}
-              aria-current={lesson.slug === current.slug ? 'page' : undefined}
-              data-read={isLessonRead(progress, lessonKey(section, lesson))}
-            >
-              {frenchSpacing(lesson.question)}
-            </Link>
-          </li>
-        ))}
-        <li>
-          <Link to={`/${section.slug}/quiz`}>Le quiz</Link>
+    <ol className={styles.pageList}>
+      {section.lessons.map((lesson) => (
+        <li key={lesson.slug}>
+          <Link
+            to={`/${section.slug}/${lesson.slug}`}
+            aria-current={lesson.slug === current.slug ? 'page' : undefined}
+            data-read={isLessonRead(progress, lessonKey(section, lesson))}
+          >
+            {frenchSpacing(lesson.question)}
+          </Link>
         </li>
-      </ol>
+      ))}
+      <li>
+        <Link to={`/${section.slug}/quiz`}>Le quiz</Link>
+      </li>
+    </ol>
+  );
+}
+
+function LessonPager({ section, lesson }: { section: Section; lesson: Lesson }) {
+  const index = section.lessons.indexOf(lesson);
+  const previous = section.lessons[index - 1];
+  const next = section.lessons[index + 1];
+  const nextTo = next ? `/${section.slug}/${next.slug}` : `/${section.slug}/quiz`;
+  const nextLabel = next
+    ? `Page suivante : ${next.question}`
+    : 'Vérifier ce que j’ai compris avec le quiz';
+
+  return (
+    <nav aria-label="Pages voisines" className={styles.pager}>
+      {previous && (
+        <LinkButton variant="secondary" to={`/${section.slug}/${previous.slug}`}>
+          Page précédente
+        </LinkButton>
+      )}
+      <LinkButton to={nextTo} onClick={() => setLessonRead(lessonKey(section, lesson), true)}>
+        {frenchSpacing(nextLabel)}
+      </LinkButton>
     </nav>
   );
 }
@@ -46,28 +67,37 @@ export function LessonPage() {
   if (!section || !lesson) return <NotFoundPage />;
 
   const key = lessonKey(section, lesson);
-  const read = isLessonRead(progress, key);
-  const index = section.lessons.indexOf(lesson);
-  const next = section.lessons[index + 1];
-  const nextTo = next ? `/${section.slug}/${next.slug}` : `/${section.slug}/quiz`;
-  const nextLabel = next ? next.question : 'Vérifier ce que j’ai compris avec le quiz';
 
   return (
     <div className={styles.layout}>
-      <SectionRail section={section} current={lesson} />
+      <nav aria-label="Dans cette section" className={styles.rail}>
+        <Link to={`/${section.slug}`} className={styles.railTitle}>
+          {frenchSpacing(section.question)}
+        </Link>
+        <SectionPageList section={section} current={lesson} />
+      </nav>
 
       <article className={styles.lesson}>
-        <h1>{frenchSpacing(lesson.question)}</h1>
-        <p className={styles.meta}>Environ {pluralize(lesson.minutes, 'minute')}</p>
+        <div className={styles.top}>
+          <Breadcrumb
+            crumbs={[
+              { label: 'Parcours', to: '/' },
+              { label: section.shortTitle, to: `/${section.slug}` },
+              { label: lesson.question },
+            ]}
+          />
+          <h1>{frenchSpacing(lesson.question)}</h1>
+          <p className={styles.meta}>
+            Page {section.lessons.indexOf(lesson) + 1} sur {section.lessons.length}, environ{' '}
+            {pluralize(lesson.minutes, 'minute')}
+          </p>
+        </div>
 
-        <p className={styles.summary}>
-          <InlineText text={lesson.summary} />
-        </p>
-
-        <BlockList blocks={lesson.blocks} />
-
-        <section className={styles.takeaways} aria-labelledby="titre-retenir">
-          <h2 id="titre-retenir">À retenir</h2>
+        <section className={styles.essential} aria-labelledby="titre-essentiel">
+          <h2 id="titre-essentiel">L’essentiel</h2>
+          <p className={styles.summary}>
+            <InlineText text={lesson.summary} />
+          </p>
           <ul>
             {lesson.takeaways.map((takeaway) => (
               <li key={takeaway}>
@@ -77,18 +107,24 @@ export function LessonPage() {
           </ul>
         </section>
 
+        <div className={styles.pagesOnPhone}>
+          <MoreDetails title="Voir toutes les pages de cette section">
+            <SectionPageList section={section} current={lesson} />
+          </MoreDetails>
+        </div>
+
+        <BlockList blocks={lesson.blocks} />
+
         <div className={styles.end} data-print="hide">
           <label className={styles.readToggle}>
             <input
               type="checkbox"
-              checked={read}
+              checked={isLessonRead(progress, key)}
               onChange={(event) => setLessonRead(key, event.target.checked)}
             />
             J’ai lu cette page
           </label>
-          <p>
-            Et ensuite : <Link to={nextTo}>{frenchSpacing(nextLabel)}</Link>
-          </p>
+          <LessonPager section={section} lesson={lesson} />
         </div>
       </article>
     </div>

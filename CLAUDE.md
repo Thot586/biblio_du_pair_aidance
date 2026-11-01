@@ -26,3 +26,6 @@ français. Voir `docs/PLAN.md` pour les décisions et les règles de rédaction.
 - Un terme technique du contenu s'écrit `[[id]]` pour être survolable. Un test le vérifie.
 - Une scène ne dépend que de `frame` (pas de CSS animé) : mêmes entrées, même image.
 - Accessibilité non négociable : clavier, lecteur d'écran, mouvements réduits, téléphone 360 px.
+- Avant de toucher à la navigation ou à l'ordre d'une page, lire `docs/PARCOURS.md`.
+- La recherche se nourrit du contenu (`features/search/documents.ts`) : toute nouvelle page de
+  contenu ou tout nouvel outil doit y apparaître. Un test le vérifie.

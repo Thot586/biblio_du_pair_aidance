@@ -21,3 +21,14 @@ export function frenchSpacing(text: string): string {
 export function pluralize(count: number, singular: string, plural = `${singular}s`): string {
   return `${count} ${count > 1 ? plural : singular}`;
 }
+
+const DURATION_STEP_MINUTES = 5;
+
+/** Une durée arrondie aux 5 minutes, facile à lire : « 45 minutes », « 3 h 25 ». */
+export function formatDuration(minutes: number): string {
+  const rounded = Math.round(minutes / DURATION_STEP_MINUTES) * DURATION_STEP_MINUTES;
+  if (rounded < 60) return `${rounded} minutes`;
+  const remainder = rounded % 60;
+  const hours = `${Math.floor(rounded / 60)} h`;
+  return remainder === 0 ? hours : `${hours} ${String(remainder).padStart(2, '0')}`;
+}

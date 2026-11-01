@@ -4,6 +4,7 @@ export const motsSection: Section = {
   id: 'mots',
   slug: 'mots',
   question: 'Quels mots utiliser pour chercher ?',
+  shortTitle: 'Mes mots',
   promise:
     'Vous avez votre question ? Il reste à la traduire en mots qu’un outil de recherche comprendra. C’est plus simple qu’il n’y paraît : nous allons trouver vos mots, les passer en anglais si besoin, puis apprendre à les combiner.',
   lessons: [

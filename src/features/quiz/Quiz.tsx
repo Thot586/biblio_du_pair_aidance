@@ -1,8 +1,8 @@
 import { useId, useRef, useState } from 'react';
-import { Link } from 'react-router';
+import { nextSection } from '@/content/course';
 import type { Section } from '@/content/types';
 import { recordQuizResult } from '@/features/progress/progressStore';
-import { Button } from '@/shared/ui/Button';
+import { Button, LinkButton } from '@/shared/ui/Button';
 import { InlineText } from '@/shared/ui/InlineText';
 import { pluralize } from '@/shared/lib/text';
 import { isAnswerCorrect, resultMessage, toggleChoice } from './quizLogic';
@@ -46,6 +46,7 @@ export function Quiz({ section }: { section: Section }) {
   };
 
   if (finished || !question) {
+    const next = nextSection(section);
     return (
       <div className={styles.result}>
         <h2 ref={headingRef} tabIndex={-1}>
@@ -53,8 +54,12 @@ export function Quiz({ section }: { section: Section }) {
         </h2>
         <p>{resultMessage(correct, questions.length)}</p>
         <div className={styles.actions}>
-          <Button onClick={restart}>Recommencer le quiz</Button>
-          <Link to={`/${section.slug}`}>Retour à la section</Link>
+          <LinkButton to={next ? `/${next.slug}` : '/'}>
+            {next ? `Section suivante : ${next.shortTitle}` : 'Retour au parcours'}
+          </LinkButton>
+          <Button variant="secondary" onClick={restart}>
+            Recommencer le quiz
+          </Button>
         </div>
       </div>
     );

@@ -1,0 +1,38 @@
+.page {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 46rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.page h1 {
+  overflow-wrap: anywhere;
+}
+
+.lead {
+  font-size: var(--text-lead);
+  line-height: 1.5;
+}
+
+.count {
+  margin-top: calc(var(--space-3) * -1);
+  color: var(--color-text-muted);
+}
+
+.group {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.group h2 {
+  font-size: var(--text-h3);
+}
+
+.excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}

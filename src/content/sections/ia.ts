@@ -5,6 +5,7 @@ export const iaSection: Section = {
   id: 'ia',
   slug: 'ia',
   question: 'L’IA peut-elle m’aider ?',
+  shortTitle: 'L’IA',
   promise:
     'Oui, et elle peut même beaucoup vous aider, à condition de savoir ce qu’elle fait et de garder la main. Voyons ensemble ce qui est permis dans le DU, à quoi servent les outils, où sont les pièges, et comment protéger les personnes dont vous parlez.',
   lessons: [
